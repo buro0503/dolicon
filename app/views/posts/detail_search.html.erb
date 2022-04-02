@@ -1,0 +1,31 @@
+
+  <%= month_calendar events: @posts do |date, posts| %>
+  <%= date.day %>
+  
+    
+  <% posts.each do |t| %>
+
+
+    <div>
+        【<%= Prefecture.find(t.prefecture_id).name %>】
+        <%= link_to t.name2, post_path(t.id) %>
+        
+        <% if user_signed_in? %>
+          <% if current_user.already_liked?(t) %>
+            <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete, remote: true do %>
+              <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% else %>
+            <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post, remote: true do %>
+              <i class="fas fa-heart"></i>
+              <%= t.likes.count %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <i class="fas fa-heart"></i><%= t.likes.count %>
+        <% end %>
+
+    </div>
+  <% end %>
+<% end %>
+

@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name1: MyText
+  name2: MyText
+  month: 1
+  day: 1
+  detail: MyText
+  image: MyString
+  music: MyText
+  prefecture: one
+  site: MyText
+  user_id: 1
+  address: MyString
+  latitude: 1.5
+  date: 2022-03-10
+  image2: MyString
+
+two:
+  name1: MyText
+  name2: MyText
+  month: 1
+  day: 1
+  detail: MyText
+  image: MyString
+  music: MyText
+  prefecture: two
+  site: MyText
+  user_id: 1
+  address: MyString
+  latitude: 1.5
+  date: 2022-03-10
+  image2: MyString

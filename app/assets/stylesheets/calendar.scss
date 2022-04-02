@@ -1,0 +1,65 @@
+
+
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+  .calendar-heading {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    align-items: center;
+    text-align:center;
+    color: black;
+  }
+
+
+
+  .hokkaidou_touhoku{
+    margin-top: 10px;
+    padding: 1%;
+    font-size: 17px;
+    line-height: 120%; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 680px;
+  }
+
+
+  
+    .sbt-btn {
+      display       : inline-block;
+      border-radius : 1%;          /* 角丸       */
+      font-size     : 12pt;        /* 文字サイズ */
+      text-align    : center;      /* 文字位置   */
+      cursor        : pointer;     /* カーソル   */
+      padding       : 3px 3px;   /* 余白       */
+      background    : white;     /* 背景色     */
+      color         : #000000;     /* 文字色     */
+      line-height   : 1em;         /* 1行の高さ  */
+      transition    : .3s;         /* なめらか変化 */
+      border        : 2px solid #cccccc;    /* 枠の指定 */
+    }
+    .sbt-btn:hover {
+      box-shadow    : none;        /* カーソル時の影消去 */
+      color         : black;     /* 背景色     */
+      background    : #cccccc;     /* 文字色     */
+    }
+  
+
+  .liked-btn {
+    width: 20px;
+    font-size: 20px;
+    color: #808080; 
+    }
+   
+   .unliked-btn {
+    width: 20px;
+    font-size: 20px;
+    color: #e54747;
+    }
+  
+    .detail-status{
+      margin: 3%;
+    }

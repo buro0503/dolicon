@@ -1,0 +1,64 @@
+<br>
+<% if current_user.id == @user.id %>
+<h2>マイページ</h2>
+<% end %>
+<% if current_user.id != @user.id %>
+<h2>団体ページ</h2>
+<% end %>
+
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<p>プロフィール : <%= @user.profile %></p>
+<p>団体種別 : <%= @user.syurui %></p>
+<p>活動県 : <%= @user.profile %></p>
+<p>ふりがな : <%= @user.hurigana %></p>
+
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path %>
+<% end %>
+
+<% if current_user.id == @user.id %>
+  <p><%= month_calendar events: @user.liked_posts do |date, t| %></p>
+    <%= date.day %>
+      <% t.each do |t| %>
+       <div>
+        <%= link_to t.name2, post_path(t.id) %>
+       </div>
+      <% end %>
+  <% end %>
+ <% end %>
+
+ 
+
+<% if @user.posts.present? %>
+  <h2>ユーザーの投稿一覧</h2>
+  <% @user.posts.order("start_time DESC").each do |t| %>
+      <br><%= t.start_time.strftime("%Y年%-m月%-d日") %>
+      <br><%= t.name1 %> 
+      <%= link_to "詳細へ", post_path(t.id) %>
+    </div>
+  <% end %>
+<% else %>
+  <h3>このユーザーの投稿はありません</h3>
+<% end %>
+
+<% if @userliked_posts.present? %>
+<h2>ユーザーがいいねした投稿一覧</h2>
+  <% @user.liked_posts.each do |t| %>
+    <%= t.created_at %>
+    <%= link_to "詳細へ", post_path(t.id) %>
+    <%= t.name1 %> 
+    <%= t.name2 %> 
+    <%= t.month %> 
+    <%= t.day %> 
+    <%= t.detail %> 
+    <%= t.music %> 
+    <%= t.prefecture %> 
+    <%= t.site %> 
+  <% end %>
+<% else %>
+  <h3>いいねした投稿はありません</h3>
+<% end %>
+
+</div>
+<%= link_to "投稿一覧に戻る", posts_path %>

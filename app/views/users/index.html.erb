@@ -1,0 +1,549 @@
+
+<% provide(:title, 'ユーザー一覧') %>
+<h1>ユーザー一覧</h1>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :団体種別 %>
+  <%= f.radio_button :syurui_eq, 1, {:checked => true} %>学生団体
+  <%= f.radio_button :syurui_eq, 2 %>社会人団体
+
+  <%= f.submit "検索" %>
+<% end %>
+
+
+
+
+<% if @users_1.present? %><%= link_to "北海道", users_path(ancor: "1") %><% end %>
+<% if @users_2.present? %><%= link_to "青森県", users_path(ancor: "2") %><% end %>
+<% if @users_3.present? %><%= link_to "岩手県", users_path(ancor: "3") %><% end %>
+<% if @users_4.present? %><%= link_to "宮城県", users_path(ancor: "4") %><% end %>
+<% if @users_5.present? %><%= link_to "秋田県", users_path(ancor: "5") %><% end %>
+<% if @users_6.present? %><%= link_to "山形県", users_path(ancor: "6") %><% end %>
+<% if @users_7.present? %><%= link_to "福島県", users_path(ancor: "7") %><% end %>
+<% if @users_8.present? %><%= link_to "茨城県", users_path(ancor: "8") %><% end %>
+<% if @users_9.present? %><%= link_to "栃木県", users_path(ancor: "9") %><% end %>
+<% if @users_10.present? %><%= link_to "群馬県", users_path(ancor: "10") %><% end %>
+<% if @users_11.present? %><%= link_to "埼玉県", users_path(ancor: "11") %><% end %>
+<% if @users_12.present? %><%= link_to "千葉県", users_path(ancor: "12") %><% end %>
+<% if @users_13.present? %><%= link_to "東京都", users_path(ancor: "13") %><% end %>
+<% if @users_14.present? %><%= link_to "神奈川県", users_path(ancor: "14") %><% end %>
+<% if @users_15.present? %><%= link_to "新潟県", users_path(ancor: "15") %><% end %>
+<% if @users_16.present? %><%= link_to "富山県", users_path(ancor: "16") %><% end %>
+<% if @users_17.present? %><%= link_to "石川県", users_path(ancor: "17") %><% end %>
+<% if @users_18.present? %><%= link_to "福井県", users_path(ancor: "18") %><% end %>
+<% if @users_19.present? %><%= link_to "山梨県", users_path(ancor: "19") %><% end %>
+<% if @users_20.present? %><%= link_to "長野県", users_path(ancor: "20") %><% end %>
+<% if @users_21.present? %><%= link_to "岐阜県", users_path(ancor: "21") %><% end %>
+<% if @users_22.present? %><%= link_to "静岡県", users_path(ancor: "22") %><% end %>
+<% if @users_23.present? %><%= link_to "愛知県", users_path(ancor: "23") %><% end %>
+<% if @users_24.present? %><%= link_to "三重県", users_path(ancor: "24") %><% end %>
+<% if @users_25.present? %><%= link_to "滋賀県", users_path(ancor: "25") %><% end %>
+<% if @users_26.present? %><%= link_to "京都府", users_path(ancor: "26") %><% end %>
+<% if @users_27.present? %><%= link_to "大阪府", users_path(ancor: "27") %><% end %>
+<% if @users_28.present? %><%= link_to "兵庫県", users_path(ancor: "28") %><% end %>
+<% if @users_29.present? %><%= link_to "奈良県", users_path(ancor: "29") %><% end %>
+<% if @users_30.present? %><%= link_to "和歌山県", users_path(ancor: "30") %><% end %>
+<% if @users_31.present? %><%= link_to "鳥取県", users_path(ancor: "31") %><% end %>
+<% if @users_32.present? %><%= link_to "島根県", users_path(ancor: "32") %><% end %>
+<% if @users_33.present? %><%= link_to "岡山県", users_path(ancor: "33") %><% end %>
+<% if @users_34.present? %><%= link_to "広島県", users_path(ancor: "34") %><% end %>
+<% if @users_35.present? %><%= link_to "山口県", users_path(ancor: "35") %><% end %>
+<% if @users_36.present? %><%= link_to "徳島県", users_path(ancor: "36") %><% end %>
+<% if @users_37.present? %><%= link_to "香川県", users_path(ancor: "37") %><% end %>
+<% if @users_38.present? %><%= link_to "愛媛県", users_path(ancor: "38") %><% end %>
+<% if @users_39.present? %><%= link_to "高知県", users_path(ancor: "39") %><% end %>
+<% if @users_40.present? %><%= link_to "福岡県", users_path(ancor: "40") %><% end %>
+<% if @users_41.present? %><%= link_to "佐賀県", users_path(ancor: "41") %><% end %>
+<% if @users_42.present? %><%= link_to "長崎県", users_path(ancor: "42") %><% end %>
+<% if @users_43.present? %><%= link_to "熊本県", users_path(ancor: "43") %><% end %>
+<% if @users_44.present? %><%= link_to "大分県", users_path(ancor: "44") %><% end %>
+<% if @users_45.present? %><%= link_to "宮崎県", users_path(ancor: "45") %><% end %>
+<% if @users_46.present? %><%= link_to "鹿児島県", users_path(ancor: "46") %><% end %>
+<% if @users_47.present? %><%= link_to "沖縄県", users_path(ancor: "47") %><% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p id="1">
+<% if @users_1.present? %>　【北海道】 <% end %>
+<ul class="users">
+  <% @users_1.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="2">
+<% if @users_2.present? %>　【青森県】 <% end %>
+<ul class="users">
+  <% @users_2.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="3">
+<% if @users_3.present? %>　【岩手県】 <% end %>
+<ul class="users">
+  <% @users_3.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="4">
+<% if @users_4.present? %>　【宮城県】 <% end %>
+<ul class="users">
+  <% @users_4.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="5">
+<% if @users_5.present? %>　【秋田県】 <% end %>
+<ul class="users">
+  <% @users_5.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+      
+    </ul>
+  <% end %>
+</ul>
+
+<p id="6">
+<% if @users_6.present? %>　【山形県】 <% end %>
+<ul class="users">
+  <% @users_6.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+      
+    </ul>
+  <% end %>
+</ul>
+
+<p id="7">
+<% if @users_7.present? %>　【福島県】 <% end %>
+<ul class="users">
+  <% @users_7.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="8">
+<% if @users_8.present? %>　【茨城県】 <% end %>
+<ul class="users">
+  <% @users_8.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="9">
+<% if @users_9.present? %>　【栃木県】 <% end %>
+<ul class="users">
+  <% @users_9.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="10">
+<% if @users_10.present? %>　【群馬県】 <% end %>
+<ul class="users">
+  <% @users_10.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="11">
+<% if @users_11.present? %>　【埼玉県】 <% end %>
+<ul class="users">
+  <% @users_11.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="12">
+<% if @users_12.present? %>　【千葉県】 <% end %>
+<ul class="users">
+  <% @users_12.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="13">
+<% if @users_13.present? %>　【東京都】 <% end %>
+<ul class="users">
+  <% @users_13.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="14">
+<% if @users_14.present? %>　【神奈川県】 <% end %>
+<ul class="users">
+  <% @users_14.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="15">
+<% if @users_15.present? %>　【新潟県】 <% end %>
+<ul class="users">
+  <% @users_15.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="16">
+<% if @users_16.present? %>　【富山県】 <% end %>
+<ul class="users">
+  <% @users_16.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="17">
+<% if @users_17.present? %>　【石川県】 <% end %>
+<ul class="users">
+  <% @users_17.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="18">
+<% if @users_18.present? %>　【福井県】 <% end %>
+<ul class="users">
+  <% @users_18.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="19">
+<% if @users_19.present? %>　【山梨県】 <% end %>
+<ul class="users">
+  <% @users_19.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="20">
+<% if @users_20.present? %>　【長野県】 <% end %>
+<ul class="users">
+  <% @users_20.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="21">
+<% if @users_21.present? %>　【岐阜県】 <% end %>
+<ul class="users">
+  <% @users_21.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="22">
+<% if @users_22.present? %>　【静岡県】 <% end %>
+<ul class="users">
+  <% @users_22.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="23">
+<% if @users_23.present? %>　【愛知県】 <% end %>
+<ul class="users">
+  <% @users_23.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="24">
+<% if @users_24.present? %>　【三重県】 <% end %>
+<ul class="users">
+  <% @users_24.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="25">
+<% if @users_25.present? %>　【滋賀県】 <% end %>
+<ul class="users">
+  <% @users_25.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="26">
+<% if @users_26.present? %>　【京都府】 <% end %>
+<ul class="users">
+  <% @users_26.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="27">
+<% if @users_27.present? %>　【大阪府】 <% end %>
+<ul class="users">
+  <% @users_27.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="28">
+<% if @users_28.present? %>　【兵庫県】 <% end %>
+<ul class="users">
+  <% @users_28.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="29">
+<% if @users_29.present? %>　【奈良県】 <% end %>
+<ul class="users">
+  <% @users_29.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="30">
+<% if @users_30.present? %>　【和歌山県】 <% end %>
+<ul class="users">
+  <% @users_30.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="31">
+<% if @users_31.present? %>　【鳥取県】 <% end %>
+<ul class="users">
+  <% @users_31.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="32">
+<% if @users_32.present? %>　【島根県】 <% end %>
+<ul class="users">
+  <% @users_32.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="33">
+<% if @users_33.present? %>　【岡山県】 <% end %>
+<ul class="users">
+  <% @users_33.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="34">
+<% if @users_34.present? %>　【広島県】 <% end %>
+<ul class="users">
+  <% @users_34.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="35">
+<% if @users_35.present? %>　【山口県】 <% end %>
+<ul class="users">
+  <% @users_35.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="36">
+<% if @users_36.present? %>　【徳島県】 <% end %>
+<ul class="users">
+  <% @users_36.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %> 
+    </ul>
+  <% end %>
+</ul>
+
+<p id="37">
+<% if @users_37.present? %>　【香川県】 <% end %>
+<ul class="users">
+  <% @users_37.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="38">
+<% if @users_38.present? %>　【愛媛県】 <% end %>
+<ul class="users">
+  <% @users_38.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="39">
+<% if @users_39.present? %>　【高知県】 <% end %>
+<ul class="users">
+  <% @users_39.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="40">
+<% if @users_40.present? %>　【福岡県】 <% end %>
+<ul class="users">
+  <% @users_40.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="41">
+<% if @users_41.present? %>　【佐賀県】 <% end %>
+<ul class="users">
+  <% @users_41.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="42">
+<% if @users_42.present? %>　【長崎県】 <% end %>
+<ul class="users">
+  <% @users_42.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="43">
+<% if @users_43.present? %>　【熊本県】 <% end %>
+<ul class="users">
+  <% @users_43.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="44">
+<% if @users_44.present? %>　【大分県】 <% end %>
+<ul class="users">
+  <% @users_44.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="45">
+<% if @users_45.present? %>　【宮崎県】 <% end %>
+<ul class="users">
+  <% @users_45.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="46">
+<% if @users_46.present? %>　【鹿児島県】 <% end %>
+<ul class="users">
+  <% @users_46.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+<p id="47">
+<% if @users_48.present? %>　【沖縄県】 <% end %>
+<ul class="users">
+  <% @users_47.each do |user| %>
+    <ul>
+      <li><%= link_to user.name, user %>
+    </ul>
+  <% end %>
+</ul>
+
+

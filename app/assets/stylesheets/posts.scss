@@ -1,0 +1,56 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.field b{
+    padding: 0.2%;
+    text-decoration: none;
+    color: white;
+    background-color: rgba($color:#ff3300 , $alpha: 1);
+    font-size: 12px;
+    font-weight: lighter;
+    justify-content: space-around;
+    width: autp;
+    border-radius: 0px; //丸め
+    border: 1px solid #444444; 
+}
+
+.field c{
+    padding: 0.2%;
+    text-decoration: none;
+    color: white;
+    background-color: rgba($color: green , $alpha: 1);
+    font-size: 12px;
+    font-weight: lighter;
+    justify-content: space-around;
+    width: autp;
+    border-radius: 0px; //丸め
+    border: 1px solid #444444; 
+}
+
+.toukou-zentai{
+    font-family: Avenir,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    border: 1px solid #000;
+    font-family: Hiragino Sans,ヒラギノ角ゴシック,メイリオ,Meiryo,ＭＳ Ｐゴシック,MS PGothic,ＭＳ ゴシック,Helvetica Neue,Helvetica,Arial,sans-serif;
+    background: none;
+    margin: 10px;
+    padding: 20px;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 15px;
+}
+
+.field{
+    margin: 5%;
+    line-height: normal;
+    background: none;
+    position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 15px;
+}

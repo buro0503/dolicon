@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mandolin Concert Information</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>
+      <div class="header-title">
+       <p><%= link_to "Mandolin　", posts_path %></p>
+       <p><%= link_to "Concert　", posts_path %></p>
+       <p><%= link_to "Information", posts_path %></p>
+      </div>
+      </h1>
+      <div class="header-list">
+       <ul>
+        <li><%= link_to "新規投稿",new_post_path %></li>
+        <li><%= link_to "カレンダー", post_calendar_path %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "マイページ", user_path(current_user.id) %></li>
+        <li><%= link_to "団体一覧", users_path %></li>
+        <% end %>
+       </ul>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    
+    <footer>
+      <p>Copyright © GeekSalon All Rights Reserved.</p>
+    </footer>
+    <a href="#" class="gotop">トップへ</a>
+    </body>
+</html>
+

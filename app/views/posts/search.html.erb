@@ -1,0 +1,26 @@
+<%= form_with(scope: :search, url: search_posts_path, method: :get, local: true) do |f| %>
+
+    <%= f.label :date, "開催日" %>
+    <%= f.date_field :date_from, value: @search_params[:date_from] %> ~
+    <%= f.date_field :date_to, value: @search_params[:date_to] %>
+  
+    <%= f.label :prefectures, "都道府県" %>
+    <%= f.text_field :prefectures, value: @search_params[:prefectures] %>
+  
+    <%= f.label :music, "曲目" %>
+    <%= f.text_field :music, value: @search_params[:music] %>
+  
+    <%= submit_tag '検索', class: "button" %>
+  <% end %>
+
+
+  <% unless @search_params.blank? %>
+   <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.prefectures %></td>
+      <td><%= post.music %></td>
+      <td><%= post.date %></td>
+    </tr>
+   <% end %>
+  <% end %>
+  

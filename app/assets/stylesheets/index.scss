@@ -1,0 +1,169 @@
+@media (max-width: 2000px) {
+
+.post-top{
+   padding: 20px;
+   font-size: auto;
+   text-align: center;
+}
+
+.post-zentai{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; //大事
+  text-align: center;
+  width: 100%;
+  align-items: stretch;
+}
+
+.posts-container {
+    background-color: #F7F4EE;
+    width: 400px;
+    margin: 10px auto;
+  }
+
+  .post-narabi {
+    width: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.1%;
+    background-color: red;
+   }
+
+  .post-narabi a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: autp;
+    border-radius: 10px; //丸め
+    border: 1px solid #444444; 
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+  .post-narabi a:hover{ //上乗ったとき
+    opacity: 0.8;//じわっと変化
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    background-color: white;
+    color: black;
+  }
+
+  .posts-container p {
+    background-color: aquamarine;
+    margin: 10px;
+    text-align: left;
+    overflow-wrap: break-all;
+  }
+
+  .left-container{
+    background-color: green;
+    margin-left: 10%;
+  }
+
+  .right-container{
+    background-color: yellow;
+    margin-right: 100%;
+  }
+  
+  .kensaku {
+    width: 200px;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  .main-box {
+    background-color: bisque;
+    margin: 0px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .time {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+.zyunban h1,li{
+  margin: 10px;
+  display: flex;
+}
+
+}
+
+
+@media(max-width:599px){
+  .post-top{
+    padding: 20px;
+    font-size: auto;
+    text-align: center;
+ }
+ 
+ .post-zentai{
+   background-color: #cae95a;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap; //大事
+   text-align: center;
+   width: 100%;
+   align-items: stretch;
+ }
+
+
+ 
+ .posts-container {
+     background-color: #F7F4EE;
+     width: 400px;
+     margin: 10px auto;
+   }
+ 
+   .posts-container p {
+     background-color: aquamarine;
+     margin: 10px;
+     text-align: left;
+   }
+ 
+   .left-container{
+     background-color: green;
+     margin-left: 10%;
+   }
+ 
+   .right-container{
+     background-color: yellow;
+     margin-right: 100%;
+   }
+   
+   .kensaku {
+     width: 200px;
+     margin: 30px auto;
+     text-align: center;
+   }
+ 
+   .main-box {
+     background-color: bisque;
+     margin: 0px 0;
+     display: flex;
+     justify-content: space-between;
+   }
+   .time {
+     display: flex;
+     justify-content: flex-end;
+   }
+ 
+ .zyunban h1,li{
+   margin: 10px;
+   display: flex;
+ }
+ 
+
+}

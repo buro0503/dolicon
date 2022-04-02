@@ -1,0 +1,257 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require simple_calendar
+ *= require_tree .
+ *= require_self
+ */
+
+ @media (max-width: 2000px) {
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+body {
+  background-color: #CEB774;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative; 
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+    Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body, ol, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 18px; }
+
+
+
+header {
+  background-image: url("background5.jpg");
+  height: 370px;
+  width: fit-content;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+
+}
+header a {
+  color: #707070;
+  text-decoration: none;
+}
+
+header h1 {
+  margin-left: 20px;
+  color: white;
+}
+
+.header-list {
+  font-size: 23px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+
+
+.header-list a:hover{ //上乗ったとき
+  font-size: 25px;
+  opacity: 0.8;//じわっと変化
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out
+}
+
+.header-title {
+  font-size: 40px;
+  margin-left: 150px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+header ul {
+  display: flex; 
+}
+header li {
+  list-style: none;
+  margin-right: 40px;
+}
+
+.like-btn {
+  width: 25px;
+  font-size: 20px;
+  color: #808080; 
+  }
+ 
+ .unlike-btn {
+  width: 25px;
+  font-size: 20px;
+  color: #e54747;
+  }
+
+
+.pagenate_end ul {
+  list-style-type: none;
+  font-size: 20px;
+  margin: 20px auto 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+html{
+  scroll-behavior: smooth;
+}
+.gotop{
+  display: block;
+  width: 60px;
+  height: 60px;
+  box-sizing: border-box;
+  background: #FFF;
+  border: 1px solid #999;
+  padding-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  font-size: 85%;
+  text-decoration: none;
+  color: #333;
+  opacity: 0.5;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+}
+.gotop::before{
+  content: "";
+  display: block;
+  border-top: 2px solid #333;
+  border-right: 2px solid #333;
+  width: 25%;
+  height: 25%;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  transform: rotate(-45deg);
+}
+.gotop:hover{
+  opacity: 1;
+}
+
+
+@media(max-width:599px){
+  .content .btn
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    background-color: #CEB774;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative; 
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  body, ol, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 10px;
+    line-height: 18px; }
+  
+  
+  
+  header {
+    background-image: url("background5.jpg");
+    height: 370px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  header a {
+    color: #707070; 
+    text-decoration: none; 
+  }
+  header h1 {
+    margin-left: 20px;
+    color: white;
+  }
+  .header-list {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .header-title {
+    font-size: 40px;
+    margin-left: 150px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+  }
+  
+  header ul {
+    display: flex; 
+  }
+  header li {
+    list-style: none;
+    margin-right: 40px;
+  }
+  
+  
+  .pagenate_end ul {
+    list-style-type: none;
+    font-size: 20px;
+    margin: 20px auto 0;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+
+
+  .gotop{
+      width: 40px;
+      height: 40px;
+      text-indent: -9999px;
+      opacity: 1;
+      border: none;
+      background: none;
+      bottom: 10px;
+      right: 10px;
+  }
+  .gotop::before{
+      bottom: 0;
+  }
+}
+}

@@ -1,0 +1,67 @@
+<%= stylesheet_link_tag 'posts', :media => "all" %>
+
+<div class="toukou-zentai">
+<h3>新規投稿</h3>
+<%= form_for @post do |f| %>
+  <div class="field">
+    <%= f.label :演奏会名 %>
+    <b>必須</b>
+    <br><%= f.text_field :name1, :size => 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :団体名 %>
+    <b>必須</b>
+    <br><%= f.text_field :name2, :size => 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :曲目 %>
+    <c>任意</c>
+    <br><%= f.text_field :music, :size => 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :開催地域 %>
+    <b>必須</b>
+    <br><%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}) %>
+  </div>
+
+  <div class="field">
+  <%= f.label :自由記述 %>
+  <c>任意</c>
+  <br><%= f.text_field :detail, :size => 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :チラシ画像（表） %>
+    <c>任意</c>
+    <br><%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :チラシ画像（裏） %>
+    <c>任意</c>
+    <br><%= f.file_field :image2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :実施日、開演時間 %>
+    <b>必須</b>
+    <br><%= f.datetime_field :start_time %>
+  </div>
+
+ <%= form_with(model: @post) do |f| %>
+
+  <div class="field my-3">
+    <%= f.label :開催場所 %>
+    <b>必須</b>
+    <br><%= f.text_field :address %>
+  </div>
+  <div class="actions">
+    <%= f.submit "投稿する" %>
+  </div>
+ <% end %>
+</div>
+<% end %>
+<%= link_to "投稿一覧に戻る", posts_path %>
