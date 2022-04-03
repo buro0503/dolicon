@@ -6,8 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
-
+    <script src="https://kit.fontawesome.com/e17acfdf78.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,19 +16,29 @@
     <header>
       <h1>
       <div class="header-title">
-       <p><%= link_to "Mandolin　", posts_path %></p>
-       <p><%= link_to "Concert　", posts_path %></p>
-       <p><%= link_to "Information", posts_path %></p>
+       <p><%= link_to "M　", posts_path %></p>
+       <p><%= link_to "C　", posts_path %></p>
+       <p><%= link_to "I", posts_path %></p>
       </div>
       </h1>
       <div class="header-list">
        <ul>
-        <li><%= link_to "新規投稿",new_post_path %></li>
-        <li><%= link_to "カレンダー", post_calendar_path %></li>
+        <li><%= link_to new_post_path do%></li>
+          <i class="fa-solid fa-pencil"></i>
+        <% end %>
+        <li><%= link_to  post_calendar_path do %></li>
+          <i class="fa-regular fa-calendar"></i>
+        <% end %>
+
         <% if user_signed_in? %>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to "マイページ", user_path(current_user.id) %></li>
-        <li><%= link_to "団体一覧", users_path %></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do%></li>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <% end %>
+        <li><%= link_to user_path(current_user.id) do%></li>
+          <i class="fa-solid fa-circle-user"></i>        <% end %>
+        <li><%= link_to users_path do%></li>
+          <i class="fa-solid fa-users"></i>
+        <% end %>
         <% end %>
        </ul>
       </div>

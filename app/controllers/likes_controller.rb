@@ -17,3 +17,4 @@ class LikesController < ApplicationController
        @post = Post.find(params[:id])
       end
 end
+

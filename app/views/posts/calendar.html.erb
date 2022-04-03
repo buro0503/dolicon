@@ -140,6 +140,7 @@
         【<%= Prefecture.find(t.prefecture_id).name %>】
          <br><%= link_to t.name2, post_path(t.id) %>
         
+         <div>
         <% if user_signed_in? %>
           <% if current_user.already_liked?(t) %>
             <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete, remote: true do %>
@@ -154,6 +155,7 @@
         <% else %>
           <i class="fas fa-heart"></i><%= t.likes.count %>
         <% end %>
+        </div>
 
     </div>
   <% end %>

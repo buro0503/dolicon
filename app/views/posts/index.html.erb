@@ -40,8 +40,11 @@
             <p><%= link_to post.image_url, "data-lightbox" => post.image_url do %>
             <%= image_tag post.image_url, size: "210x297" if post.image? %></p>
             <% end %>
+            
+            <div>
             <div id="likes_buttons_<%= post.id %>">
              <%= render partial: 'likes/like', locals: {post: post} %>
+            </div>
             </div>
 
             </div>
