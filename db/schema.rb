@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_03_054317) do
+ActiveRecord::Schema.define(version: 2022_04_03_080829) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -51,6 +51,29 @@ ActiveRecord::Schema.define(version: 2022_04_03_054317) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["label_id"], name: "index_post_labels_on_label_id"
     t.index ["post_id"], name: "index_post_labels_on_post_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "name1"
+    t.text "name2"
+    t.integer "month"
+    t.integer "day"
+    t.text "detail"
+    t.string "image"
+    t.text "music"
+    t.text "site"
+    t.integer "user_id"
+    t.string "address"
+    t.float "latitude"
+    t.date "date"
+    t.string "image2"
+    t.integer "prefecture_id"
+    t.string "prefecture"
+    t.float "longitude"
+    t.datetime "start_time"
+    t.string "caption"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
