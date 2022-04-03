@@ -5,8 +5,6 @@ class Post < ApplicationRecord
   belongs_to :user
   
   has_many :comments, dependent: :destroy
-  has_many :post_labels, dependent: :destroy, foreign_key: 'post_id'
-  has_many :labels, through: :post_labels, source: :label
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
 
