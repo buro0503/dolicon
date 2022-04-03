@@ -1,9 +1,6 @@
 class Post < ApplicationRecord
-  
-
   mount_uploader :image, ImageUploader
   mount_uploader :image2, ImageUploader
-
 
   belongs_to :user
   
@@ -12,7 +9,6 @@ class Post < ApplicationRecord
   has_many :labels, through: :post_labels, source: :label
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
-
 
   geocoded_by :address
 after_validation :geocode, if: :address_changed?

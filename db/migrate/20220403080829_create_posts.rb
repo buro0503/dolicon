@@ -14,6 +14,11 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.float :latitude
       t.date :date
       t.string :image2
+      t.integer :prefecture_id
+      t.string :prefecture
+      t.float :longitude
+      t.datetime :start_time
+      t.string :caption
 
       t.timestamps
     end
