@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_02_030514) do
+ActiveRecord::Schema.define(version: 2022_04_03_062728) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -44,20 +44,6 @@ ActiveRecord::Schema.define(version: 2022_04_02_030514) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "post2s", force: :cascade do |t|
-    t.string "image3"
-    t.string "image4"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "post_images", force: :cascade do |t|
-    t.integer "post_id"
-    t.string "image_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "post_labels", force: :cascade do |t|
     t.integer "post_id", null: false
     t.integer "label_id", null: false
@@ -83,31 +69,30 @@ ActiveRecord::Schema.define(version: 2022_04_02_030514) do
     t.string "image2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "prefecture_id"
+    t.string "prefecture"
     t.float "longitude"
     t.datetime "start_time"
-    t.string "prefecture"
     t.string "caption"
-    t.string "image1"
-    t.integer "prefecture_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.text "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.boolean "allow_password_change", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.text "profile"
     t.integer "User_id"
     t.string "image_name"
-    t.datetime "start_time"
     t.string "prefecture"
     t.integer "syurui"
     t.integer "hurigana"
     t.integer "prefecture_id"
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

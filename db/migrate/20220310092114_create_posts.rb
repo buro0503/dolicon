@@ -8,7 +8,6 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.text :detail
       t.string :image
       t.text :music
-      t.references :prefecture, null: false, foreign_key: true
       t.text :site
       t.integer :user_id
       t.string :address
