@@ -2,55 +2,75 @@
 <html>
   <head>
     <title>Mandolin Concert Information</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <script src="https://kit.fontawesome.com/e17acfdf78.js" crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <script src="https://kit.fontawesome.com/e17acfdf78.js" crossorigin="anonymous"></script>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
     <header>
+     <div class=header-title>
       <h1>
-      <div class="header-title">
-       <p><%= link_to "M　", posts_path %></p>
-       <p><%= link_to "C　", posts_path %></p>
-       <p><%= link_to "I", posts_path %></p>
-      </div>
+        <%= link_to "MCI", posts_path %>
       </h1>
+      </div>
+      
       <div class="header-list">
        <ul>
-        <li><%= link_to new_post_path do%></li>
-          <i class="fa-solid fa-pencil"></i>
-        <% end %>
-        <li><%= link_to  post_calendar_path do %></li>
+         <li><%= link_to  post_calendar_path do %></li>
           <i class="fa-regular fa-calendar"></i>
-        <% end %>
+          <br><c>カレンダー</c>
+         <% end %>
 
-        <% if user_signed_in? %>
-        <li><%= link_to destroy_user_session_path, method: :delete do%></li>
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        <% end %>
-        <li><%= link_to user_path(current_user.id) do%></li>
-          <i class="fa-solid fa-circle-user"></i>        <% end %>
-        <li><%= link_to users_path do%></li>
+         <li><%= link_to users_path do%></li>
           <i class="fa-solid fa-users"></i>
-        <% end %>
-        <% end %>
+          <br><c>団体一覧</c>
+         <% end %>
+
+          <% if user_signed_in? %>
+            <li><%= link_to user_path(current_user.id) do %></li>
+                <i class="fa-solid fa-circle-user"></i>
+                <br><c>マイページ</c>
+                <% end %>
+
+            <li><%= link_to destroy_user_session_path, method: :delete do%></li>
+                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                 <br><c>ログアウト</c>
+                <% end %>
+
+          <% else %>
+              <li><%= link_to new_user_session_path do %></li>
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <br><c>ログイン</c>
+              <% end %>
+          <% end %>
+
+
+
        </ul>
       </div>
     </header>
+
     <main>
       <%= yield %>
+
+    <a href="#" class="gotop">トップへ</a>
+    
+    <div class=newpost>
+    <%= link_to new_post_path do%>
+      <i class="fa-solid fa-circle-plus"></i>
+    <% end %>
+    </div>
     </main>
+
     
     <footer>
       <p>Copyright © GeekSalon All Rights Reserved.</p>
     </footer>
-    <a href="#" class="gotop">トップへ</a>
     </body>
 </html>
 

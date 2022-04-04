@@ -1,3 +1,95 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.dantaiitiran{
+    margin-top: 0.2em;
+}
+
+  .title{
+  font-size: 0.7em;
+  padding: 0em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  width: fit-content;
+  height: 3em;
+  padding-left: 3em;
+  padding-right: 1em;
+  background-color: #D98E04;
+  border-radius: 0px 20px 20px 0px;
+  box-shadow: 3px 3px 3px rgb(0, 0, 0 / 10%);
+
+  }
+
+
+    .title h1{
+        font-weight: 300;
+        margin-top: auto;
+        margin-bottom: auto;
+        color: white;
+        padding-top: 0.4em;
+    }
+
+  .dantaikensaku{
+      font-size: 0.9em;
+      background-color: #ffffff;
+      border-radius: 40px;
+      padding-top: 1em;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1em;
+      padding-right: 1em;
+      width: fit-content;
+  }
+
+    .radiobotan{
+
+    }
+
+    .kensakubotan{
+
+    }
+
+  .mokuzi{
+      line-height: 1.5em;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.9em;
+      padding-left: 5em;
+
+  }
+
+    .mokuzi a{
+
+    }
+
+    .mokuzi a::before{
+        content: "\A" ;
+	    white-space: pre ;
+    }
+
+  .user_index{
+      padding-left: 2em;
+      margin-left: 2em;
+      margin-right: 2em;
+      margin-top: 3em;
+  }
+
+  .prefecture_each{
+      background-color: #ffffff;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      margin-bottom: 0.5em;
+  }
+
+    .user_index p{
+    }
+
+    .user_index a{
+
+    }
+
+    .users li{
+
+    }
+

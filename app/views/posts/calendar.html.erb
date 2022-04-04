@@ -1,163 +1,173 @@
-<%= stylesheet_link_tag 'calendar', :media => "all" %>
+<div class="title">
+<% provide(:title, 'カレンダー') %>
+<h1>カレンダー</h1>
+</div>
 
-
-
-<div class="ken-kensaku">
- <%= search_form_for(@q,url: post_detail_search_path) do |f| %>
-  <div class="detail-status">
-    <div class="detail-status--label"></div>
-      <div class="detail-status--checkbox"></div>
-        <div class="hokkaidou_touhoku"> 
-          <h4> 北海道・東北地方 </h4>
-            <div class="checkboxes">
-              <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 1, ''%>
-              <%= '北海道'%>
-              <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 2, ''%>
-              <%= '青森県'%> 
-              <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 3, ''%>
-      <%= '岩手県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 4, ''%>
-      <%= '宮城県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 5, ''%>
-      <%= '秋田県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 6, ''%>
-      <%= '山形県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 7, ''%>
-      <%= '福島県'%>
-      </div>
-      <h4> 関東地方 </h4>
-      <div class="checkboxes">
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 8, ''%>
-      <%= '茨城県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 9, ''%>
-      <%= '栃木県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 10, ''%>
-      <%= '群馬県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 11, ''%>
-      <%= '埼玉県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 12, ''%>
-      <%= '千葉県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 13, ''%>
-      <%= '東京都'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 14, ''%>
-      <%= '神奈川県'%>
-      </div>
-      <h4> 中部地方 </h4>
-      <div class="checkboxes">
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 15, ''%>
-      <%= '新潟県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 16, ''%>
-      <%= '富山県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 17, ''%>
-      <%= '石川県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 18, ''%>
-      <%= '福井県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 19, ''%>
-      <%= '山梨県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 20, ''%>
-      <%= '長野県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 21, ''%>
-      <%= '岐阜県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 22, ''%>
-      <%= '静岡県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 23, ''%>
-      <%= '愛知県'%>
-      </div>
-      <h4> 関西地方 </h4>
-      <div class="checkboxes">
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 24, ''%>
-      <%= '三重県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 25, ''%>
-      <%= '滋賀県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 26, ''%>
-      <%= '京都府'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 27, ''%>
-      <%= '大阪府'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 28, ''%>
-      <%= '兵庫県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 29, ''%>
-      <%= '奈良県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 30, ''%>
-      <%= '和歌山県'%>
-      </div>
-      <h4> 中国地方 </h4>
-      <div class="checkboxes">
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 31, ''%>
-      <%= '鳥取県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 32, ''%>
-      <%= '島根県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 33, ''%>
-      <%= '岡山県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 34, ''%>
-      <%= '広島県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 35, ''%>
-      <%= '山口県'%>
-      </div>
-      <h4> 四国地方 </h4>
-      <div class="checkboxes">
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 36, ''%>
-      <%= '徳島県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 37, ''%>
-      <%= '香川県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 38, ''%>
-      <%= '愛媛県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 39, ''%>
-      <%= '高知県'%>
-      </div>
-      <h4> 九州地方・沖縄 </h4>
-      <div class="checkboxes">
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 40, ''%>
-      <%= '福岡県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 41, ''%>
-      <%= '佐賀県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 42, ''%>
-      <%= '長崎県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 43, ''%>
-      <%= '熊本県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 44, ''%>
-      <%= '大分県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 45, ''%>
-      <%= '宮崎県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 46, ''%>
-      <%= '鹿児島県'%>
-      <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 47, ''%>
-      <%= '沖縄県'%>
+<div class=thekkubokkusutokensaku>
+<%= search_form_for(@q,url: post_detail_search_path) do |f| %>
+  <div class="tyekkubokkusuzentai"> 
+    <h4> 北海道・東北地方 </h4>
+    <div class="checkboxes">
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 1, ''%>
+     <%= '北海道　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 2, ''%>
+     <%= '青森県　'%> 
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 3, ''%>
+     <%= '岩手県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 4, ''%>
+     <%= '宮城県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 5, ''%>
+     <%= '秋田県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 6, ''%>
+     <%= '山形県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 7, ''%>
+     <%= '福島県　'%>
     </div>
+    <h4> 関東地方 </h4>
+    <div class="checkboxes">
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 8, ''%>
+     <%= '茨城県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 9, ''%>
+     <%= '栃木県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 10, ''%>
+     <%= '群馬県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 11, ''%>
+     <%= '埼玉県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 12, ''%>
+     <%= '千葉県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 13, ''%>
+     <%= '東京都'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 14, ''%>
+     <%= '神奈川県　'%>
+    </div>
+    <h4> 中部地方 </h4>
+    <div class="checkboxes">
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 15, ''%>
+     <%= '新潟県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 16, ''%>
+     <%= '富山県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 17, ''%>
+     <%= '石川県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 18, ''%>
+     <%= '福井県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 19, ''%>
+     <%= '山梨県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 20, ''%>
+     <%= '長野県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 21, ''%>
+     <%= '岐阜県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 22, ''%>
+     <%= '静岡県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 23, ''%>
+     <%= '愛知県　'%>
+    </div>
+    <h4> 関西地方 </h4>
+    <div class="checkboxes">
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 24, ''%>
+     <%= '三重県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 25, ''%>
+     <%= '滋賀県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 26, ''%>
+     <%= '京都府'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 27, ''%>
+     <%= '大阪府'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 28, ''%>
+     <%= '兵庫県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 29, ''%>
+     <%= '奈良県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 30, ''%>
+     <%= '和歌山県　'%>
+    </div>
+    <h4> 中国地方 </h4>
+    <div class="checkboxes">
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 31, ''%>
+     <%= '鳥取県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 32, ''%>
+     <%= '島根県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 33, ''%>
+     <%= '岡山県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 34, ''%>
+     <%= '広島県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 35, ''%>
+     <%= '山口県　'%>
+    </div>
+    <h4> 四国地方 </h4>
+    <div class="checkboxes">
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 36, ''%>
+     <%= '徳島県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 37, ''%>
+     <%= '香川県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 38, ''%>
+     <%= '愛媛県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 39, ''%>
+     <%= '高知県　'%>
+    </div>
+    <h4> 九州地方・沖縄 </h4>
+    <div class="checkboxes">
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 40, ''%>
+     <%= '福岡県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 41, ''%>
+     <%= '佐賀県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 42, ''%>
+     <%= '長崎県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 43, ''%>
+     <%= '熊本県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 44, ''%>
+     <%= '大分県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 45, ''%>
+     <%= '宮崎県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 46, ''%>
+     <%= '鹿児島県　'%>
+     <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 47, ''%>
+     <%= '沖縄県　'%>
+    </div>
+  </div>
 
-      
-      <%= f.submit "検索", class: "sbt-btn"%>
- <% end %>
+    <div class=kensakubotan>
+     <%= f.submit "検索", class: "sbt-btn"%>
+    </div>
+<% end %>
 </div>
 
 
-<%= month_calendar events: @posts do |date, posts| %>
-  <%= date.day %>
+
+<%= stylesheet_link_tag 'calendar', :media => "all" %>
+
+
+<div class="mainbox">
+
+
+
+
+  <%= month_calendar events: @posts do |date, posts| %>
+    <%= date.day %>
   
   
-<div class="calendar">
-  <% posts.each do |t| %>
-    <div>
-        【<%= Prefecture.find(t.prefecture_id).name %>】
+    <div class="calendar">
+      <% posts.each do |t| %>
+        <div>
+         【<%= Prefecture.find(t.prefecture_id).name %>】
          <br><%= link_to t.name2, post_path(t.id) %>
         
          <div>
-        <% if user_signed_in? %>
-          <% if current_user.already_liked?(t) %>
-            <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete, remote: true do %>
-              <i class="fas fa-heart unliked-btn"></i><%= t.likes.count %>
+            <% if user_signed_in? %>
+              <% if current_user.already_liked?(t) %>
+                <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete, remote: true do %>
+                  <i class="fas fa-heart unliked-btn"></i><%= t.likes.count %>
+                <% end %>
+              <% else %>
+                <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post, remote: true do %>
+                  <i class="fas fa-heart liked-btn"></i>
+                  <%= t.likes.count %>
+                <% end %>
+              <% end %>
+            <% else %>
+              <i class="fas fa-heart"></i><%= t.likes.count %>
             <% end %>
-          <% else %>
-            <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post, remote: true do %>
-              <i class="fas fa-heart liked-btn"></i>
-              <%= t.likes.count %>
-            <% end %>
-          <% end %>
-        <% else %>
-          <i class="fas fa-heart"></i><%= t.likes.count %>
-        <% end %>
+          </div>
         </div>
-
+      <% end %>
     </div>
   <% end %>
-  </div>
-<% end %>
+</div>
+

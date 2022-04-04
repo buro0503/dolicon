@@ -1,9 +1,163 @@
 
 
+
+
+@media(max-width:2000px){
+
+  * {
+      padding: 0;
+      margin: 0;
+    }
+  
+    .mainbox{
+      margin: 3%;
+    }
+  
+    .thekkubokkusutokensaku{
+      max-width: fit-content;
+      background-color: #E7D0A9;
+      border: solid;
+      border-color: #542D24;
+      margin: 3%;
+    }
+  
+    .checkboxes{
+      padding-bottom: 1%;
+    }
+
+    .tyekkubokkusuzentai{
+      padding: 1%;
+      font-size: 1.1em;
+      line-height: 130%; 
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .tyekkubokkusuzentai h4{
+      font-size: 1.2em;
+    }
+  
+    .kensakubotan{
+      padding-top: 0.5em;
+      padding-bottom: 1em;
+      text-align: center;  
+      font-size: 0.9em;
+    }  
+    
+    .simple-calendar{
+  
+    }
+  
+    
+  
+    .calendar-heading {
+      padding-top: 20px;
+      padding-bottom: 10px;
+      font-size: 20px;
+      align-items: center;
+      text-align:center;
+      color: black;
+    }
+    
+    .calendar-heading a{
+  
+    }
+  
+    .calendar-title{
+      
+    }
+  
+    .table.table-striped{
+    }
+
+    .table.table-striped td{
+    }
+  
+    .table.table-striped thead{
+
+    }
+    
+      .sbt-btn {
+        display       : inline-block;
+        border-radius : 1%;          /* 角丸       */
+        font-size     : 12pt;        /* 文字サイズ */
+        text-align    : center;      /* 文字位置   */
+        cursor        : pointer;     /* カーソル   */
+        padding       : 3px 3px;   /* 余白       */
+        background    : white;     /* 背景色     */
+        color         : #000000;     /* 文字色     */
+        line-height   : 1em;         /* 1行の高さ  */
+        transition    : .3s;         /* なめらか変化 */
+        border        : 2px solid #cccccc;    /* 枠の指定 */
+      }
+      .sbt-btn:hover {
+        box-shadow    : none;        /* カーソル時の影消去 */
+        color         : black;     /* 背景色     */
+        background    : #cccccc;     /* 文字色     */
+      }
+    
+  
+    .liked-btn {
+      width: 20px;
+      font-size: 20px;
+      color: #808080; 
+      }
+     
+     .unliked-btn {
+      width: 20px;
+      font-size: 20px;
+      color: #e54747;
+      }
+    
+  
+    }
+
+@media(max-width:599px){
+
 * {
     padding: 0;
     margin: 0;
   }
+
+  .mainbox{
+    margin: 3%;
+  }
+
+  .thekkubokkusutokensaku{
+    max-width: fit-content;
+    background-color: #e7dac3;
+    border: solid;
+    border-color: #542D24;
+    border-width: 1px;
+
+  }
+
+  .checkboxes{
+    padding-bottom: 1%;
+  }
+
+  .tyekkubokkusuzentai{
+    padding: 1%;
+    font-size: 0.9em;
+    line-height: 130%; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+  }
+
+  .kensakubotan{
+    padding-top: 0.5em;
+  text-align: center;  
+  font-size: 0.9em;
+  }  
+  
+  .simple-calendar{
+
+  }
+
+  
 
   .calendar-heading {
     padding-top: 20px;
@@ -13,20 +167,26 @@
     text-align:center;
     color: black;
   }
+  
+  .calendar-heading a{
 
-
-
-  .hokkaidou_touhoku{
-    margin-top: 10px;
-    padding: 1%;
-    font-size: 17px;
-    line-height: 120%; 
-    margin-left: auto;
-    margin-right: auto;
-    width: 680px;
   }
 
+  .calendar-title{
+    
+  }
 
+  .table.table-striped{
+  }
+
+  .table.table-striped td{
+    font-size: 0.8em;
+  }
+
+  .table.table-striped thead{
+    font-size: 0.9em;
+    text-align: center;
+  }
   
     .sbt-btn {
       display       : inline-block;
@@ -60,6 +220,5 @@
     color: #e54747;
     }
   
-    .detail-status{
-      margin: 3%;
-    }
+
+  }

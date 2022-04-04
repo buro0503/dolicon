@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
  def index
   if params[:search1] == nil
-    @posts= Post.all.page(params[:page]).per(50).where("start_time > ?",Date.today).order(date: :asc)
+    @posts= Post.all.page(params[:page]).per(2).where("start_time > ?",Date.today).order(date: :asc)
   elsif params[:search1] == ''
     @posts= Post.all.page(params[:page]).per(50).where("start_time > ?",Date.today).order(date: :asc)
   else
