@@ -6,19 +6,19 @@
   <div class="field">
     <%= f.label :演奏会名 %>
     <b>必須</b>
-    <br><%= f.text_field :name1, :size => 50 %>
+    <br><%= f.text_field :name1 %>
   </div>
 
   <div class="field">
     <%= f.label :団体名 %>
     <b>必須</b>
-    <br><%= f.text_field :name2, :size => 50 %>
+    <br><%= f.text_field :name2 %>
   </div>
 
   <div class="field">
     <%= f.label :曲目 %>
     <c>任意</c>
-    <br><%= f.text_field :music, :size => 50 %>
+    <br><%= f.text_field :music %>
   </div>
 
   <div class="field">
@@ -30,7 +30,7 @@
   <div class="field">
   <%= f.label :自由記述 %>
   <c>任意</c>
-  <br><%= f.text_field :detail, :size => 50 %>
+  <br><%= f.text_field :detail %>
   </div>
 
   <div class="field">
@@ -64,4 +64,3 @@
  <% end %>
 </div>
 <% end %>
-<%= link_to "投稿一覧に戻る", posts_path %>

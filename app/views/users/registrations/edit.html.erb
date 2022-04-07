@@ -5,18 +5,12 @@
 
  # <!--アカウント編集時に名前を入力できるようにフォームを追加-->
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :名前 %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
-  <%= f.label :ふりがな %><br />
-  <%= f.text_field :hurigana, autofocus: true %>
-</div>
-
-  <!--アカウント編集時にプロフィールを入力できるようにフォームを追加-->
-  <div class="field">
-    <%= f.label :profile %><br />
+    <%= f.label :プロフィール %><br />
     <%= f.text_area :profile, autofocus: true %>
   </div>
 

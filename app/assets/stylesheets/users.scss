@@ -7,7 +7,6 @@
 }
 
   .title{
-  font-size: 0.7em;
   padding: 0em;
   margin-top: 3em;
   margin-bottom: 3em;
@@ -31,7 +30,6 @@
     }
 
   .dantaikensaku{
-      font-size: 0.9em;
       background-color: #ffffff;
       border-radius: 40px;
       padding-top: 1em;
@@ -39,7 +37,7 @@
       margin-right: auto;
       padding-left: 1em;
       padding-right: 1em;
-      width: fit-content;
+      text-align: center;
   }
 
     .radiobotan{
@@ -52,11 +50,11 @@
 
   .mokuzi{
       line-height: 1.5em;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 0.9em;
+      margin:  0 auto;            /* 中央寄せ */
+      max-width: 60%;
       padding-left: 5em;
-
+      background-color: #ffffff;
+      margin-top: 1em;
   }
 
     .mokuzi a{
@@ -73,6 +71,7 @@
       margin-left: 2em;
       margin-right: 2em;
       margin-top: 3em;
+
   }
 
   .prefecture_each{
@@ -80,6 +79,8 @@
       padding-top: 0.5em;
       padding-bottom: 0.5em;
       margin-bottom: 0.5em;
+      margin:  0 auto;            /* 中央寄せ */
+
   }
 
     .user_index p{
@@ -93,3 +94,41 @@
 
     }
 
+
+@media(max-width:2000px){
+    .prefecture_each ul{
+    list-style: none;
+    line-height: 1em;
+    }
+    .dantaikensaku{
+        max-width: 20em;
+        font-size: 1.2em;
+    }
+    .mokuzi{
+        font-size: 1.2em;
+    }
+    .prefecture_each{
+        font-size: 1.2em;
+        max-width: 50%;
+
+    }
+
+}
+
+@media(max-width:599px){
+    .dantaikensaku{
+    max-width: 20em;
+    font-size: 1em;
+    }
+
+    .title{
+        font-size: 0.7em;
+    }
+
+    .mokuzi{
+        font-size: 0.9em;
+    }
+    .prefecture_each{
+        font-size: 0.9em;
+    }
+}
