@@ -11,7 +11,7 @@
   <div class="dantaikensaku">
     <div class="radiobotan">
       <%= search_form_for @q do |f| %>
-      <%= f.label :団体種別 %>
+      <b><%= f.label :団体種別 %></b>
       <%= f.radio_button :syurui_eq, 1, {:checked => true} %>学生団体
       <%= f.radio_button :syurui_eq, 2 %>社会人団体
     </div>
@@ -74,479 +74,477 @@
 <% if @users_47.present? %><%= link_to "沖縄県", users_path(anchor: "47") %><% end %>
 </div>
 
-<div class="user_index">
-<p id="1">
-<% if @users_1.present? %> <div class="prefecture_each"> 【北海道】<% end %>
-<ul class="users">
-  <% @users_1.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="1">
+  <% if @users_1.present? %>   <div class="prefecture_each"> 【北海道】  <% end %>
+  <ul class="users">
+    <% @users_1.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="2">
-<% if @users_2.present? %> <div class="prefecture_each"> 【青森県】<% end %>
-<ul class="users">
-  <% @users_2.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="2">
+  <% if @users_2.present? %>   <div class="prefecture_each"> 【青森県】  <% end %>
+  <ul class="users">
+    <% @users_2.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="3">
-<% if @users_3.present? %> <div class="prefecture_each"> 【岩手県】<% end %>
-<ul class="users">
-  <% @users_3.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="3">
+  <% if @users_3.present? %>   <div class="prefecture_each"> 【岩手県】  <% end %>
+  <ul class="users">
+    <% @users_3.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="4">
-<% if @users_4.present? %> <div class="prefecture_each"> 【宮城県】<% end %>
-<ul class="users">
-  <% @users_4.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="4">
+  <% if @users_4.present? %>   <div class="prefecture_each"> 【宮城県】  <% end %>
+  <ul class="users">
+    <% @users_4.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="5">
-<% if @users_5.present? %> <div class="prefecture_each"> 【秋田県】<% end %>
-<ul class="users">
-  <% @users_5.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
+  <p id="5">
+  <% if @users_5.present? %>   <div class="prefecture_each"> 【秋田県】  <% end %>
+  <ul class="users">
+    <% @users_5.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
       
-    </ul>
-  <% end %> </div>
-</ul>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="6">
-<% if @users_6.present? %> <div class="prefecture_each"> 【山形県】<% end %>
-<ul class="users">
-  <% @users_6.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
+  <p id="6">
+  <% if @users_6.present? %>   <div class="prefecture_each"> 【山形県】  <% end %>
+  <ul class="users">
+    <% @users_6.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
       
-    </ul>
-  <% end %> </div>
-</ul>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="7">
-<% if @users_7.present? %> <div class="prefecture_each"> 【福島県】<% end %>
-<ul class="users">
-  <% @users_7.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="7">
+  <% if @users_7.present? %>   <div class="prefecture_each"> 【福島県】  <% end %>
+  <ul class="users">
+    <% @users_7.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="8">
-<% if @users_8.present? %> <div class="prefecture_each"> 【茨城県】<% end %>
-<ul class="users">
-  <% @users_8.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="8">
+  <% if @users_8.present? %>   <div class="prefecture_each"> 【茨城県】  <% end %>
+  <ul class="users">
+    <% @users_8.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="9">
-<% if @users_9.present? %> <div class="prefecture_each"> 【栃木県】<% end %>
-<ul class="users">
-  <% @users_9.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="9">
+  <% if @users_9.present? %>   <div class="prefecture_each"> 【栃木県】  <% end %>
+  <ul class="users">
+    <% @users_9.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="10">
-<% if @users_10.present? %> <div class="prefecture_each"> 【群馬県】<% end %>
-<ul class="users">
-  <% @users_10.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="10">
+  <% if @users_10.present? %>   <div class="prefecture_each"> 【群馬県】  <% end %>
+  <ul class="users">
+    <% @users_10.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="11">
-<% if @users_11.present? %> <div class="prefecture_each"> 【埼玉県】<% end %>
-<ul class="users">
-  <% @users_11.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="11">
+  <% if @users_11.present? %>   <div class="prefecture_each"> 【埼玉県】  <% end %>
+  <ul class="users">
+    <% @users_11.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="12">
-<% if @users_12.present? %> <div class="prefecture_each"> 【千葉県】<% end %>
-<ul class="users">
-  <% @users_12.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="12">
+  <% if @users_12.present? %>   <div class="prefecture_each"> 【千葉県】  <% end %>
+  <ul class="users">
+    <% @users_12.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="13">
-<% if @users_13.present? %> <div class="prefecture_each"> 【東京都】<% end %>
-<ul class="users">
-  <% @users_13.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="13">
+  <% if @users_13.present? %>   <div class="prefecture_each"> 【東京都】  <% end %>
+  <ul class="users">
+    <% @users_13.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="14">
-<% if @users_14.present? %> <div class="prefecture_each"> 【神奈川県】<% end %>
-<ul class="users">
-  <% @users_14.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="14">
+  <% if @users_14.present? %>   <div class="prefecture_each"> 【神奈川県】  <% end %>
+  <ul class="users">
+    <% @users_14.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="15">
-<% if @users_15.present? %> <div class="prefecture_each"> 【新潟県】<% end %>
-<ul class="users">
-  <% @users_15.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="15">
+  <% if @users_15.present? %>   <div class="prefecture_each"> 【新潟県】  <% end %>
+  <ul class="users">
+    <% @users_15.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="16">
-<% if @users_16.present? %> <div class="prefecture_each"> 【富山県】<% end %>
-<ul class="users">
-  <% @users_16.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="16">
+  <% if @users_16.present? %>   <div class="prefecture_each"> 【富山県】  <% end %>
+  <ul class="users">
+    <% @users_16.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="17">
-<% if @users_17.present? %> <div class="prefecture_each"> 【石川県】<% end %>
-<ul class="users">
-  <% @users_17.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="17">
+  <% if @users_17.present? %>   <div class="prefecture_each"> 【石川県】  <% end %>
+  <ul class="users">
+    <% @users_17.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="18">
-<% if @users_18.present? %> <div class="prefecture_each"> 【福井県】<% end %>
-<ul class="users">
-  <% @users_18.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="18">
+  <% if @users_18.present? %>   <div class="prefecture_each"> 【福井県】  <% end %>
+  <ul class="users">
+    <% @users_18.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="19">
-<% if @users_19.present? %> <div class="prefecture_each"> 【山梨県】<% end %>
-<ul class="users">
-  <% @users_19.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="19">
+  <% if @users_19.present? %>   <div class="prefecture_each"> 【山梨県】  <% end %>
+  <ul class="users">
+    <% @users_19.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="20">
-<% if @users_20.present? %> <div class="prefecture_each"> 【長野県】<% end %>
-<ul class="users">
-  <% @users_20.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="20">
+  <% if @users_20.present? %>   <div class="prefecture_each"> 【長野県】  <% end %>
+  <ul class="users">
+    <% @users_20.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="21">
-<% if @users_21.present? %> <div class="prefecture_each"> 【岐阜県】<% end %>
-<ul class="users">
-  <% @users_21.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="21">
+  <% if @users_21.present? %>   <div class="prefecture_each"> 【岐阜県】  <% end %>
+  <ul class="users">
+    <% @users_21.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="22">
-<% if @users_22.present? %> <div class="prefecture_each"> 【静岡県】<% end %>
-<ul class="users">
-  <% @users_22.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="22">
+  <% if @users_22.present? %>   <div class="prefecture_each"> 【静岡県】  <% end %>
+  <ul class="users">
+    <% @users_22.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="23">
-<% if @users_23.present? %> <div class="prefecture_each"> 【愛知県】<% end %>
-<ul class="users">
-  <% @users_23.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="23">
+  <% if @users_23.present? %>   <div class="prefecture_each"> 【愛知県】  <% end %>
+  <ul class="users">
+    <% @users_23.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="24">
-<% if @users_24.present? %> <div class="prefecture_each"> 【三重県】<% end %>
-<ul class="users">
-  <% @users_24.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="24">
+  <% if @users_24.present? %>   <div class="prefecture_each"> 【三重県】  <% end %>
+  <ul class="users">
+    <% @users_24.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="25">
-<% if @users_25.present? %> <div class="prefecture_each"> 【滋賀県】<% end %>
-<ul class="users">
-  <% @users_25.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="25">
+  <% if @users_25.present? %>   <div class="prefecture_each"> 【滋賀県】  <% end %>
+  <ul class="users">
+    <% @users_25.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="26">
-<% if @users_26.present? %> <div class="prefecture_each"> 【京都府】<% end %>
-<ul class="users">
-  <% @users_26.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="26">
+  <% if @users_26.present? %>   <div class="prefecture_each"> 【京都府】  <% end %>
+  <ul class="users">
+    <% @users_26.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="27">
-<% if @users_27.present? %> <div class="prefecture_each"> 【大阪府】<% end %>
-<ul class="users">
-  <% @users_27.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="27">
+  <% if @users_27.present? %>   <div class="prefecture_each"> 【大阪府】  <% end %>
+  <ul class="users">
+    <% @users_27.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="28">
-<% if @users_28.present? %> <div class="prefecture_each"> 【兵庫県】<% end %>
-<ul class="users">
-  <% @users_28.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="28">
+  <% if @users_28.present? %>   <div class="prefecture_each"> 【兵庫県】  <% end %>
+  <ul class="users">
+    <% @users_28.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="29">
-<% if @users_29.present? %> <div class="prefecture_each"> 【奈良県】<% end %>
-<ul class="users">
-  <% @users_29.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="29">
+  <% if @users_29.present? %>   <div class="prefecture_each"> 【奈良県】  <% end %>
+  <ul class="users">
+    <% @users_29.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="30">
-<% if @users_30.present? %> <div class="prefecture_each"> 【和歌山県】<% end %>
-<ul class="users">
-  <% @users_30.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="30">
+  <% if @users_30.present? %>   <div class="prefecture_each"> 【和歌山県】  <% end %>
+  <ul class="users">
+    <% @users_30.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="31">
-<% if @users_31.present? %> <div class="prefecture_each"> 【鳥取県】<% end %>
-<ul class="users">
-  <% @users_31.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="31">
+  <% if @users_31.present? %>   <div class="prefecture_each"> 【鳥取県】  <% end %>
+  <ul class="users">
+    <% @users_31.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="32">
-<% if @users_32.present? %> <div class="prefecture_each"> 【島根県】<% end %>
-<ul class="users">
-  <% @users_32.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="32">
+  <% if @users_32.present? %>   <div class="prefecture_each"> 【島根県】  <% end %>
+  <ul class="users">
+    <% @users_32.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="33">
-<% if @users_33.present? %> <div class="prefecture_each"> 【岡山県】<% end %>
-<ul class="users">
-  <% @users_33.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="33">
+  <% if @users_33.present? %>   <div class="prefecture_each"> 【岡山県】  <% end %>
+  <ul class="users">
+    <% @users_33.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="34">
-<% if @users_34.present? %> <div class="prefecture_each"> 【広島県】<% end %>
-<ul class="users">
-  <% @users_34.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="34">
+  <% if @users_34.present? %>   <div class="prefecture_each"> 【広島県】  <% end %>
+  <ul class="users">
+    <% @users_34.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="35">
-<% if @users_35.present? %> <div class="prefecture_each"> 【山口県】<% end %>
-<ul class="users">
-  <% @users_35.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="35">
+  <% if @users_35.present? %>   <div class="prefecture_each"> 【山口県】  <% end %>
+  <ul class="users">
+    <% @users_35.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="36">
-<% if @users_36.present? %> <div class="prefecture_each"> 【徳島県】<% end %>
-<ul class="users">
-  <% @users_36.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %> 
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="36">
+  <% if @users_36.present? %>   <div class="prefecture_each"> 【徳島県】  <% end %>
+  <ul class="users">
+    <% @users_36.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %> 
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="37">
-<% if @users_37.present? %> <div class="prefecture_each"> 【香川県】<% end %>
-<ul class="users">
-  <% @users_37.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="37">
+  <% if @users_37.present? %>   <div class="prefecture_each"> 【香川県】  <% end %>
+  <ul class="users">
+    <% @users_37.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="38">
-<% if @users_38.present? %> <div class="prefecture_each"> 【愛媛県】<% end %>
-<ul class="users">
-  <% @users_38.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="38">
+  <% if @users_38.present? %>   <div class="prefecture_each"> 【愛媛県】  <% end %>
+  <ul class="users">
+    <% @users_38.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="39">
-<% if @users_39.present? %> <div class="prefecture_each"> 【高知県】<% end %>
-<ul class="users">
-  <% @users_39.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="39">
+  <% if @users_39.present? %>   <div class="prefecture_each"> 【高知県】  <% end %>
+  <ul class="users">
+    <% @users_39.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="40">
-<% if @users_40.present? %> <div class="prefecture_each"> 【福岡県】<% end %>
-<ul class="users">
-  <% @users_40.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="40">
+  <% if @users_40.present? %>   <div class="prefecture_each"> 【福岡県】  <% end %>
+  <ul class="users">
+    <% @users_40.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="41">
-<% if @users_41.present? %> <div class="prefecture_each"> 【佐賀県】<% end %>
-<ul class="users">
-  <% @users_41.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="41">
+  <% if @users_41.present? %>   <div class="prefecture_each"> 【佐賀県】  <% end %>
+  <ul class="users">
+    <% @users_41.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="42">
-<% if @users_42.present? %> <div class="prefecture_each"> 【長崎県】<% end %>
-<ul class="users">
-  <% @users_42.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="42">
+  <% if @users_42.present? %>   <div class="prefecture_each"> 【長崎県】  <% end %>
+  <ul class="users">
+    <% @users_42.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="43">
-<% if @users_43.present? %> <div class="prefecture_each"> 【熊本県】<% end %>
-<ul class="users">
-  <% @users_43.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="43">
+  <% if @users_43.present? %>   <div class="prefecture_each"> 【熊本県】  <% end %>
+  <ul class="users">
+    <% @users_43.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="44">
-<% if @users_44.present? %> <div class="prefecture_each"> 【大分県】<% end %>
-<ul class="users">
-  <% @users_44.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="44">
+  <% if @users_44.present? %>   <div class="prefecture_each"> 【大分県】  <% end %>
+  <ul class="users">
+    <% @users_44.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="45">
-<% if @users_45.present? %> <div class="prefecture_each"> 【宮崎県】<% end %>
-<ul class="users">
-  <% @users_45.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="45">
+  <% if @users_45.present? %>   <div class="prefecture_each"> 【宮崎県】  <% end %>
+  <ul class="users">
+    <% @users_45.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="46">
-<% if @users_46.present? %> <div class="prefecture_each"> 【鹿児島県】<% end %>
-<ul class="users">
-  <% @users_46.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
+  <p id="46">
+  <% if @users_46.present? %>   <div class="prefecture_each"> 【鹿児島県】  <% end %>
+  <ul class="users">
+    <% @users_46.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
-<p id="47">
-<% if @users_48.present? %> <div class="prefecture_each"> 【沖縄県】<% end %>
-<ul class="users">
-  <% @users_47.each do |user| %>
-    <ul>
-      <li><%= link_to user.name, user %>
-    </ul>
-  <% end %> </div>
-</ul>
-</div>
+  <p id="47">
+  <% if @users_48.present? %>   <div class="prefecture_each"> 【沖縄県】  <% end %>
+  <ul class="users">
+    <% @users_47.each do |user| %>
+      <ul>
+        <li>  <%= link_to user.name, user %>
+      </ul>
+    <% end %>   </div>
+  </ul>
 
 
 

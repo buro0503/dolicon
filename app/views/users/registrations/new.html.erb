@@ -1,16 +1,20 @@
+<%= stylesheet_link_tag 'login', :media => "all" %>
+
+<div class="login_title">
 <h2>新規登録</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   
   <div class="field">
-    <%= f.label :名前 %><br>
+    <%= f.label :名前（一般利用の場合は公開されません） %><br>
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :団体種別 %><br>
+    <%= f.label :利用者 %><br>
     <%= f.label :一般  %>
     <%= f.radio_button :syurui, 0 %>
     <%= f.label :学生団体  %>
@@ -20,7 +24,7 @@
   </div>
 
   <div class="field">
-   <%= f.label :活動県 %>
+   <%= f.label :活動県（団体のみ） %>
    <br><%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}) %>
   </div>
 
@@ -42,9 +46,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+<div class="button_login">
   <div class="actions">
     <%= f.submit "新規登録" %>
   </div>
 <% end %>
 
 <%= render "users/shared/links" %>
+</div>

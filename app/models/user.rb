@@ -11,6 +11,9 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   validates :name, presence: true
+  validates :syurui, presence: true
+  validates :email, presence: true
+
   validates :name, length: { maximum: 50 }
   validates :profile, length: { maximum: 200 } 
   

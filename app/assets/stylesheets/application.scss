@@ -20,6 +20,20 @@
    margin: 0;
  }
 
+ .title{
+  padding: 0em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  width: fit-content;
+  height: 3em;
+  padding-left: 3em;
+  padding-right: 1em;
+  background-color: #D98E04;
+  border-radius: 0px 20px 20px 0px;
+  box-shadow: 3px 3px 3px rgb(0, 0, 0 / 10%);
+
+  }
+
  body {
    padding-top: 4em;
    background-color: #f6e3d0;
