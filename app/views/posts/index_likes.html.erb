@@ -7,52 +7,57 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
 </head>
 <body>
+
+
 <%= yield %>
-<div class="kensaku">
+
+
+<div class="title">
+<% provide(:title, '投稿一覧') %>
+<h1>投稿一覧</h1>
 </div>
+
 
 <div class="post-top">
- <h3>演奏会一覧(おすすめ順）</h3>
- <%= page_entries_info @posts %>
+  <h3>演奏会一覧(おすすめ順）</h3>
+  <%= page_entries_info @posts %>
 </div>
 
-<div class="zyunban">
-  <ul>
-  <li><%= link_to "実施日昇順・検索", posts_path %></li>
-  <li><%= link_to "新着", posts_index_new_path %></li>
-  <li><%= link_to "いいね順", posts_index_likes_path %></li>
-  </ul>
+<div class="post-narabi">
+    <c><%= link_to "実施日昇順・検索", posts_path %></c>
+    <c><%= link_to "新着", posts_index_new_path %></c>
+    <b><%= link_to "いいね順", posts_index_likes_path %></b>
 </div>
-
-  <% @rank_posts.each do |t| %>
+<div class="post-zentai">
+    <% @rank_posts.each do |post| %>
       <div class="posts-container">
         <div class="post">
           <div class="main-box">
             <div class="left-container">
-            <p><%= t.start_time.strftime("%-m月%-d日") %></p>
-            <p>【<%= Prefecture.find(t.prefecture_id).name %>】
-            <%= link_to t.name2, user_path(t.id) %></p>
-            <p><%= link_to t.image_url, "data-lightbox" => t.image_url do %>
-            <%= image_tag t.image_url, size: "210x297" if t.image? %></p>  
-              <% end %> 
-              </div>
-
-            <div class="right-container">
-              <p><%= link_to "詳細へ", post_path(t.id) %></p>
-              <% if user_signed_in? && current_user.id == t.user_id %>  
-              <p><%= link_to "編集する", edit_post_path(t.id) %></p>
-              <p><%= button_to "削除する", post_path(t.id), method: :delete %></p>
-              <% end %>
+            <d><p><%= post.start_time.strftime("%-m月%-d日") %></p></d>
+            <d><p>【<%= Prefecture.find(post.prefecture_id).name %>】
+            <e><%= link_to post.name2, user_path(post.id) %></p></d></e>
+            <d><p><%= link_to post.image_url, "data-lightbox" => post.image_url do %>
+            <%= image_tag post.image_url, size: "189x267" if post.image? %></p></d>
+            <% end %>
+            
+            <div>
+            <div class="likes_buttons" id="likes_buttons_<%= post.id %>">
+             <%= render partial: 'likes/like', locals: {post: post} %>
             </div>
+            <p><%= link_to "詳細へ", post_path(post.id) %></p>
+            </div>
+
+            </div>
+
+
           </div>
         </div>  
+  
 
-          <div id="likes_buttons_<%= t.id %>">
-            <%= render partial: 'likes/like', locals: {post: t} %>
-          </div>
       </div>
-
-  <% end %>
+    <% end %>
+  </div>
 
 
 

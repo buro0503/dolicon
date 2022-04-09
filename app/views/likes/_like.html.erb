@@ -1,16 +1,19 @@
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+
 <% if user_signed_in? %>
   <% if current_user.already_liked?(post.id) %>
     <td>
       <%= link_to post_like_path(id: post.id, post_id: post.id), method: :delete, remote: true do %>
-       <i class="fas fa-heart unlike-btn"></i>
-       <%= post.likes.count %>
+        <i class="fas fa-heart unliked-btn"></i>
+      <%= post.likes.count %>
       <% end %>
     </td>
   <% else %>
     <td>
       <%= link_to post_likes_path(id: post.id, post_id: post.id), method: :post, remote: true do %>
-        <i class="fas fa-heart like-btn"></i>
-       <%= post.likes.count %>
+        <i class="fas fa-heart liked-btn"></i>
+        <%= post.likes.count %>
       <% end %>
     </td>
   <% end %>

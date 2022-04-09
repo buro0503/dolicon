@@ -2,21 +2,21 @@ class PostsController < ApplicationController
 
  def index
   if params[:search1] == nil
-    @posts= Post.all.page(params[:page]).per(2).where("start_time > ?",Date.today).order(date: :asc)
+    @posts= Post.all.page(params[:page]).per(10).where("start_time > ?",Date.today).order(date: :asc)
   elsif params[:search1] == ''
-    @posts= Post.all.page(params[:page]).per(50).where("start_time > ?",Date.today).order(date: :asc)
+    @posts= Post.all.page(params[:page]).per(10).where("start_time > ?",Date.today).order(date: :asc)
   else
-    @posts = Post.where("music LIKE ? OR name2 LIKE ? ",'%' + params[:search1] + '%','%' + params[:search1] + '%').page(params[:page]).where("start_time > ?",Date.today).per(3)
+    @posts = Post.where("music LIKE ? OR name2 LIKE ? ",'%' + params[:search1] + '%','%' + params[:search1] + '%').page(params[:page]).where("start_time > ?",Date.today).per(10)
   end 
 end
 
  def index_likes
-  @posts = Post.all.where("start_time > ?",Date.today).page(params[:page]).per(3)
+  @posts = Post.all.where("start_time > ?",Date.today).page(params[:page]).per(10)
   @rank_posts = Post.all.where("start_time > ?",Date.today).sort {|a,b| b.liked_users.count <=> a.liked_users.count}
  end
 
  def index_new
-  @posts= Post.all.page(params[:page]).per(3).order(created_at: :desc)
+  @posts= Post.all.page(params[:page]).per(10).order(created_at: :desc)
  end
 
 
@@ -99,7 +99,7 @@ end
 
 
 
- before_action :authenticate_user!, except: [:index, :index_likes, :index_new, :show, :calendar]
+ before_action :authenticate_user!, except: [:index, :index_likes, :index_new, :calendar]
 
  private
  def post_params

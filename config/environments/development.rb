@@ -34,7 +34,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
@@ -45,7 +45,7 @@ Rails.application.configure do
     :port => 587,
     :domain => 'smtp.gmail.com',
     :user_name => ENV["GOOGLE_MAIL_ADDRESS"],
-    :password => ENV["cjsu uryw zfre yunm"],
+    :password => ENV["GOOGLE_MAILER_PASSWORD"],
     :authentication => 'login'
   }
   # Print deprecation notices to the Rails logger.

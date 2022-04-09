@@ -7,47 +7,57 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
 </head>
 <body>
+
+
 <%= yield %>
+
+
+<div class="title">
+<% provide(:title, '投稿一覧') %>
+<h1>投稿一覧</h1>
+</div>
+
+
 <div class="post-top">
-  <h3>演奏会一覧(新着順）</h3>
+  <h3>演奏会一覧(実施日が近い順）</h3>
   <%= page_entries_info @posts %>
 </div>
-  <br>  <%= link_to "実施日昇順・検索", posts_path %>
-  <%= link_to "新着", posts_index_new_path %>
-  <%= link_to "いいね順", posts_index_likes_path %>
 
-
-  <% @posts.each do |post| %>
-    <div class="posts-container">
-      <div class="post">
-        <div class="main-box">
-          <div class="left-container">
-          <p>【<%= Prefecture.find(post.prefecture_id).name %>】
-          <%= link_to post.name2, user_path(post.id) %></p>
-          <p><%= post.start_time.strftime("%-m月%-d日") %></p>
-          <p><%= link_to post.image_url, "data-lightbox" => post.image_url do %>
-          <%= image_tag post.image_url, size: "210x297" if post.image? %></p>
+<div class="post-narabi">
+    <c><%= link_to "実施日昇順・検索", posts_path %></c>
+    <b><%= link_to "新着", posts_index_new_path %></b>
+    <c><%= link_to "いいね順", posts_index_likes_path %></c>
+</div>
+<div class="post-zentai">
+    <% @posts.each do |post| %>
+      <div class="posts-container">
+        <div class="post">
+          <div class="main-box">
+            <div class="left-container">
+            <d><p><%= post.start_time.strftime("%-m月%-d日") %></p></d>
+            <d><p>【<%= Prefecture.find(post.prefecture_id).name %>】
+            <e><%= link_to post.name2, user_path(post.id) %></p></d></e>
+            <d><p><%= link_to post.image_url, "data-lightbox" => post.image_url do %>
+            <%= image_tag post.image_url, size: "189x267" if post.image? %></p></d>
             <% end %>
-          </div>
+            
+            <div>
+            <div class="likes_buttons" id="likes_buttons_<%= post.id %>">
+             <%= render partial: 'likes/like', locals: {post: post} %>
+            </div>
+            <p><%= link_to "詳細へ", post_path(post.id) %></p>
+            </div>
 
-          <div class="right-container">
-              <p><%= link_to "詳細へ", post_path(post.id) %></p>
-              <% if user_signed_in? && current_user.id == post.user_id %>  
-              <p><%= link_to "編集する", edit_post_path(post.id) %></p>
-              <p><%= button_to "削除する", post_path(post.id), method: :delete %></p>
-              <% end %>
-          </div>
-        </div>
-      </div>  
+            </div>
 
-      <div id="likes_buttons_<%= post.id %>">
-       <%= render partial: 'likes/like', locals: {post: post} %>
-      </div>
-       
+
+          </div>
+        </div>  
   
-    </div>
 
-<% end %>
+      </div>
+    <% end %>
+  </div>
 
 
 

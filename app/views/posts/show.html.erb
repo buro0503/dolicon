@@ -1,3 +1,7 @@
+<%= stylesheet_link_tag 'post_show', :media => "all" %>
+
+
+
 <html>
 <head>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
@@ -6,100 +10,109 @@
 </head>
 <body>
 <%= yield %>
-
+<div class="mainbox">
+<div class="title">
+<% provide(:title, '詳細情報') %>
+<h1>詳細情報</h1>
+</div>
 
 <div class="post">
+  <div class="post_shousai">
+    <% if @post.image.present? %>
+      <h2><p><%= link_to @post.name2, user_path(@post.id) %></p></h2>
+      <h2><p><%= @post.name1 %></p></h2>
+      <p><%= @post.detail %></p>
 
-  <p><%= @post.name1 %></p>
-  <p><%= link_to @post.name2, user_path(@post.id) %></p>
-  <p><%= @post.detail %></p>
-  <p><%= @post.music %></p>
-  <p><%= @post.prefecture %></p>
-  <p><%= @post.site %></p>
-  実施日↓ 　　　↓開演時間<br>
-  <p><%= @post.start_time %><br></p>
-  <%= link_to @post.image_url, "data-lightbox" => @post.image_url do %>
-  <p><%= image_tag @post.image_url, size: "210x297" if @post.image? %><p>
-  <% end %>
-  <%= link_to @post.image2_url, "data-lightbox" => @post.image2_url do %>
-  <p><%= image_tag @post.image2_url, size: "210x297" if @post.image? %><p> 
-  <% end %>
+      <div class="gazou">
+      <%= link_to @post.image_url, "data-lightbox" => @post.image_url do %>
+        <p><%= image_tag @post.image_url, size: "210x297" if @post.image? %><p>
+      <% end %>
 
-<% if user_signed_in? && current_user.id == @post.user_id %>  
-  <%= link_to "編集する", edit_post_path(@post.id) %>
-  <%= button_to "削除する", post_path(@post.id), method: :delete %>
-<% end %>
-  
+      <% if  @post.image2.present? %>
+        <%= link_to @post.image2_url, "data-lightbox" => @post.image2_url do %>
+          <p><%= image_tag @post.image2_url, size: "210x297" if @post.image? %><p> 
+        <% end %>
+      <% end %>
+      </div>
+    <% else %>
+      <h2><p><%= link_to @post.name2, user_path(@post.id) %></p></h2>
+      <h2><p><%= @post.name1 %></p></h2>
+      <p><%= @post.detail %></p>
+      <p><%= @post.prefecture %></p>
+      <p><%= @post.site %></p>
+      <p>実施日 <%= @post.start_time.strftime("%-m月%-d日") %></p>
+      <p>開演時間 <%= @post.start_time.strftime("%H時%-M分") %></p>
+    <% end %>
+
+    <% if user_signed_in? && current_user.id == @post.user_id %>  
+     <%= link_to "編集する", edit_post_path(@post.id) %>
+      <%= button_to "削除する", post_path(@post.id), method: :delete %>
+    <% end %>
+   
+    <div id="likes_buttons_<%= @post.id %>">
+      <%= render partial: 'likes/like', locals: {post: @post} %>
+    </div>
+
+  </div>
 
 
-<div>
-<div id="likes_buttons_<%= @post.id %>">
-<%= render partial: 'likes/like', locals: {post: @post} %>
-</div>
-
-</div>
-
-</div>
-
-<script type="text/javascript">
-function initMap() {
-  var test = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
-  var map = new google.maps.Map(document.getElementById('map'), {
+  <script type="text/javascript">
+    function initMap() {
+    var test = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15, 
             center: test
             });
-  var transitLayer = new google.maps.TransitLayer();
-  transitLayer.setMap(map);
-  var contentString = '住所：<%= @post.address %>';
-  var infowindow = new google.maps.InfoWindow({
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+    var contentString = '住所：<%= @post.address %>';
+    var infowindow = new google.maps.InfoWindow({
     content: contentString
-  });
-  var marker = new google.maps.Marker({
+    });
+    var marker = new google.maps.Marker({
                 position:test,
                 map: map,
                 title: contentString
               });
-  marker.addListener('click', function() {
+    marker.addListener('click', function() {
     infowindow.open(map, marker);
-  });
-}
-</script>
-<script async defer
+    });
+    }
+  </script>
+  <script async defer
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-</script>
-<style type="text/css">
-#map { height: 200px;
+  </script>
+  <style type="text/css">
+   #map { height: 200px;
       width: 70%;}
-</style>
-<div id="map"></div>
+  </style>
+  <div id="map"></div>
+</div>
 
-<h2>いいねしたユーザー</h2>
-<% @post.liked_users.each do |user| %>
-  <li><%= user.name %></li>
+<div class="comments">
+<% if user_signed_in? %>
+<%= form_with(model: [@post, @comment], local: true) do |f| %>
+  <%= f.text_area :content %>
+  <%= button_tag type: "submit" do %>
+    <i class="far fa-comments"></i> コメントする
+  <% end %>
 <% end %>
+<% end %>
+</div>
+
 
 <div class="comment-wrapper">
   <p>コメント一覧</p>
   <% @comments.each do |c| %>
     <div>
-      <%= c.user.email unless c.user.blank? %>
-      <br>
       <%= c.content %>
     </div>
-      <br>
-  <% end %>
-
-
-  
-  <% if user_signed_in? %>
-    <%= form_with(model: [@post, @comment], local: true) do |f| %>
-      <%= f.text_area :content %>
-      <%= button_tag type: "submit" do %>
-        <i class="far fa-comments"></i> コメントする
-      <% end %>
-    <% end %>
   <% end %>
 </div>
+</div>
+
+  
+
 
 
 

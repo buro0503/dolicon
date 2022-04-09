@@ -1,11 +1,41 @@
-  .post-top{
+@media(max-width:599px){
+  .zyunban h1,li{
+    margin: 1em;
+    display: flex;
+  }
+  .post-narabi b{
+    font-size: 1em;
+   margin: 1%;
+  }
+ 
+  .post-narabi c{
+    font-size: 1em;
+   margin: 1%;
+  }
+    }
+ 
+    @media(max-width:2000px){
+     .zyunban h1,li{
+       margin: 1em;
+       display: flex;
+    }
+ 
+    .post-narabi b{
+     margin: 1%;
+    }
+ 
+    .post-narabi c{
+     margin: 1%;
+    }
+   }
+ 
+ .post-top{
     padding: 20px;
     font-size: auto;
     text-align: center;
  }
  
  .post-zentai{
-   background-color: #cae95a;
    display: flex;
    flex-direction: row;
    flex-wrap: wrap; //大事
@@ -17,27 +47,68 @@
 
  
  .posts-container {
-     background-color: #F7F4EE;
-     width: 400px;
-     margin: 10px auto;
+     margin: 1em auto;
    }
  
    .posts-container p {
-     background-color: aquamarine;
-     margin: 10px;
-     text-align: left;
+
    }
  
-   .left-container{
+   .left-container d{
      background-color: green;
-     margin-left: 10%;
+     max-width: 210px;
+     text-align: start;
+     width: 100%;
+   }
+
+   .left-container e{
+    word-break: break-all;
+    word-wrap: break-word;    
+   }
+
+   .likes_buttons{
+     text-align: end;     
    }
  
-   .right-container{
-     background-color: yellow;
-     margin-right: 100%;
-   }
+  .post-narabi{
+    text-align: center;
+    list-style-type: disc;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    }
+
+    .post-narabi a{
+      color: black;
+      text-decoration: none;
+    }
+    
+    .post-narabi b{
+      font-weight: 100;
+      padding: 1em;
+      border: 2px solid #d98e04;
+      border-radius: 5px;
+      transition: .4s;
+      background-color: #f2ad2c;
+    }
+    .post-narabi c{
+      padding: 1em;
+      border: 2px solid #d98e04;
+      border-radius: 5px;
+      transition: .4s;
+    }
+
+    .post-narabi c:hover{
+      background-color: rgba(217, 142, 4, 0.3);
+    }
+
+
    
+   .right-container p{
+    position: absolute; /*自由に配置する指定*/
+    bottom: 0; /*下寄せの指定*/
+    margin: 0;
+   }
+
    .kensaku {
      padding-top: 0em;
      width: 200px;
@@ -46,11 +117,22 @@
    }
  
    .main-box {
-     background-color: bisque;
+     font-size: 1.2em;
+     line-height: 120%;
+     background-color: #F2F2F2;
      margin: 0px 0;
+     padding: 1em;
      display: flex;
      justify-content: space-between;
-   }
+     max-width: fit-content;
+     box-shadow: 4px 4px 4px gray;
+     border-top: solid 6px #d98e04;
+    }
+
+    a{
+    }
+
+
    .time {
      display: flex;
      justify-content: flex-end;
@@ -58,16 +140,3 @@
  
 
    
-   @media(max-width:599px){
- .zyunban h1,li{
-   margin: 1em;
-   display: flex;
- }
-   }
-
-   @media(max-width:2000px){
-    .zyunban h1,li{
-      margin: 1em;
-      display: flex;
-   }
-  }

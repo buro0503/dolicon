@@ -1,5 +1,70 @@
-.main {
+@media(max-width:2000px){
+    .contents{
+        font-size: 1em;
+    }
 
+    .profile{
+        font-size: 1.3em;
+        line-height: 150%;
+    }
+}
+
+
+@media(max-width:599px){
+    .contents{
+        font-size: 0.8em;
+    }
+
+    .profile{
+        font-size: 0.8em;
+        line-height: 150%;
+    }
+}
+
+.mainbox {
+}
+
+
+
+.contents{
+    max-width: 50em;
+    line-height: 180%;
+    margin-top: 3em,;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    position: relative;
+    padding: 0.25em 1em;
+    top: 0;
+    background: #efefef;
+}
+
+.contents:before, .contents:after{
+    position: absolute;
+    top: 0;
+    content:'';
+    width: 10px;
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.contents:before{
+    border-left: dotted 2px #15adc1;
+    border-top: dotted 2px #15adc1;
+    border-bottom: dotted 2px #15adc1;
+    left: 0;
+}
+
+.contents:after{
+    border-top: dotted 2px #15adc1;
+    border-right: dotted 2px #15adc1;
+    border-bottom: dotted 2px #15adc1;
+    right: 0;
+}
+
+.contents h2{
+    margin-bottom: 1em;
 }
 
  .syousai{
@@ -18,8 +83,11 @@
 
  }
 
-.user_post{
+.user_post h2{
+    margin-top: 2em;
+}
 
+.user_post_each{
 }
 
 .user_post h4{
