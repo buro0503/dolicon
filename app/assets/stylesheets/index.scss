@@ -29,6 +29,8 @@
     }
    }
  
+  
+
  .post-top{
     padding: 20px;
     font-size: auto;
@@ -127,7 +129,14 @@
      max-width: fit-content;
      box-shadow: 4px 4px 4px gray;
      border-top: solid 6px #d98e04;
+     min-width: 9.6em;
+     min-height: 18.9em;
     }
+
+    .main-box f{
+      font-weight: bold;
+    }
+
 
     a{
     }

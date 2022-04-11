@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_03_120334) do
+ActiveRecord::Schema.define(version: 2022_04_11_050857) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -71,13 +71,13 @@ ActiveRecord::Schema.define(version: 2022_04_03_120334) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.text "profile"
-    t.integer "User_id"
     t.string "image_name"
     t.string "prefecture"
     t.integer "syurui"
     t.integer "hurigana"
     t.integer "prefecture_id"
     t.text "name"
+    t.integer "user_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
