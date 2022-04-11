@@ -57,14 +57,14 @@
    }
  
    .left-container d{
-     background-color: green;
      max-width: 210px;
      text-align: start;
      width: 100%;
+     
    }
 
    .left-container e{
-   }
+  }
 
    .likes_buttons{
      text-align: end;     
@@ -107,6 +107,7 @@
     position: absolute; /*自由に配置する指定*/
     bottom: 0; /*下寄せの指定*/
     margin: 0;
+    
    }
 
    .kensaku {
@@ -131,9 +132,7 @@
      min-height: 18.9em;
     }
 
-    .main-box f{
-      font-weight: bold;
-    }
+
 
 
 

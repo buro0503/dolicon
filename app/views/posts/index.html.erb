@@ -19,9 +19,9 @@
 
 <div class="kensaku">
 <h3>投稿を検索</h3>
-<%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
-  <nobr><%= text_field_tag :search1 %>
-  <%= submit_tag '検索する'  %>
+<nobr><%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+  <%= text_field_tag :search1 %>
+  <%= submit_tag '検索する'  %></nobr>
 <% end %>
 </div>
 
