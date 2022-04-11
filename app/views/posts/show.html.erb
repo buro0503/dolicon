@@ -10,48 +10,41 @@
 </head>
 <body>
 <%= yield %>
-<div class="mainbox">
 <div class="title">
 <% provide(:title, '詳細情報') %>
 <h1>詳細情報</h1>
 </div>
 
-<div class="post">
+<div class="mainbox">
+<div class="post_show">
   <div class="post_shousai">
+    <% if user_signed_in? %>
+      <h2><p><%= link_to @post.name2, user_path(@post.user_id) %></p></h2>
+    <% else %>
+      <h2><p><%= @post.name2 %></p></h2>
+    <% end %>
+    <h2><p><%= @post.name1 %></p></h2>
+    <p>公演日 <%= @post.start_time.strftime("%-m/%-d(%a.)") %></p>
+    <p>開演時間 <%= @post.start_time.strftime("%-H:%M") %></p>
+    
     <% if @post.image.present? %>
-      <p>実施日 <%= @post.start_time.strftime("%-m月%-d日") %></p>
-      <p>開演時間 <%= @post.start_time.strftime("%H:%M") %></p>
-      <% if user_signed_in? %>
-       <h2><p><%= link_to @post.name2, user_path(@post.user_id) %></p></h2>
-      <% else %>
-       <h2><p><%= @post.name2 %></p></h2>
-      <% end %>
-      <h2><p><%= @post.name1 %></p></h2>
-      <p><%= @post.detail %></p>
+
+      <p><%= safe_join(@post.detail.split("\n"),tag(:br)) %></p>
 
       <div class="gazou">
-      <%= link_to @post.image_url, "data-lightbox" => @post.image_url do %>
-        <p><%= image_tag @post.image_url, size: "210x297" if @post.image? %><p>
-      <% end %>
-
-      <% if  @post.image2.present? %>
-        <%= link_to @post.image2_url, "data-lightbox" => @post.image2_url do %>
-          <p><%= image_tag @post.image2_url, size: "210x297" if @post.image? %><p> 
+        <%= link_to @post.image_url, "data-lightbox" => @post.image_url do %>
+          <p><%= image_tag @post.image_url, size: "210x297" if @post.image? %><p>
         <% end %>
-      <% end %>
+        <% if  @post.image2.present? %>
+          <%= link_to @post.image2_url, "data-lightbox" => @post.image2_url do %>
+            <p><%= image_tag @post.image2_url, size: "210x297" if @post.image? %><p> 
+          <% end %>
+        <% end %>
       </div>
     <% else %>
-      <% if user_signed_in? %>
-       <h2><p><%= link_to @post.name2, user_path(@post.user_id) %></p></h2>
-      <% else %>
-       <h2><p><%= @post.name2 %></p></h2>
-      <% end %>
-      <h2><p><%= @post.name1 %></p></h2>
-      <p><%= @post.detail %></p>
-      <p><%= @post.prefecture %></p>
-      <p><%= @post.site %></p>
-      <p>公演日 <%= @post.start_time.strftime("%-m月%-d日") %></p>
-      <p>開演時間 <%= @post.start_time.strftime("%H時%-M分") %></p>
+      <p><%= safe_join(@post.detail.split("\n"),tag(:br)) %></p>
+      <p>【<%= @post.prefecture %>】</p>
+      <p> <%= @post.music %> </p>     
     <% end %>
 
     <% if user_signed_in? && current_user.id == @post.user_id %>  
@@ -111,14 +104,17 @@
 </div>
 
 
+<% if @comments.present? %>
 <div class="comment-wrapper">
   <p>コメント一覧</p>
   <% @comments.each do |c| %>
     <div>
-      <%= c.content %>
+      <p><%= c.created_at.strftime("%-m月%-d日") %></p>
+      <p><%= c.content %><p>
     </div>
   <% end %>
 </div>
+<% end %>
 </div>
 
   

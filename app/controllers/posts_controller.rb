@@ -62,7 +62,7 @@ end
  def update
     post = Post.find(params[:id])
     if post.update(post_params)
-      redirect_to :action => "index", :id => post.id
+      redirect_to :action => "show", :id => post.id
     else
       redirect_to :action => "new"
     end

@@ -30,19 +30,19 @@
   <div class="field">
   <%= f.label :自由記述 %>
   <c>任意</c>
-  <br><%= f.text_field :detail %>
+  <br><%= f.text_area :detail %>
   </div>
 
   <div class="field">
     <%= f.label :チラシ画像（表） %>
     <c>任意</c>
-    <br><%= f.file_field :image %>
+    <br><%= f.file_field :image ,accept:'image/jpeg,image/png,image/jfif' %>
   </div>
 
   <div class="field">
     <%= f.label :チラシ画像（裏） %>
     <c>任意</c>
-    <br><%= f.file_field :image2 %>
+    <br><%= f.file_field :image2 ,accept:'image/jpeg,image/png,image/jfif' %>
   </div>
 
   <div class="field">
@@ -59,7 +59,7 @@
     <br><%= f.text_field :address %>
   </div>
   <div class="actions">
-    <%= f.submit "投稿する" %>
+    <%= f.submit "投稿する", type: 'button', onclick: 'submit();' %>
   </div>
  <% end %>
 </div>

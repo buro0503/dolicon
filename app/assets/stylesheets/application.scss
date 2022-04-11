@@ -82,15 +82,7 @@
  }
 
  .header-list a:hover{ //上乗ったとき
-   font-size: 0.9em;
-   opacity: 0.7;//薄くなる
-   filter: alpha(opacity=80);
-   -moz-opacity: 0.8;
-   -webkit-transition: 0.1s ease-in-out;
-   -moz-transition: 0.1s ease-in-out;
-   -o-transition: 0.1s ease-in-out;
-   transition: 0.1s ease-in-out
-   
+   opacity: 0.5;//薄くなる
  }
 
  .header-list c{
@@ -104,6 +96,10 @@
    display: flex;
    align-items: center;
    box-shadow: -15px 0px gold;
+   }
+
+   .header-title :hover{
+    opacity: 0.8;
    }
    
 
@@ -199,6 +195,10 @@ footer {
   header li {
     list-style: none;
     margin-right: 2em;
+  }
+
+  .header-title{
+    font-size: 0.6em;
   }
   
 }

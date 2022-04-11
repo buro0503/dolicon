@@ -1,63 +1,53 @@
-<div class="mainbox">
-
-    <div class="info_each">
+  <div class="field">
     <%= form_for @post do |f| %>
     <%= f.label :演奏会名 %>
-    <%= f.text_field :name1 %>
+    <br><%= f.text_field :name1 %>
   </div>
 
   
-  <div class="info_each">
+  <div class="field">
     <%= f.label :団体名 %>
-    <%= f.text_field :name2 %>
+    <br><%= f.text_field :name2 %>
   </div>
 
-  <div class="info_each">
+  <div class="field">
     <%= f.label :自由記述 %>
-    <%= f.text_field :detail %>
+    <br><%= f.text_area :detail %>
   </div>
 
-  <div class="info_each">
+  <div class="field">
     <%= f.label :曲目 %>
-    <%= f.text_field :music %>
+    <br><%= f.text_area :music %>
   </div>
 
-  <div class="info_each">
+  <div class="field">
     <%= f.label :開催地域（都道府県） %>
-    <%= f.text_field :prefecture %>
+    <br><%= f.text_field :prefecture %>
   </div>
 
-  <div class="info_each">
+  <div class="field">
     <%= f.label :チラシ画像（表） %>
-    <%= f.file_field :image %>
+    <br><%= f.file_field :image %>
   </div>
 
-  <div class="info_each">
+  <div class="field">
     <%= f.label :チラシ画像（裏） %>
-    <%= f.file_field :image2 %>
+    <br><%= f.file_field :image2 %>
   </div>
 
-  <div class="info_each">
+  <div class="field">
     <%= f.label :実施日、開演時間 %>
-    <%= f.datetime_field :start_time %>
+    <br><%= f.datetime_field :start_time %>
   </div>
 
-
-
-
-  <div class="info_each">
   <%= form_with(model: @post) do |f| %>
-  </div>
 
-  <div class="info_each">
+  <div class="field">
     <%= f.label :開催場所 %>
-    <%= f.text_field :address %>
+    <br><%= f.text_field :address %>
   </div>
 
-  <div class="info_each">
     <%= f.submit "編集する" %>
-  </div>
  <% end %>
  <% end %>
 
- </div>

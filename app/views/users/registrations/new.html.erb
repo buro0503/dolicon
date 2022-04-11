@@ -17,13 +17,11 @@
 
   <div class="field">
     <%= f.label :利用者 %><br>
-    <%= f.label :一般  %>
-    <%= f.radio_button :syurui, 0 %>
-    <%= f.label :学生団体  %>
-    <%= f.radio_button :syurui, 1 %>
-    <%= f.label :社会人団体  %>
-    <%= f.radio_button :syurui, 2 %>
+    <%= f.radio_button :syurui, 0 %>一般
+    <%= f.radio_button :syurui, 1 %>学生団体
+    <%= f.radio_button :syurui, 2 %>社会人団体
   </div>
+
 
   <div class="field">
    <%= f.label :活動県（団体のみ） %>
