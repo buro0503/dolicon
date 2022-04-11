@@ -101,7 +101,7 @@ end
 
 
 
- before_action :authenticate_user!, except: [:index, :index_likes, :index_new, :calendar]
+ before_action :authenticate_user!, except: [:index, :index_likes, :index_new, :show, :calendar]
 
  private
  def post_params

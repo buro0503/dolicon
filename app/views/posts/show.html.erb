@@ -19,7 +19,11 @@
 <div class="post">
   <div class="post_shousai">
     <% if @post.image.present? %>
-      <h2><p><%= link_to @post.name2, user_path(@post.id) %></p></h2>
+      <% if user_signed_in? %>
+       <h2><p><%= link_to @post.name2, user_path(@post.user_id) %></p></h2>
+      <% else %>
+       <h2><p><%= @post.name2 %></p></h2>
+      <% end %>
       <h2><p><%= @post.name1 %></p></h2>
       <p><%= @post.detail %></p>
 
@@ -35,7 +39,11 @@
       <% end %>
       </div>
     <% else %>
-      <h2><p><%= link_to @post.name2, user_path(@post.id) %></p></h2>
+      <% if user_signed_in? %>
+       <h2><p><%= link_to @post.name2, user_path(@post.user_id) %></p></h2>
+      <% else %>
+       <h2><p><%= @post.name2 %></p></h2>
+      <% end %>
       <h2><p><%= @post.name1 %></p></h2>
       <p><%= @post.detail %></p>
       <p><%= @post.prefecture %></p>

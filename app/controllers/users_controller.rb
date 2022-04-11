@@ -61,8 +61,14 @@ class UsersController < ApplicationController
 
     end    
 
+
+          before_action :authenticate_user!, except: [:index]
+
+
     def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :profile, :syurui, :hurigana, :prefecture, :prefecture_id])
       end
+
+
 
 end
