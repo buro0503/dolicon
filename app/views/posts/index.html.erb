@@ -28,16 +28,16 @@
 
 
 <div class="post-top">
-  <h3>演奏会一覧(実施日が近い順）</h3>
+  <div class="post-narabi">
+    <b><%= link_to "実施日昇順・検索", posts_path %></b>
+    <c><%= link_to "新着", posts_index_new_path %></c>
+    <c><%= link_to "いいね順", posts_index_likes_path %></c>
+  </div>
   <%= page_entries_info @posts %>
 </div>
 
 
-<div class="post-narabi">
-    <b><%= link_to "実施日昇順・検索", posts_path %></b>
-    <c><%= link_to "新着", posts_index_new_path %></c>
-    <c><%= link_to "いいね順", posts_index_likes_path %></c>
-</div>
+
 <div class="post-zentai">
     <% @posts.each do |post| %>
       <div class="posts-container">

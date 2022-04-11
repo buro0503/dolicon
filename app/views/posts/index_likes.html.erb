@@ -19,15 +19,14 @@
 
 
 <div class="post-top">
-  <h3>演奏会一覧(おすすめ順）</h3>
-  <%= page_entries_info @posts %>
-</div>
-
-<div class="post-narabi">
+  <div class="post-narabi">
     <c><%= link_to "実施日昇順・検索", posts_path %></c>
     <c><%= link_to "新着", posts_index_new_path %></c>
     <b><%= link_to "いいね順", posts_index_likes_path %></b>
+  </div>  <%= page_entries_info @posts %>
 </div>
+
+
 <div class="post-zentai">
     <% @rank_posts.each do |post| %>
       <div class="posts-container">
