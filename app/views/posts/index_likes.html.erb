@@ -20,11 +20,9 @@
 
 <div class="post-top">
   <div class="post-narabi">
-  <ul>
-    <li><c><%= button_to "実施日昇順・検索", posts_path, method: :get %></c></li>
-    <li><c><%= button_to "新着", posts_index_new_path, method: :get %></c></li>
-    <li><b><%= button_to "いいね順", posts_index_likes_path, method: :get %></b></li>
-  </ul>
+    <c><%= link_to "実施日昇順・検索", posts_path %></c>
+    <c><%= link_to "新着", posts_index_new_path %></c>
+    <f><%= link_to "いいね順", posts_index_likes_path %></f>
   </div>  <%= page_entries_info @posts %>
 </div>
 
