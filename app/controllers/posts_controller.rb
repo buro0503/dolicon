@@ -2,9 +2,9 @@ class PostsController < ApplicationController
 
  def index
   if params[:search1] == nil
-    @posts= Post.all.page(params[:page]).per(10).where("start_time > ?",Date.today).order(date: :asc)
+    @posts= Post.all.page(params[:page]).per(10).where("start_time > ?",Date.today).order(start_time: :asc)
   elsif params[:search1] == ''
-    @posts= Post.all.page(params[:page]).per(10).where("start_time > ?",Date.today).order(date: :asc)
+    @posts= Post.all.page(params[:page]).per(10).where("start_time > ?",Date.today).order(start_time: :asc)
   else
     @posts = Post.where("music LIKE ? OR name2 LIKE ? ",'%' + params[:search1] + '%','%' + params[:search1] + '%').page(params[:page]).where("start_time > ?",Date.today).per(10)
   end 
