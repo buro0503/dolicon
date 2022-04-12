@@ -60,9 +60,15 @@
 
     <a href="#" class="gotop">トップへ</a>
     
+
+
     <div class=newpost>
-    <%= link_to new_post_path do%>
-      <i class="fa-solid fa-circle-plus"></i>
+    <% if user_signed_in? %>
+      <% if current_user.syurui != 0 %>
+        <%= link_to new_post_path do%>
+         <i class="fa-solid fa-circle-plus"></i>
+        <% end %>
+      <% end %>
     <% end %>
     </div>
     </main>
