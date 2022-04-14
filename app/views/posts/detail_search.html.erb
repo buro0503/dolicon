@@ -1,7 +1,18 @@
+<div class="title">
+<% provide(:title, 'カレンダー') %>
+<h1>カレンダー</h1>
+</div>
+<%= stylesheet_link_tag 'calendar', :media => "all" %>
+
+
+<div class="mainbox">
+
+
 
   <%= month_calendar events: @posts do |date, posts| %>
     <%= date.day %>
     
+
       
     <% posts.each do |t| %>
   
@@ -28,5 +39,5 @@
       </div>
     <% end %>
   <% end %>
-  
+  </div>
   

@@ -189,7 +189,28 @@ footer {
   justify-content: flex-end;
 }
 
+details {
+  border: 1px solid #542D24;
+  border-radius: 4px;
+  padding: .5em .5em 0;
+  background-color: #e7dac3;
 
+}
+
+summary {
+  font-weight: bold;
+  margin: -.5em -.5em 0;
+  padding: .5em;
+}
+
+details[open] {
+  padding: .5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: .5em;
+}
 
 @media (max-width: 2000px){
   header li {

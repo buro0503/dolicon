@@ -7,9 +7,7 @@
     margin-top: 2em;
 }
 
-.post_shousai h2{
-    font-size: 1.5em;
-}
+
 
 .post_shousai p{
     font-size: 1em;
@@ -31,3 +29,12 @@
 
 }
 
+@media(max-width:2000px){
+    .post_shousai h2{
+        font-size: 1.5em;
+    }}
+
+@media(max-width:599px){
+    .post_shousai h2{
+        font-size: 1.2em;
+    }}

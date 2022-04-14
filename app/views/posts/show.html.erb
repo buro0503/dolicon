@@ -24,6 +24,7 @@
       <h2><p><%= @post.name2 %></p></h2>
     <% end %>
     <h2><p><%= @post.name1 %></p></h2>
+    <p>【<%= Prefecture.find(@post.prefecture_id).name %>】</p>
     <p>公演日 <%= @post.start_time.strftime("%-m/%-d(%a.)") %></p>
     <p>開演時間 <%= @post.start_time.strftime("%-H:%M") %></p>
     
@@ -43,7 +44,6 @@
       </div>
     <% else %>
       <p><%= safe_join(@post.detail.split("\n"),tag(:br)) %></p>
-      <p>【<%= @post.prefecture %>】</p>
       <p> <%= @post.music %> </p>     
     <% end %>
 
@@ -90,7 +90,6 @@
       width: 70%;}
   </style>
   <div id="map"></div>
-</div>
 
 <div class="comments">
 <% if user_signed_in? %>
@@ -117,8 +116,7 @@
 <% end %>
 </div>
 
-  
-
+</div>
 
 
 

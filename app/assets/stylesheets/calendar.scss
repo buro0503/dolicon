@@ -6,18 +6,20 @@
 .mainbox{
   margin: 2%;
   margin-bottom: 3em;
-  line-height: 2em;
 }
+
+
 
 .checkboxes{
   padding-bottom: 1%;
 }
 
+.like_button{
+  font-size: 1em;
+}
 
 .thekkubokkusutokensaku{
-  background-color: #e7dac3;
-  max-width: fit-content;
-  border: double 5px #542D24;
+
 }
 
   .tyekkubokkusuzentai{
@@ -29,13 +31,13 @@
   }
 
   .kensakubotan{
-    padding-top: 0.5em;
+    padding-top: 0.1em;
   text-align: center;  
   font-size: 0.9em;
   }  
 
   .calendar-heading {
-    padding-top: 20px;
+    padding-top: 0em;
     padding-bottom: 10px;
     font-size: 20px;
     align-items: center;
@@ -63,17 +65,7 @@
     background    : #cccccc;     /* 文字色     */
   }
 
-  .liked-btn {
-    width: 20px;
-    font-size: 20px;
-    color: #808080; 
-    }
-   
-   .unliked-btn {
-    width: 20px;
-    font-size: 20px;
-    color: #e54747;
-    }
+
 
     .table.table.table-striped{
       background-color: white;
@@ -84,11 +76,20 @@
 
     }
 
+  .liked-btn {
+
+    color: #808080; 
+    }
+   
+   .unliked-btn {
+    color: #e54747;
+    }
+
 
 
 @media(max-width:2000px){
   .thekkubokkusutokensaku{
-  margin: 3%;
+  margin: 1%;
 }
 
 .tyekkubokkusuzentai{
@@ -100,7 +101,6 @@
 }
 
 .kensakubotan{
-  padding-bottom: 1em;
 }
 }
 

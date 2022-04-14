@@ -8,7 +8,6 @@
       </div>
 
 
-<div class="mainbox" >
   <div class="contents">
       <p>名前 : <%= @user.name %></p>
       <p>メールアドレス : <%= @user.email %></p>
@@ -29,7 +28,7 @@
       </div>
     <% end %>
 
-
+<div class="mainbox" >
   <div class="calendar">
     <% if current_user.id == @user.id %>
       <p><%= month_calendar events: @user.liked_posts do |date, t| %></p>
@@ -46,20 +45,19 @@
         <% end %>
     <% end %>
   </div>
+</div>
+
 
 
   <% if current_user.id != @user.id %>
-   <div class="user_post">
+    <div class="user_post">
      <h2>ユーザーの投稿一覧</h2>
       <% @user.posts.order("start_time DESC").each do |t| %>
-     <div class="user_post_each">
+      <div class="user_post_each">
         <br><%= t.start_time.strftime("%Y年%-m月%-d日") %>
         <br><%= t.name1 %> 
         <%= link_to "詳細へ", post_path(t.id) %>
-     </div>
+      </div>
       <% end %>
+    </div>
   <% end %>
-
-
-  </div>
-</div>
