@@ -49,7 +49,6 @@
 
 
 
-  <% if current_user.id != @user.id %>
     <div class="user_post">
      <h2>ユーザーの投稿一覧</h2>
       <% @user.posts.order("start_time DESC").each do |t| %>
@@ -60,4 +59,3 @@
       </div>
       <% end %>
     </div>
-  <% end %>
