@@ -240,7 +240,7 @@
     <div class="calendar">
       <% posts.each do |t| %>
         <div>
-         【<%= Prefecture.find(t.prefecture_id).name %>】
+         <%= Prefecture.find(t.prefecture_id).name %>
          <br><%= link_to t.name2, post_path(t.id) %>
         
          <div class="like_button">
