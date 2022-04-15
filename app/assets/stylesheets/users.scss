@@ -4,6 +4,8 @@
 
 
 
+
+
 .dantaiitiran{
     margin-top: 0.2em;
 }
@@ -13,9 +15,8 @@ details {
     border-radius: 4px;
     padding: .5em .5em 0;
     background-color: #e7dac3;
-    max-width: fit-content;
     align-items: center;
-  
+    min-width: 64%;
   }
   
   summary {
@@ -44,20 +45,20 @@ details {
     }
 
   .dantaikensaku{
+      line-height: 1.5em;
       background-color: #F2F2F2;
       box-shadow: .5px .5px 4px 1px rgba(128, 128, 128, 0.5);
       border-radius: 40px;
       padding-top: 2.2em;
+      padding-bottom: 0.5em;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
       padding-left: 1em;
       padding-right: 1em;
       text-align: center;
       position: relative;
-	  z-index: 0
-      
-      
+	  z-index: 0      
   }
 
   .dantaikensaku::before{
@@ -98,7 +99,7 @@ details {
     }
 
   .mokuzi{
-      margin-left: 8.5em;
+      margin-left: 8.9em;
   }
 
 
@@ -130,7 +131,6 @@ details {
     }
 
     .users li{
-
     }
 
 

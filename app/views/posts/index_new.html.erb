@@ -42,24 +42,22 @@
             <% end %>
             <d><p><%= link_to post.image_url, "data-lightbox" => post.image_url do %>
             <%= image_tag post.image_url, size: "189x267" if post.image? %></p></d>
-            <% end %>
-            
-            <div>
-            <div class="likes_buttons" id="likes_buttons_<%= post.id %>">
-             <%= render partial: 'likes/like', locals: {post: post} %>
-            </div>
-            <p><%= link_to "詳細へ", post_path(post.id) %></p>
-            </div>
-
-            </div>
-
-
+            <% end %>            
           </div>
-        </div>  
-  
 
-      </div>
-    <% end %>
+          <div class="likes_buttons" id="likes_buttons_<%= post.id %>">
+          <e><%= render partial: 'likes/like', locals: {post: post} %></e>
+        </div>
+        <div class="index_shousai">
+          <e><p><%= link_to "詳細へ", post_path(post.id) %></p></e>
+        </div>
+
+    </div>
+  </div>  
+
+
+</div>
+<% end %>
   </div>
 
 

@@ -8,7 +8,15 @@
   margin-bottom: 3em;
 }
 
-
+details {
+  border: 1px solid #542D24;
+  border-radius: 4px;
+  padding: .5em .5em 0;
+  background-color: #e7dac3;
+  max-width: fit-content;
+  align-items: center;
+  min-width: 96.3%;
+}
 
 .checkboxes{
   padding-bottom: 1%;
@@ -37,7 +45,7 @@
   }  
 
   .calendar-heading {
-    padding-top: 0em;
+    padding-top: 1em;
     padding-bottom: 10px;
     font-size: 20px;
     align-items: center;
