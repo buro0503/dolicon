@@ -33,9 +33,9 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = 'http://assets.example.com'
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_caching = true
   config.action_mailer.delivery_method = :smtp
-  host = 'https://dolicon.herokuapp.com/'
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = { host: 'https://dolicon.herokuapp.com/', port: 3000 }
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
     :address => "smtp.gmail.com",
