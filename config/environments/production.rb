@@ -32,19 +32,7 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = 'http://assets.example.com'
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.perform_caching = true
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'https://dolicon.herokuapp.com/', port: 3000 }
-  config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => 'smtp.gmail.com',
-    :user_name => ENV["GOOGLE_MAIL_ADDRESS"],
-    :password => ENV["GOOGLE_MAILER_PASSWORD"],
-    :authentication => 'login'
-  }
+  host = 'localhost:3000'
   Rails.application.routes.default_url_options[:host] = host
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -79,7 +67,7 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-
+  # config.action_mailer.raise_delivery_errors = false
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
