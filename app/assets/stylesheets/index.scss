@@ -1,3 +1,130 @@
+.kensaku h3{
+  margin: 1em;
+}
+
+.post-top{
+ padding: 20px;
+ font-size: auto;
+ text-align: center;
+}
+
+.post-zentai{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap; //大事
+text-align: center;
+width: 100%;
+align-items: stretch;
+}
+
+
+
+.posts-container {
+  margin: 1em auto;
+}
+
+.posts-container p {
+
+}
+
+.left-container d{
+  max-width: 210px;
+  text-align: start;
+  width: 100%;
+  
+}
+
+.left-container e{
+}
+
+.likes_buttons{
+  text-align: end;     
+}
+
+.post-narabi{
+ list-style-type: disc;
+ margin-top: 2em;
+ margin-bottom: 2em;
+ display: flex;
+ justify-content: center;
+ }
+
+ .post-narabi a{
+   color: black;
+   text-decoration: none;
+   display: inline-block;
+   border: 2px solid #f2ad2c;
+   border-radius: 7px;
+   padding: 1em 1em 1em 1em;
+ }
+
+
+ .post-narabi f{
+   background-color: #f2ad2c;
+   font-weight: 100;
+   border-radius: 7px;
+   transition: .4s;
+   max-width: fit-content;
+   display: inline-block;
+ }
+ .post-narabi c{
+   transition: .4s;
+   display: inline-block;
+   max-width: fit-content;
+ }
+
+ .post-narabi c:hover{
+   background-color: rgba(217, 142, 4, 0.3);
+   border-radius: 7px;
+ }
+
+
+
+.right-container p{
+ position: absolute; /*自由に配置する指定*/
+ bottom: 0; /*下寄せの指定*/
+ margin: 0;
+ 
+}
+
+.kensaku {
+  padding-top: 0em;
+  width: 200px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.main-box {
+  font-size: 1.2em;
+  line-height: 120%;
+  background-color: #F2F2F2;
+  margin: 0px 0;
+  padding: 1em;
+  justify-content: space-between;
+  max-width: fit-content;
+  box-shadow: 4px 4px 4px gray;
+  border-top: solid 6px #d98e04;
+  min-width: 9.6em;
+ }
+
+
+
+
+
+
+ a{
+ }
+
+
+.time {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+
+
 @media(max-width:599px){
   .zyunban h1,li{
     margin: 1em;
@@ -29,128 +156,3 @@
     }
    }
 
-   .kensaku h3{
-     margin: 1em;
-   }
-
- .post-top{
-    padding: 20px;
-    font-size: auto;
-    text-align: center;
- }
- 
- .post-zentai{
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap; //大事
-   text-align: center;
-   width: 100%;
-   align-items: stretch;
- }
-
-
- 
- .posts-container {
-     margin: 1em auto;
-   }
- 
-   .posts-container p {
-
-   }
- 
-   .left-container d{
-     max-width: 210px;
-     text-align: start;
-     width: 100%;
-     
-   }
-
-   .left-container e{
-  }
-
-   .likes_buttons{
-     text-align: end;     
-   }
- 
-  .post-narabi{
-    list-style-type: disc;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    display: flex;
-    justify-content: center;
-    }
-
-    .post-narabi a{
-      color: black;
-      text-decoration: none;
-      display: inline-block;
-      border: 2px solid #f2ad2c;
-      border-radius: 7px;
-      padding: 1em 1em 1em 1em;
-    }
-
-
-    .post-narabi f{
-      background-color: #f2ad2c;
-      font-weight: 100;
-      border-radius: 7px;
-      transition: .4s;
-      max-width: fit-content;
-      display: inline-block;
-    }
-    .post-narabi c{
-      transition: .4s;
-      display: inline-block;
-      max-width: fit-content;
-    }
-
-    .post-narabi c:hover{
-      background-color: rgba(217, 142, 4, 0.3);
-      border-radius: 7px;
-    }
-
-
-   
-   .right-container p{
-    position: absolute; /*自由に配置する指定*/
-    bottom: 0; /*下寄せの指定*/
-    margin: 0;
-    
-   }
-
-   .kensaku {
-     padding-top: 0em;
-     width: 200px;
-     margin: 30px auto;
-     text-align: center;
-   }
- 
-   .main-box {
-     font-size: 1.2em;
-     line-height: 120%;
-     background-color: #F2F2F2;
-     margin: 0px 0;
-     padding: 1em;
-     justify-content: space-between;
-     max-width: fit-content;
-     box-shadow: 4px 4px 4px gray;
-     border-top: solid 6px #d98e04;
-     min-width: 9.6em;
-    }
-
-
-
-
-
-
-    a{
-    }
-
-
-   .time {
-     display: flex;
-     justify-content: flex-end;
-   }
- 
-
-   

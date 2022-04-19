@@ -87,3 +87,4 @@ end
 
 
 gem 'devise-i18n'
+gem 'bootstrap', '~> 4.3.1'
