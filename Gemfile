@@ -89,3 +89,5 @@ end
 gem 'devise-i18n'
 gem 'bootstrap', '~> 4.3.1'
 gem 'meta-tags'
+gem 'sitemap_generator'
+gem 'whenever', require: false
