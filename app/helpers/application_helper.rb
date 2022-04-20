@@ -1,11 +1,11 @@
 module ApplicationHelper
     def default_meta_tags
         {
-          site: 'ほげほげのサイト',
+          site: 'マンドリン演奏会情報',
           reverse: true,
           separator: '|',
           og: defalut_og,
-          twitter: default_twitter_card
+          #twitter: default_twitter_card
         }
       end
       
@@ -13,17 +13,17 @@ module ApplicationHelper
       
       def defalut_og
         {
-          title: :full_title,          # :full_title とすると、サイトに表示される <title> と全く同じものを表示できる
-          description: :description,   # 上に同じ
-          url: request.url,
+          title: :'マンドリン演奏会情報１',          # :full_title とすると、サイトに表示される <title> と全く同じものを表示できる
+          description: :'description',   # 上に同じ
+          #url: request.url,
           image: 'https://example.com/hoge.png'
         }
       end
       
-      def default_twitter_card
-        {
-          card: 'summary_large_image', # または summary
-          site: '@hogehoge'            # twitter ID
-        }
+      #def default_twitter_card
+        #{
+          #card: 'summary_large_image', # または summary
+          #site: '@hogehoge'            # twitter ID
+        #}
       end
 end
