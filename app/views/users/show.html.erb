@@ -35,7 +35,7 @@
         <%= date.day %>
         <% t.each do |t| %>
           <div>
-           <%= link_to t.name2, post_path(t.id) %>
+           <%= link_to User.find(t.user_id).ryakusyou, post_path(t.id) %>
           </div>
         <% end %>
       <% end %>

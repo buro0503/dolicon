@@ -1,9 +1,94 @@
-<h1>java</h1>
-<textarea name="" id="hoge" cols="30" rows="10">みんな「かいぴしゅきしゅき～」</textarea>
-<p><button onclick="clickButton()">クリックしてね</button></p>
-<script>
-function clickButton()(
-    const hoge = document.getElementById("hoge");
-    alart(hoge.value);
-)
-</script>
+<html>
+  <head>
+    <title>JavaScriptを学ぼう</title>
+      <meta charset="utf-8">
+      <script type="text/javascript">
+      <!--
+      function changeDisplay() {
+          if ( document.Form1["number"][3].checked ) { // 「その他」のラジオボタンをクリックしたとき
+              document . Form1["inputNumber"] . disabled = false; // 「その他」のラジオボタンの横のテキスト入力欄を有効化
+              document . getElementById('input-number') . style . display = "inline"; // 「その他」のラジオボタンの横のテキスト入力欄を表示
+          } else { // 「その他」のラジオボタン以外をクリックしたとき
+              document . Form1["inputNumber"] . disabled = true; // 「その他」のラジオボタンの横のテキスト入力欄を無効化
+              document . getElementById('input-number') . style . display = "none"; // 「その他」のラジオボタンの横のテキスト入力欄を非表示
+          }
+      }
+      window.onload = changeDisplay; // ページを表示したとき、changeDisplay() を呼び出す
+      // -->
+      </script>
+  </head>
+  <body>
+  <form name="Form1" method="post" action="#">
+  <p>パソコン所有台数</p>
+  <input type="radio" name="number" value="持っていない" id="radio-0" checked onClick="changeDisplay()"><label for="radio-0"> 持っていない</label>&nbsp;
+  <input type="radio" name="number" value="1台" id="radio-1" onClick="changeDisplay()"><label for="radio-1"> 1台</label>&nbsp;
+  <input type="radio" name="number" value="2台" id="radio-2" onClick="changeDisplay()"><label for="radio-2"> 2台</label>&nbsp;
+  <input type="radio" name="number" value="その他" id="radio-other" onClick="changeDisplay()"><label for="radio-other"> その他</label>&nbsp;
+  <p id="input-number" style="display:none;"><input type="text" name="inputNumber" size="2">台</p>
+  </form>
+  </body>
+</html>
+
+<%= stylesheet_link_tag 'login', :media => "all" %>
+
+<div class="mainbox_login">
+
+<div class="login_title">
+<h2>新規登録</h2>
+</div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :名前・正式団体名（一般利用の場合は公開されません） %><br>
+    <%= f.text_field :name, autofocus: true,size: 30  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :略称 %><br />
+    <%= f.text_field :ryakusyou,size: 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :利用者 %><br>
+    <%= f.radio_button :syurui, 0 %>一般
+    <%= f.radio_button :syurui, 1 %>学生団体
+    <%= f.radio_button :syurui, 2 %>社会人団体
+  </div>
+
+
+  <div class="field">
+   <%= f.label :活動県（団体のみ） %>
+   <br><%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",size: 30  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> 文字以上)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password",size: 30  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード（再入力） %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",size: 30  %>
+  </div>
+
+<div class="button_login">
+  <div class="actions">
+    <%= f.submit "新規登録" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+</div>
+</div>
+
+

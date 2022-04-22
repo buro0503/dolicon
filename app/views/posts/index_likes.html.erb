@@ -36,9 +36,9 @@
             <d><p><%= post.start_time.strftime("%-m月%-d日") %></p></d>
             <d><p>【<%= Prefecture.find(post.prefecture_id).name %>】
             <% if user_signed_in? %>
-            <e><%= link_to post.name2, user_path(post.user_id) %></p></d></e>
+            <e><%= link_to User.find(post.user_id).name, user_path(post.user_id) %></p></d></e>
             <% else %>
-            <e><%= post.name2 %></p></d></e>
+            <e><%= User.find(post.user_id).name %></p></d></e>
             <% end %>
             <d><p><%= link_to post.image_url, "data-lightbox" => post.image_url do %>
             <%= image_tag post.image_url, size: "189x267" if post.image? %></p></d>

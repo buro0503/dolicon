@@ -19,7 +19,7 @@
   
       <div>
           <%= Prefecture.find(t.prefecture_id).name %>
-          <%= link_to t.name2, post_path(t.id) %>
+          <br><%= link_to User.find(t.user_id).ryakusyou, post_path(t.id) %>
           
           <% if user_signed_in? %>
             <% if current_user.already_liked?(t) %>

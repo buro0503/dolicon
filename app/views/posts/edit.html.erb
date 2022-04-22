@@ -3,23 +3,17 @@
   <div class="field">
     <%= form_for @post do |f| %>
     <%= f.label :演奏会名 %>
-    <br><%= f.text_field :name1 %>
-  </div>
-
-  
-  <div class="field">
-    <%= f.label :団体名 %>
-    <br><%= f.text_field :name2 %>
+    <br><%= f.text_field :name1,size: 30 %>
   </div>
 
   <div class="field">
     <%= f.label :自由記述 %>
-    <br><%= f.text_area :detail %>
+    <br><%= f.text_area :detail, size: "30x7" %>
   </div>
 
   <div class="field">
     <%= f.label :曲目 %>
-    <br><%= f.text_area :music %>
+    <br><%= f.text_area :music, size: "30x7" %>
   </div>
 
   <div class="field">
@@ -46,7 +40,7 @@
 
   <div class="field">
     <%= f.label :開催場所 %>
-    <br><%= f.text_field :address %>
+    <br><%= f.text_field :address,size: 30 %>
   </div>
 
   <div class="submit">

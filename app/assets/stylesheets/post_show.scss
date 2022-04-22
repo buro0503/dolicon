@@ -1,5 +1,6 @@
 .post_show{
-    margin-left: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .post_shousai{
@@ -21,12 +22,21 @@
 
 }
 
-.comments{
+.gazou{
+    max-width: fit-content;
+}
 
+#map{
+    padding-right: 30%;
+    margin: 1em 0em 1em 0em;
+}
+
+.comments{
+margin: 1em 0em 1em 0em;
 }
 
 .comment-wrapper{
-
+line-height: 1.5em;
 }
 
 @media(max-width:2000px){

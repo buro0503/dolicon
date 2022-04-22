@@ -14,9 +14,11 @@
       <div class="tyekkubokkusuzentai"> 
         <h4> 北海道・東北地方 </h4>
         <div class="checkboxes">
+
+
         <% if @post_1.present? %>
          <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 1, ''%>
-         <%= '北海道　'%>
+         <%= Prefecture.find(prefecture_id=1).name %>
         <% end %>
     
          <% if @post_2.present? %>
@@ -241,7 +243,8 @@
       <% posts.each do |t| %>
         <div>
           <%= Prefecture.find(t.prefecture_id).name %>
-         <br><%= link_to t.name2, post_path(t.id) %>
+         <br><%= link_to User.find(t.user_id).ryakusyou, post_path(t.id) %>
+         
         
          <div class="like_button">
             <% if user_signed_in? %>

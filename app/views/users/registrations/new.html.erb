@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag 'login', :media => "all" %>
 
+<body>
 <div class="mainbox_login">
 
 <div class="login_title">
@@ -11,8 +12,13 @@
 
   
   <div class="field">
-    <%= f.label :名前（一般利用の場合は公開されません） %><br>
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.label :名前・正式団体名（一般利用の場合は公開されません） %><br>
+    <%= f.text_field :name, autofocus: true,size: 30  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :略称 %><br />
+    <%= f.text_field :ryakusyou,size: 30 %>
   </div>
 
   <div class="field">
@@ -30,7 +36,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",size: 30  %>
   </div>
 
   <div class="field">
@@ -38,12 +44,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password",size: 30  %>
   </div>
 
   <div class="field">
     <%= f.label :パスワード（再入力） %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",size: 30  %>
   </div>
 
 <div class="button_login">
@@ -55,3 +61,4 @@
 <%= render "users/shared/links" %>
 </div>
 </div>
+</body>

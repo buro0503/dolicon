@@ -12,8 +12,7 @@ class Post < ApplicationRecord
 after_validation :geocode, if: :address_changed?
 validates :start_time, presence: true
 validates :name1, presence: true
-validates :name2, presence: true
 validates :prefecture_id, presence: true
 validates :start_time, presence: true
-validates :name2, presence: true
+
 end

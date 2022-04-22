@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag 'users', :media => "all" %>
 
+
 <div class="dantaiitiran">
 
   <div class="title">
@@ -73,8 +74,8 @@
     <% if @users_46.present? %><li><%= link_to "鹿児島県", users_path(anchor: "46") %><% end %>
     <% if @users_47.present? %><li><%= link_to "沖縄県", users_path(anchor: "47") %><% end %>
     <ul>
-    </details>
-  </div>
+  </details>
+</div>
 
 
 
@@ -83,7 +84,11 @@
   <ul class="users">
     <% @users_1.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -93,7 +98,11 @@
   <ul class="users">
     <% @users_2.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -103,7 +112,11 @@
   <ul class="users">
     <% @users_3.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -113,7 +126,11 @@
   <ul class="users">
     <% @users_4.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -123,7 +140,11 @@
   <ul class="users">
     <% @users_5.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       
       </ul>
     <% end %>   </div>
@@ -134,7 +155,11 @@
   <ul class="users">
     <% @users_6.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       
       </ul>
     <% end %>   </div>
@@ -145,7 +170,11 @@
   <ul class="users">
     <% @users_7.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -155,7 +184,11 @@
   <ul class="users">
     <% @users_8.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -165,7 +198,11 @@
   <ul class="users">
     <% @users_9.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -175,7 +212,11 @@
   <ul class="users">
     <% @users_10.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -185,7 +226,11 @@
   <ul class="users">
     <% @users_11.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -195,7 +240,11 @@
   <ul class="users">
     <% @users_12.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -205,7 +254,11 @@
   <ul class="users">
     <% @users_13.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -215,7 +268,11 @@
   <ul class="users">
     <% @users_14.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -225,7 +282,11 @@
   <ul class="users">
     <% @users_15.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -235,7 +296,11 @@
   <ul class="users">
     <% @users_16.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -245,7 +310,11 @@
   <ul class="users">
     <% @users_17.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -255,7 +324,11 @@
   <ul class="users">
     <% @users_18.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -265,7 +338,11 @@
   <ul class="users">
     <% @users_19.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -275,7 +352,11 @@
   <ul class="users">
     <% @users_20.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -285,7 +366,11 @@
   <ul class="users">
     <% @users_21.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -295,7 +380,11 @@
   <ul class="users">
     <% @users_22.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -305,7 +394,11 @@
   <ul class="users">
     <% @users_23.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -315,7 +408,11 @@
   <ul class="users">
     <% @users_24.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -325,7 +422,11 @@
   <ul class="users">
     <% @users_25.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -335,7 +436,11 @@
   <ul class="users">
     <% @users_26.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -345,7 +450,11 @@
   <ul class="users">
     <% @users_27.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -355,7 +464,11 @@
   <ul class="users">
     <% @users_28.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -365,7 +478,11 @@
   <ul class="users">
     <% @users_29.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -375,7 +492,11 @@
   <ul class="users">
     <% @users_30.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -385,7 +506,11 @@
   <ul class="users">
     <% @users_31.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -395,7 +520,11 @@
   <ul class="users">
     <% @users_32.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -405,7 +534,11 @@
   <ul class="users">
     <% @users_33.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -415,7 +548,11 @@
   <ul class="users">
     <% @users_34.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -425,7 +562,11 @@
   <ul class="users">
     <% @users_35.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -435,7 +576,11 @@
   <ul class="users">
     <% @users_36.each do |user| %>
       <ul>
-        <li>  <%= link_to user.name, user %> 
+      <% if user_signed_in? %>
+        <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %> 
       </ul>
     <% end %>   </div>
   </ul>
@@ -445,7 +590,11 @@
   <ul class="users">
     <% @users_37.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -455,7 +604,11 @@
   <ul class="users">
     <% @users_38.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -465,7 +618,11 @@
   <ul class="users">
     <% @users_39.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -475,7 +632,11 @@
   <ul class="users">
     <% @users_40.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -485,7 +646,11 @@
   <ul class="users">
     <% @users_41.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -495,7 +660,11 @@
   <ul class="users">
     <% @users_42.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -505,7 +674,11 @@
   <ul class="users">
     <% @users_43.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -515,7 +688,11 @@
   <ul class="users">
     <% @users_44.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -525,7 +702,11 @@
   <ul class="users">
     <% @users_45.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -535,7 +716,11 @@
   <ul class="users">
     <% @users_46.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>
@@ -545,7 +730,11 @@
   <ul class="users">
     <% @users_47.each do |user| %>
       <ul>
+      <% if user_signed_in? %>
         <li>  <%= link_to user.name, user %>
+      <% else %>
+        <li> <%= user.name %>
+      <% end %>
       </ul>
     <% end %>   </div>
   </ul>

@@ -4,21 +4,15 @@
 <h3>新規投稿</h3>
 <%= form_for @post do |f| %>
   <div class="field">
-    <%= f.label :演奏会名 %>
+    <%= f.label :演奏会名（団体名は含めない） %>
     <b>必須</b>
-    <br><%= f.text_field :name1 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :団体名 %>
-    <b>必須</b>
-    <br><%= f.text_field :name2 %>
+    <br><%= f.text_field :name1,size: 30 %>
   </div>
 
   <div class="field">
     <%= f.label :曲目 %>
     <c>任意</c>
-    <br><%= f.text_area :music %>
+    <br><%= f.text_area :music, size: "30x7" %>
   </div>
 
   <div class="field">
@@ -30,7 +24,7 @@
   <div class="field">
   <%= f.label :自由記述 %>
   <c>任意</c>
-  <br><%= f.text_area :detail %>
+  <br><%= f.text_area :detail, size: "30x7" %>
   </div>
 
   <div class="field">

@@ -3,7 +3,7 @@
 }
 
 .post-top{
- padding: 20px;
+ padding: 0.2em;
  font-size: auto;
  text-align: center;
 }
@@ -44,7 +44,7 @@ align-items: stretch;
 .post-narabi{
  list-style-type: disc;
  margin-top: 2em;
- margin-bottom: 2em;
+ margin-bottom: 1em;
  display: flex;
  justify-content: center;
  }
@@ -90,7 +90,8 @@ align-items: stretch;
 .kensaku {
   padding-top: 0em;
   width: 200px;
-  margin: 30px auto;
+  margin: 1em auto;
+  margin-bottom: 0em;
   text-align: center;
 }
 

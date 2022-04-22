@@ -19,9 +19,9 @@
 <div class="post_show">
   <div class="post_shousai">
     <% if user_signed_in? %>
-      <h2><p><%= link_to @post.name2, user_path(@post.user_id) %></p></h2>
+      <h2><p><%= link_to User.find(@post.user_id).name, user_path(@post.user_id) %></p></h2>
     <% else %>
-      <h2><p><%= @post.name2 %></p></h2>
+      <h2><p><%= User.find(@post.user_id).name %></p></h2>
     <% end %>
     <h2><p><%= @post.name1 %></p></h2>
     <p>【<%= Prefecture.find(@post.prefecture_id).name %>】</p>
@@ -91,16 +91,18 @@
   </style>
   <div id="map"></div>
 
+<% if current_user.id != @post.user_id %>
 <div class="comments">
 <% if user_signed_in? %>
 <%= form_with(model: [@post, @comment], local: true) do |f| %>
   <%= f.text_area :content %>
-  <%= button_tag type: "submit" do %>
+  <br><%= button_tag type: "submit" do %>
     <i class="far fa-comments"></i> コメントする
   <% end %>
 <% end %>
 <% end %>
 </div>
+<% end %>
 
 
 <% if @comments.present? %>
