@@ -75,21 +75,37 @@
    text-decoration: none; 
  }
 
- .header-list{
+ .sign_out{
    margin-right: 1em;
  }
 
- .header-list i{
+ .sign_out i{
    padding: 0em 0.7em 0em 0.7em;
  }
 
- .header-list a:hover{ //上乗ったとき
+ .sign_out a:hover{ //上乗ったとき
    opacity: 0.5;//薄くなる
  }
 
- .header-list c{
+ .sign_out c{
    font-size: 0.01em;
  }
+
+ .sign_in{
+  margin-right: 1em;
+}
+
+.sign_in i{
+  padding: 0em 0.7em 0em 0.7em;
+}
+
+.sign_in a:hover{ //上乗ったとき
+  opacity: 0.5;//薄くなる
+}
+
+.sign_in c{
+  font-size: 0.01em;
+}
  
  .header-title {
    padding-left: 0.7em;
@@ -256,7 +272,7 @@ details[open] summary {
   display: contents;
 }
 
-.header-list{
+.sign_in{
   display: none;
 }
 
