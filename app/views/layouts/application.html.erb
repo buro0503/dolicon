@@ -21,7 +21,7 @@
       </h1>
       </div>
       
-
+      <% if user_signed_in? %>
       <div class="nav">
     
         <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
@@ -63,6 +63,7 @@
           <% end %>
         </nav>
       </div>
+      <% end %>
 
       <div class="header-list">
        <ul>
