@@ -258,6 +258,7 @@ details[open] summary {
     margin-right: 0%;
     font-size: smaller;
   }
+  
   .header-title{
     font-size: 0.6em;
   }
@@ -268,6 +269,12 @@ details[open] summary {
 }
 
 @media(max-width:550px){
+  header li {
+    list-style: none;
+    margin-right: 0%;
+    font-size: smaller;
+  }
+
 .nav{
   display: contents;
 }
