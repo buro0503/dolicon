@@ -21,9 +21,13 @@
 
   <div class="field">
     <%= f.label :利用者 %><br>
-    <%= f.radio_button :syurui, 0 %>一般
-    <%= f.radio_button :syurui, 1 %>学生団体
-    <%= f.radio_button :syurui, 2 %>社会人団体
+    <%= f.radio_button :syurui, 0 %>
+    <label for='user_syurui_0'>一般</label>
+    <%= f.radio_button :syurui, 1 %>
+    <label for='user_syurui_1'>学生団体</label>
+    <%= f.radio_button :syurui, 2 %>
+    <label for='user_syurui_2'>社会人団体</label>
+
   </div>
 
 

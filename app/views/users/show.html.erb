@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag 'user_show', :media => "all" %>
 
 
-    <% if current_user.id == @user.id %>
+    <% if current_user.id == @user.id || current_user.id==1%>
       <div class="title">
        <% provide(:title, 'マイページ') %>
        <h1>マイページ</h1>
