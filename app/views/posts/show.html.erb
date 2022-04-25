@@ -47,7 +47,7 @@
       <p> <%= @post.music %> </p>     
     <% end %>
 
-    <% if user_signed_in? && current_user.id == @post.user_id || current_user.id==1%>  
+    <% if user_signed_in? && current_user.id == @post.user_id || user_signed_in? && current_user.id==1%>  
      <%= link_to "編集する", edit_post_path(@post.id) %>
       <%= button_to "削除する", post_path(@post.id), method: :delete %>
     <% end %>
@@ -91,9 +91,9 @@
   </style>
   <div id="map"></div>
 
+<% if user_signed_in? %>
 <% if current_user.id != @post.user_id %>
 <div class="comments">
-<% if user_signed_in? %>
 <%= form_with(model: [@post, @comment], local: true) do |f| %>
   <%= f.text_area :content %>
   <br><%= button_tag type: "submit" do %>

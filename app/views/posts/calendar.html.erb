@@ -14,215 +14,303 @@
       <div class="tyekkubokkusuzentai"> 
         <h4> 北海道・東北地方 </h4>
         <div class="checkboxes">
-
-
         <% if @post_1.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 1, ''%>
-         <%= Prefecture.find(prefecture_id=1).name %>
-        <% end %>
-    
-         <% if @post_2.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 2, ''%>
-         <%= '青森県　'%>
-         <% end %> 
-         <% if @post_3.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 3, ''%>
-         <%= '岩手県　'%>
-         <% end %>
-         <% if @post_4.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 4, ''%>
-         <%= '宮城県　'%>
-         <% end %>
-         <% if @post_5.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 5, ''%>
-         <%= '秋田県　'%>
-         <% end %>
-         <% if @post_6.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 6, ''%>
-         <%= '山形県　'%>
-         <% end %>
-         <% if @post_7.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 7, ''%>
-         <%= '福島県　'%>
-         <% end %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 1, ''%>
+        <label for='q_prefecture_id_eq_any_1'>
+        <%= Prefecture.find(prefecture_id=1).name %> </label>
+       <% end %>
+       
+       <% if @post_2.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 2, ''%>
+        <label for='q_prefecture_id_eq_any_2'>
+        <%= Prefecture.find(prefecture_id=2).name %> </label>
+       <% end %>
+       
+       <% if @post_3.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 3, ''%>
+        <label for='q_prefecture_id_eq_any_3'>
+        <%= Prefecture.find(prefecture_id=3).name %> </label>
+       <% end %>
+       
+       <% if @post_4.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 4, ''%>
+        <label for='q_prefecture_id_eq_any_4'>
+        <%= Prefecture.find(prefecture_id=4).name %> </label>
+       <% end %>
+       
+       <% if @post_5.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 5, ''%>
+        <label for='q_prefecture_id_eq_any_5'>
+        <%= Prefecture.find(prefecture_id=5).name %> </label>
+       <% end %>
+       
+       <% if @post_6.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 6, ''%>
+        <label for='q_prefecture_id_eq_any_6'>
+        <%= Prefecture.find(prefecture_id=6).name %> </label>
+       <% end %>
+       
+       <% if @post_7.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 7, ''%>
+        <label for='q_prefecture_id_eq_any_7'>
+        <%= Prefecture.find(prefecture_id=7).name %> </label>
+       <% end %>
+       
         </div>
         <h4> 関東地方 </h4>
         <div class="checkboxes">
-         <% if @post_8.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 8, ''%>
-         <%= '茨城県　'%>
-         <% end %>
-         <% if @post_9.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 9, ''%>
-         <%= '栃木県　'%>
-         <% end %>
-         <% if @post_10.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 10, ''%>
-         <%= '群馬県　'%>
-         <% end %>
-         <% if @post_11.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 11, ''%>
-         <%= '埼玉県　'%>
-         <% end %>
-         <% if @post_12.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 12, ''%>
-         <%= '千葉県　'%>
-         <% end %>
-         <% if @post_13.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 13, ''%>
-         <%= '東京都'%>
-         <% end %>
-         <% if @post_14.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 14, ''%>
-         <%= '神奈川県　'%>
-         <% end %>
+        <% if @post_8.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 8, ''%>
+        <label for='q_prefecture_id_eq_any_8'>
+        <%= Prefecture.find(prefecture_id=8).name %> </label>
+       <% end %>
+       
+       <% if @post_9.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 9, ''%>
+        <label for='q_prefecture_id_eq_any_9'>
+        <%= Prefecture.find(prefecture_id=9).name %> </label>
+       <% end %>
+       
+       <% if @post_10.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 10, ''%>
+        <label for='q_prefecture_id_eq_any_10'>
+        <%= Prefecture.find(prefecture_id=10).name %> </label>
+       <% end %>
+       
+       <% if @post_11.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 11, ''%>
+        <label for='q_prefecture_id_eq_any_11'>
+        <%= Prefecture.find(prefecture_id=11).name %> </label>
+       <% end %>
+       
+       <% if @post_12.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 12, ''%>
+        <label for='q_prefecture_id_eq_any_12'>
+        <%= Prefecture.find(prefecture_id=12).name %> </label>
+       <% end %>
+       
+       <% if @post_13.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 13, ''%>
+        <label for='q_prefecture_id_eq_any_13'>
+        <%= Prefecture.find(prefecture_id=13).name %> </label>
+       <% end %>
+       
+       <% if @post_14.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 14, ''%>
+        <label for='q_prefecture_id_eq_any_14'>
+        <%= Prefecture.find(prefecture_id=14).name %> </label>
+       <% end %>
+              
         </div>
         <h4> 中部地方 </h4>
         <div class="checkboxes">
-         <% if @post_15.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 15, ''%>
-         <%= '新潟県　'%>
-         <% end %>
-         <% if @post_16.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 16, ''%>
-         <%= '富山県　'%>
-         <% end %>
-         <% if @post_17.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 17, ''%>
-         <%= '石川県　'%>
-         <% end %>
-         <% if @post_18.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 18, ''%>
-         <%= '福井県　'%>
-         <% end %>
-         <% if @post_19.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 19, ''%>
-         <%= '山梨県　'%>
-         <% end %>
-         <% if @post_20.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 20, ''%>
-         <%= '長野県　'%>
-         <% end %>
-         <% if @post_21.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 21, ''%>
-         <%= '岐阜県　'%>
-         <% end %>
-         <% if @post_22.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 22, ''%>
-         <%= '静岡県　'%>
-         <% end %>
-         <% if @post_23.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 23, ''%>
-         <%= '愛知県　'%>
-         <% end %>
+        <% if @post_15.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 15, ''%>
+        <label for='q_prefecture_id_eq_any_15'>
+        <%= Prefecture.find(prefecture_id=15).name %> </label>
+       <% end %>
+       
+       <% if @post_16.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 16, ''%>
+        <label for='q_prefecture_id_eq_any_16'>
+        <%= Prefecture.find(prefecture_id=16).name %> </label>
+       <% end %>
+       
+       <% if @post_17.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 17, ''%>
+        <label for='q_prefecture_id_eq_any_17'>
+        <%= Prefecture.find(prefecture_id=17).name %> </label>
+       <% end %>
+       
+       <% if @post_18.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 18, ''%>
+        <label for='q_prefecture_id_eq_any_18'>
+        <%= Prefecture.find(prefecture_id=18).name %> </label>
+       <% end %>
+       
+       <% if @post_19.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 19, ''%>
+        <label for='q_prefecture_id_eq_any_19'>
+        <%= Prefecture.find(prefecture_id=19).name %> </label>
+       <% end %>
+       
+       <% if @post_20.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 20, ''%>
+        <label for='q_prefecture_id_eq_any_20'>
+        <%= Prefecture.find(prefecture_id=20).name %> </label>
+       <% end %>
+       
+       <% if @post_21.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 21, ''%>
+        <label for='q_prefecture_id_eq_any_21'>
+        <%= Prefecture.find(prefecture_id=21).name %> </label>
+       <% end %>
+       
+       <% if @post_22.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 22, ''%>
+        <label for='q_prefecture_id_eq_any_22'>
+        <%= Prefecture.find(prefecture_id=22).name %> </label>
+       <% end %>
+       
+       <% if @post_23.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 23, ''%>
+        <label for='q_prefecture_id_eq_any_23'>
+        <%= Prefecture.find(prefecture_id=23).name %> </label>
+       <% end %>
+       
         </div>
         <h4> 関西地方 </h4>
         <div class="checkboxes">
-         <% if @post_24.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 24, ''%>
-         <%= '三重県　'%>
-         <% end %>
-         <% if @post_25.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 25, ''%>
-         <%= '滋賀県　'%>
-         <% end %>
-         <% if @post_26.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 26, ''%>
-         <%= '京都府'%>
-         <% end %>
-         <% if @post_27.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 27, ''%>
-         <%= '大阪府'%>
-         <% end %>
-         <% if @post_28.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 28, ''%>
-         <%= '兵庫県　'%>
-         <% end %>
-         <% if @post_29.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 29, ''%>
-         <%= '奈良県　'%>
-         <% end %>
-         <% if @post_30.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 30, ''%>
-         <%= '和歌山県　'%>
-         <% end %>
+        <% if @post_24.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 24, ''%>
+        <label for='q_prefecture_id_eq_any_24'>
+        <%= Prefecture.find(prefecture_id=24).name %> </label>
+       <% end %>
+       
+       <% if @post_25.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 25, ''%>
+        <label for='q_prefecture_id_eq_any_25'>
+        <%= Prefecture.find(prefecture_id=25).name %> </label>
+       <% end %>
+       
+       <% if @post_26.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 26, ''%>
+        <label for='q_prefecture_id_eq_any_26'>
+        <%= Prefecture.find(prefecture_id=26).name %> </label>
+       <% end %>
+       
+       <% if @post_27.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 27, ''%>
+        <label for='q_prefecture_id_eq_any_27'>
+        <%= Prefecture.find(prefecture_id=27).name %> </label>
+       <% end %>
+       
+       <% if @post_28.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 28, ''%>
+        <label for='q_prefecture_id_eq_any_28'>
+        <%= Prefecture.find(prefecture_id=28).name %> </label>
+       <% end %>
+       
+       <% if @post_29.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 29, ''%>
+        <label for='q_prefecture_id_eq_any_29'>
+        <%= Prefecture.find(prefecture_id=29).name %> </label>
+       <% end %>
+       
+       <% if @post_30.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 30, ''%>
+        <label for='q_prefecture_id_eq_any_30'>
+        <%= Prefecture.find(prefecture_id=30).name %> </label>
+       <% end %>
+       
         </div>
         <h4> 中国地方 </h4>
         <div class="checkboxes">
-         <% if @post_31.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 31, ''%>
-         <%= '鳥取県　'%>
-         <% end %>
-         <% if @post_32.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 32, ''%>
-         <%= '島根県　'%>
-         <% end %>
-         <% if @post_33.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 33, ''%>
-         <%= '岡山県　'%>
-         <% end %>
-         <% if @post_34.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 34, ''%>
-         <%= '広島県　'%>
-         <% end %>
-         <% if @post_35.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 35, ''%>
-         <%= '山口県　'%>
-         <% end %>
-        </div>
-        <h4> 四国地方 </h4>
-        <div class="checkboxes">
-         <% if @post_36.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 36, ''%>
-         <%= '徳島県　'%>
-         <% end %>
-         <% if @post_37.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 37, ''%>
-         <%= '香川県　'%>
-         <% end %>
-         <% if @post_38.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 38, ''%>
-         <%= '愛媛県　'%>
-         <% end %>
-         <% if @post_39.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 39, ''%>
-         <%= '高知県　'%>
-         <% end %>
+        <% if @post_31.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 31, ''%>
+        <label for='q_prefecture_id_eq_any_31'>
+        <%= Prefecture.find(prefecture_id=31).name %> </label>
+       <% end %>
+       
+       <% if @post_32.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 32, ''%>
+        <label for='q_prefecture_id_eq_any_32'>
+        <%= Prefecture.find(prefecture_id=32).name %> </label>
+       <% end %>
+       
+       <% if @post_33.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 33, ''%>
+        <label for='q_prefecture_id_eq_any_33'>
+        <%= Prefecture.find(prefecture_id=33).name %> </label>
+       <% end %>
+       
+       <% if @post_34.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 34, ''%>
+        <label for='q_prefecture_id_eq_any_34'>
+        <%= Prefecture.find(prefecture_id=34).name %> </label>
+       <% end %>
+       
+       <% if @post_35.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 35, ''%>
+        <label for='q_prefecture_id_eq_any_35'>
+        <%= Prefecture.find(prefecture_id=35).name %> </label>
+       <% end %>
+       
+       <% if @post_36.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 36, ''%>
+        <label for='q_prefecture_id_eq_any_36'>
+        <%= Prefecture.find(prefecture_id=36).name %> </label>
+       <% end %>
+       
+       <% if @post_37.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 37, ''%>
+        <label for='q_prefecture_id_eq_any_37'>
+        <%= Prefecture.find(prefecture_id=37).name %> </label>
+       <% end %>
+       
+       <% if @post_38.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 38, ''%>
+        <label for='q_prefecture_id_eq_any_38'>
+        <%= Prefecture.find(prefecture_id=38).name %> </label>
+       <% end %>
+       
+       <% if @post_39.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 39, ''%>
+        <label for='q_prefecture_id_eq_any_39'>
+        <%= Prefecture.find(prefecture_id=39).name %> </label>
+       <% end %>
+       
         </div>
         <h4> 九州地方・沖縄 </h4>
         <div class="checkboxes">
-         <% if @post_40.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 40, ''%>
-         <%= '福岡県　'%>
-         <% end %>
-         <% if @post_41.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 41, ''%>
-         <%= '佐賀県　'%>
-         <% end %>
-         <% if @post_42.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 42, ''%>
-         <%= '長崎県　'%>
-         <% end %>
-         <% if @post_43.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 43, ''%>
-         <%= '熊本県　'%>
-         <% end %>
-         <% if @post_44.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 44, ''%>
-         <%= '大分県　'%>
-         <% end %>
-         <% if @post_45.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 45, ''%>
-         <%= '宮崎県　'%>
-         <% end %>
-         <% if @post_46.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 46, ''%>
-         <%= '鹿児島県　'%>
-         <% end %>
-         <% if @post_47.present? %>
-         <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 47, ''%>
-         <%= '沖縄県　'%>
-         <% end %>
+        <% if @post_40.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 40, ''%>
+        <label for='q_prefecture_id_eq_any_40'>
+        <%= Prefecture.find(prefecture_id=40).name %> </label>
+       <% end %>
+       
+       <% if @post_41.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 41, ''%>
+        <label for='q_prefecture_id_eq_any_41'>
+        <%= Prefecture.find(prefecture_id=41).name %> </label>
+       <% end %>
+       
+       <% if @post_42.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 42, ''%>
+        <label for='q_prefecture_id_eq_any_42'>
+        <%= Prefecture.find(prefecture_id=42).name %> </label>
+       <% end %>
+       
+       <% if @post_43.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 43, ''%>
+        <label for='q_prefecture_id_eq_any_43'>
+        <%= Prefecture.find(prefecture_id=43).name %> </label>
+       <% end %>
+       
+       <% if @post_44.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 44, ''%>
+        <label for='q_prefecture_id_eq_any_44'>
+        <%= Prefecture.find(prefecture_id=44).name %> </label>
+       <% end %>
+       
+       <% if @post_45.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 45, ''%>
+        <label for='q_prefecture_id_eq_any_45'>
+        <%= Prefecture.find(prefecture_id=45).name %> </label>
+       <% end %>
+       
+       <% if @post_46.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 46, ''%>
+        <label for='q_prefecture_id_eq_any_46'>
+        <%= Prefecture.find(prefecture_id=46).name %> </label>
+       <% end %>
+       
+       <% if @post_47.present? %>
+        <%= f.check_box :prefecture_id_eq_any, { multiple: true }, 47, ''%>
+        <label for='q_prefecture_id_eq_any_47'>
+        <%= Prefecture.find(prefecture_id=47).name %> </label>
+       <% end %>
+       
         </div>
       </div>
     

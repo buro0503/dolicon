@@ -1,7 +1,8 @@
 module ApplicationHelper
     def default_meta_tags
         {
-          site: 'ほげほげのサイト',
+          site: 'マンドリン演奏会情報サイト',
+          description: "ここに説明が来るはず",
           reverse: true,
           separator: '|',
           og: defalut_og,
@@ -14,7 +15,7 @@ module ApplicationHelper
       def defalut_og
         {
           title: :full_title,          # :full_title とすると、サイトに表示される <title> と全く同じものを表示できる
-          description: :description,   # 上に同じ
+          description: :full_description,   # 上に同じ
           url: request.url,
           image: 'https://example.com/hoge.png'
         }
@@ -23,7 +24,7 @@ module ApplicationHelper
       def default_twitter_card
         {
           card: 'summary_large_image', # または summary
-          site: '@hogehoge'            # twitter ID
+          site: '@buro_gm'            # twitter ID
         }
       end
 end
