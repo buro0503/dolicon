@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :labels
   get 'posts/index_likes' => 'posts#index_likes'
   get 'posts/index_new' => 'posts#index_new'
+  get 'posts/mailform' => 'posts#mailform'
   resources :posts
   
   devise_for :users
