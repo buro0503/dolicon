@@ -142,9 +142,7 @@ end
   @prefectureName = Address.where('prefecture_id IN(?)', params[:prefecture_id])
 end
 
- def javascript
- 
- end
+
 
  def mailform
 
