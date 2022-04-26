@@ -19,3 +19,13 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+function changeDisplay() {
+    if ( document.Form1["user[syurui]"][2].checked ) {
+        document . Form1["inputNumber"] . disabled = false;
+        document . getElementById('input-number') . style . display = "inline";
+    } else {
+        document . Form1["inputNumber"] . disabled = true;
+        document . getElementById('input-number') . style . display = "none";
+    }
+}
+window.onload = changeDisplay;

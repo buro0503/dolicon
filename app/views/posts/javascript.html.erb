@@ -3,92 +3,94 @@
     <title>JavaScriptを学ぼう</title>
       <meta charset="utf-8">
       <script type="text/javascript">
-      <!--
       function changeDisplay() {
-          if ( document.Form1["number"][3].checked ) { // 「その他」のラジオボタンをクリックしたとき
-              document . Form1["inputNumber"] . disabled = false; // 「その他」のラジオボタンの横のテキスト入力欄を有効化
-              document . getElementById('input-number') . style . display = "inline"; // 「その他」のラジオボタンの横のテキスト入力欄を表示
+          if ( document.Form1["number"][0].checked ) { // 「その他」のラジオボタンをクリックしたとき
+            document . Form1["user[prefecture_id]"] . disabled = true; // 「その他」のラジオボタンの横のテキスト入力欄を無効化
+            document . getElementById('user_prefecture_id') . style . display = "none"; // 「その他」のラジオボタンの横のテキスト入力欄を非表示
+            document . Form1["user[ryakusyou]"] . disabled = true; // 「その他」のラジオボタンの横のテキスト入力欄を無効化
+            document . getElementById('user_ryakusyou') . style . display = "none"; // 「その他」のラジオボタンの横のテキスト入力欄を非表示
           } else { // 「その他」のラジオボタン以外をクリックしたとき
-              document . Form1["inputNumber"] . disabled = true; // 「その他」のラジオボタンの横のテキスト入力欄を無効化
-              document . getElementById('input-number') . style . display = "none"; // 「その他」のラジオボタンの横のテキスト入力欄を非表示
+              document . Form1["user[prefecture_id]"] . disabled = false; // 「その他」のラジオボタンの横のテキスト入力欄を有効化
+              document . getElementById('user_prefecture_id') . style . display = "inline"; // 「その他」のラジオボタンの横のテキスト入力欄を表示
+              document . Form1["user[ryakusyou]"] . disabled = false; // 「その他」のラジオボタンの横のテキスト入力欄を有効化
+              document . getElementById('user_ryakusyou') . style . display = "inline"; // 「その他」のラジオボタンの横のテキスト入力欄を表示
           }
       }
       window.onload = changeDisplay; // ページを表示したとき、changeDisplay() を呼び出す
-      // -->
       </script>
   </head>
-  <body>
-  <form name="Form1" method="post" action="#">
-  <p>パソコン所有台数</p>
-  <input type="radio" name="number" value="持っていない" id="radio-0" checked onClick="changeDisplay()"><label for="radio-0"> 持っていない</label>&nbsp;
-  <input type="radio" name="number" value="1台" id="radio-1" onClick="changeDisplay()"><label for="radio-1"> 1台</label>&nbsp;
-  <input type="radio" name="number" value="2台" id="radio-2" onClick="changeDisplay()"><label for="radio-2"> 2台</label>&nbsp;
-  <input type="radio" name="number" value="その他" id="radio-other" onClick="changeDisplay()"><label for="radio-other"> その他</label>&nbsp;
-  <p id="input-number" style="display:none;"><input type="text" name="inputNumber" size="2">台</p>
-  </form>
-  </body>
-</html>
+
 
 <%= stylesheet_link_tag 'login', :media => "all" %>
 
-<div class="mainbox_login">
 
-<div class="login_title">
-<h2>新規登録</h2>
+<div class="field">
+  <form name="Form1" method="post" action="#">
+<label for="user_利用者">利用者</label><br>
+<input type="radio" value="0" name="number" id="user_syurui_0" onClick="changeDisplay()"/>
+<label for='user_syurui_0'>一般</label>
+<input type="radio" value="1" name="number" id="user_syurui_1" onClick="changeDisplay()"/>
+<label for='user_syurui_1'>学生団体</label>
+<input type="radio" value="3" name="number" id="user_syurui_2"  checked onClick="changeDisplay()"/>
+<label for='user_syurui_2'>社会人団体</label>
+
+
+<br><div style="display:none;" id="user_prefecture_id">
+<label for="user_活動県">活動県（団体のみ）</label>
+<br><select name="user[prefecture_id]"><option value="">選択して下さい</option>
+<option value="1">北海道</option>
+<option value="2">青森県</option>
+<option value="3">岩手県</option>
+<option value="4">宮城県</option>
+<option value="5">秋田県</option>
+<option value="6">山形県</option>
+<option value="7">福島県</option>
+<option value="8">茨城県</option>
+<option value="9">栃木県</option>
+<option value="10">群馬県</option>
+<option value="11">埼玉県</option>
+<option value="12">千葉県</option>
+<option value="13">東京都</option>
+<option value="14">神奈川県</option>
+<option value="15">新潟県</option>
+<option value="16">富山県</option>
+<option value="17">石川県</option>
+<option value="18">福井県</option>
+<option value="19">山梨県</option>
+<option value="20">長野県</option>
+<option value="21">岐阜県</option>
+<option value="22">静岡県</option>
+<option value="23">愛知県</option>
+<option value="24">三重県</option>
+<option value="25">滋賀県</option>
+<option value="26">京都府</option>
+<option value="27">大阪府</option>
+<option value="28">兵庫県</option>
+<option value="29">奈良県</option>
+<option value="30">和歌山県</option>
+<option value="31">鳥取県</option>
+<option value="32">島根県</option>
+<option value="33">岡山県</option>
+<option value="34">広島県</option>
+<option value="35">山口県</option>
+<option value="36">徳島県</option>
+<option value="37">香川県</option>
+<option value="38">愛媛県</option>
+<option value="39">高知県</option>
+<option value="40">福岡県</option>
+<option value="41">佐賀県</option>
+<option value="42">長崎県</option>
+<option value="43">熊本県</option>
+<option value="44">大分県</option>
+<option value="45">宮崎県</option>
+<option value="46">鹿児島県</option>
+<option value="47">沖縄県</option></select>
 </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :名前・正式団体名（一般利用の場合は公開されません） %><br>
-    <%= f.text_field :name, autofocus: true,size: 30  %>
-  </div>
-
-  <div class="field">
-    <%= f.label :略称 %><br />
-    <%= f.text_field :ryakusyou,size: 30 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :利用者 %><br>
-    <%= f.radio_button :syurui, 0 %>一般
-    <%= f.radio_button :syurui, 1 %>学生団体
-    <%= f.radio_button :syurui, 2 %>社会人団体
-  </div>
-
-
-  <div class="field">
-   <%= f.label :活動県（団体のみ） %>
-   <br><%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}) %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",size: 30  %>
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password",size: 30  %>
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード（再入力） %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password",size: 30  %>
-  </div>
-
-<div class="button_login">
-  <div class="actions">
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+<div id="user_ryakusyou" style="display:none;">
+<br><label for="user_略称">略称</label><br />
+<input size="30" type="text" name="user[ryakusyou]" id="input-number" />
 </div>
+</form>
+
 </div>
-
-
