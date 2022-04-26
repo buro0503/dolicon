@@ -11,10 +11,12 @@
   <div class="contents">
       <% if @user.nicname == nil %>
       <p>名前 : <%= @user.name %></p>
+      <p>メールアドレス : <%= @user.email %></p>
+      <p>プロフィール : <%= @user.profile %></p>
       <% else %>
       <p>ニックネーム : <%= @user.nicname %></p>
-      <% end %>
       <p>メールアドレス : <%= @user.email %></p>
+      <% end %>
       <%= link_to "編集する", edit_user_registration_path %>
     <% end %>
   </div>
@@ -28,7 +30,10 @@
       <h2> <%= @user.name %></h2>
       <p>活動県 : <%= Prefecture.find(@user.prefecture_id).name %></p>
       <p>メールアドレス : <%= @user.email %></p>
-      <p>プロフィール : <%= @user.profile %></p>
+      <% if @user.profile.present? %>
+      <p><%= @user.profile %></p>
+      <% else %>
+      <% end %>
       </div>
     <% end %>
 
@@ -55,11 +60,15 @@
 
     <div class="user_post">
      <h2>ユーザーの投稿一覧</h2>
+     <% if @user.posts.present? %>
       <% @user.posts.order("start_time DESC").each do |t| %>
       <div class="user_post_each">
         <br><%= t.start_time.strftime("%Y年%-m月%-d日") %>
         <br><%= t.name1 %> 
         <%= link_to "詳細へ", post_path(t.id) %>
       </div>
+      <% end %>
+      <% else %>
+      <br>投稿はまだありません
       <% end %>
     </div>
