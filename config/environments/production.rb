@@ -63,22 +63,6 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "dolicon_production"
 
-  config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: host}
-
-  config.action_mailer.perform_deliveries = true
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:"smtp.gmail.com",
-    domain: 'gmail.com',
-    port:587,
-    user_name: ENV['GOOGLE_MAIL_ADDRESS'],
-    password: ENV['GOOGLE_MAILER_PASSWORD'],
-    authentication: :login,
-    openssl_verify_mode: 'none',
-    enable_starttls_auto: true
-  }
 
   config.action_mailer.perform_caching = false
 
