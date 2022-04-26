@@ -122,6 +122,7 @@ align-items: stretch;
   justify-content: flex-end;
 }
 
+:focus::placeholder { color: white; } /* CSS標準(予定)の記述 */
 
 
 

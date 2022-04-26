@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.field{
+    margin: 2%;
+    line-height: normal;
+    background: none;
+    position: relative;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 15px;
+}
+
 .field b{
     padding: 0.2%;
     text-decoration: none;
@@ -45,15 +55,6 @@
     font-size: 15px;
 }
 
-.field{
-    margin: 2%;
-    line-height: normal;
-    background: none;
-    position: relative;
-    margin-left: 2%;
-    margin-right: 2%;
-    font-size: 15px;
-}
 
 .submit{
     text-align: center;
