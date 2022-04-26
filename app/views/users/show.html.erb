@@ -9,7 +9,11 @@
 
 
   <div class="contents">
+      <% if @user.nicname == nil %>
       <p>名前 : <%= @user.name %></p>
+      <% else %>
+      <p>ニックネーム : <%= @user.nicname %></p>
+      <% end %>
       <p>メールアドレス : <%= @user.email %></p>
       <%= link_to "編集する", edit_user_registration_path %>
     <% end %>
