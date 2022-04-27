@@ -1,8 +1,9 @@
 module ApplicationHelper
+  
     def default_meta_tags
         {
           site: 'マンドリン演奏会情報サイト',
-          description: "ここに説明が来るはず",
+          description: "全国のマンドリンの演奏会情報を投稿・閲覧できるサイトです",
           reverse: true,
           separator: '|',
           og: defalut_og,
@@ -23,7 +24,7 @@ module ApplicationHelper
       
       def default_twitter_card
         {
-          card: 'summary', # または summary
+          card: 'summary_large_image', # または summary
           site: '@buro_gm',            # twitter ID
           title: 'マンドリン演奏会情報サイト',
           description: '全国のマンドリンの演奏会情報を投稿・閲覧できるサイトです',
