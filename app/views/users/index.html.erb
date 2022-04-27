@@ -12,7 +12,7 @@
   <div class="radiobotan">
     <%= search_form_for @q do |f| %>
     <b><%= f.label :団体種別 %></b>
-    <%= f.radio_button :syurui_eq, 1, {:checked => true} %>
+    <%= f.radio_button :syurui_eq, 1 %>
     <label for='q_syurui_eq_1'>学生団体</label>
     <%= f.radio_button :syurui_eq, 2 %>
     <label for='q_syurui_eq_2'>社会人団体</label>
