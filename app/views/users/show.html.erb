@@ -59,6 +59,7 @@
 
 
     <div class="user_post">
+    <% if @user.nicname == nil %>
      <h2>ユーザーの投稿一覧</h2>
      <% if @user.posts.present? %>
       <% @user.posts.order("start_time DESC").each do |t| %>
@@ -71,4 +72,5 @@
       <% else %>
       <br>投稿はまだありません
       <% end %>
+    <% end %>
     </div>
