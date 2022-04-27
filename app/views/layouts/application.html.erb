@@ -28,47 +28,69 @@
       </h1>
       </div>
       
-      <% if user_signed_in? %>
-      <div class="nav">
+        <div class="nav">
     
-        <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
-        <input id="drawer_input" class="drawer_hidden" type="checkbox">
+         <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+         <input id="drawer_input" class="drawer_hidden" type="checkbox">
     
-        <!-- ハンバーガーアイコン -->
-        <label for="drawer_input" class="drawer_open"><span></span></label>
+         <!-- ハンバーガーアイコン -->
+         <label for="drawer_input" class="drawer_open"><span></span></label>
     
-        <!-- メニュー -->
-        <nav class="nav_content">
-        <div class="blank">
-        </div>
-          <div class="nav_list">
+         <!-- メニュー -->
+          <nav class="nav_content">
+            <div class="blank">
+            </div>
+            <div class="nav_list">
 
+            <% if user_signed_in? %>
+              <%= link_to  posts_path do %>
+                <i class="fa-solid fa-house"></i>
+                <c>投稿一覧</c>
+              <% end %>
 
-          <%= link_to  posts_path do %>
-            <i class="fa-solid fa-house"></i>
-            <c>投稿一覧</c>
-          <% end %>
+              <li><%= link_to  post_calendar_path do %></li>
+                <i class="fa-regular fa-calendar"></i>
+                <c>カレンダー</c>
+              <% end %></br>
 
-          <li><%= link_to  post_calendar_path do %></li>
-            <i class="fa-regular fa-calendar"></i>
-            <c>カレンダー</c>
-          <% end %></br>
+              <li><%= link_to users_path do%></li>
+                <i class="fa-solid fa-users"></i>
+                <c>団体一覧</c>
+              <% end %>
 
-          <li><%= link_to users_path do%></li>
-            <i class="fa-solid fa-users"></i>
-            <c>団体一覧</c>
-          <% end %>
+              <li><%= link_to user_path(current_user.id) do %></li>
+                <i class="fa-solid fa-circle-user"></i>
+                <c>マイページ</c>
+              <% end %>
 
-          <li><%= link_to user_path(current_user.id) do %></li>
-              <i class="fa-solid fa-circle-user"></i>
-              <c>マイページ</c>
-          <% end %>
+              <li><%= link_to destroy_user_session_path, method: :delete do%></li>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <c>ログアウト</c>
+              <% end %>
 
-          <li><%= link_to destroy_user_session_path, method: :delete do%></li>
-               <i class="fa-solid fa-arrow-right-from-bracket"></i>
-               <c>ログアウト</c>
-          <% end %>
+            <% else %>
 
+              <li><%= link_to  posts_path do %></li>
+                <i class="fa-solid fa-house"></i>
+                <c>投稿一覧</c>
+              <% end %>
+
+              <li><%= link_to  post_calendar_path do %></li>
+                <i class="fa-regular fa-calendar"></i>
+                <c>カレンダー</c>
+              <% end %>
+ 
+              <li><%= link_to users_path do%></li>
+                <i class="fa-solid fa-users"></i>
+                <c>団体一覧</c>
+              <% end %>
+
+              <li><%= link_to new_user_session_path do %></li>
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <c>ログイン</c>
+              <% end %>       
+
+            <% end %>
           <li></li>
 
           <li><%= link_to "http://twitter.com/share?url=https://dolicon.herokuapp.com/&text=マンドリン演奏会情報サイト&hashtags=マンドリン&hashtags=mandolin&via=buro_gm" do %></li>
@@ -80,7 +102,6 @@
 
         </nav>
       </div>
-      <% end %>
 
           <% if user_signed_in? %>
            <div class="sign_in">
