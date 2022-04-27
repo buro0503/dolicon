@@ -62,7 +62,7 @@ class UsersController < ApplicationController
     end    
 
 
-          before_action :authenticate_user!, except: [:index]
+          before_action :authenticate_user!, except: [:index, :show]
 
 
     def configure_permitted_parameters

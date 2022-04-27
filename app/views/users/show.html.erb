@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'user_show', :media => "all" %>
 
-
+<% if user_signed_in? %>
     <% if current_user.id == @user.id || current_user.id==1%>
       <div class="title">
        <% provide(:title, 'マイページ') %>
@@ -36,10 +36,25 @@
       <% end %>
       </div>
     <% end %>
+<% else %>
+      <div class="title">
+        <% provide(:title, '団体ページ') %>
+        <h1>団体ページ</h1>
+      </div>
+      <div class="contents">
+      <h2> <%= @user.name %></h2>
+      <p>活動県 : <%= Prefecture.find(@user.prefecture_id).name %></p>
+      <p>メールアドレス : <%= @user.email %></p>
+      <% if @user.profile.present? %>
+      <p><%= @user.profile %></p>
+      <% else %>
+      <% end %>
+      </div>
+<% end %>
 
 <div class="mainbox" >
   <div class="calendar">
-    <% if current_user.id == @user.id %>
+    <% if user_signed_in? && current_user.id == @user.id %>
       <p><%= month_calendar events: @user.liked_posts do |date, t| %></p>
         <%= date.day %>
         <% t.each do |t| %>
