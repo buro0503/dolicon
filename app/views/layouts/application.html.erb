@@ -72,7 +72,7 @@
           <li></li>
 
           <li><%= link_to "http://twitter.com/share?url=https://dolicon.herokuapp.com/&text=マンドリン演奏会情報サイト&hashtags=マンドリン演奏会&via=buro_gm" do %></li>
-            <i class="fa-brands fa-twitter"></i>twitterで共有
+            <i class="fa-brands fa-twitter"></i> twitterで<br>　　共有
             <% end %>
           <li></li>
            <li><div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://dolicon.herokuapp.com/" data-color="default" data-size="small" data-count="true" data-ver="3" style="display: none;"></div></li>
@@ -156,15 +156,20 @@
     <%= link_to "http://twitter.com/share?url=https://dolicon.herokuapp.com/&text=マンドリン演奏会情報サイト&hashtags=マンドリン演奏会&via=buro_gm" do %></li>
       <i class="fa-brands fa-twitter"></i>
     <% end %>
+
+    
     </div>
 
     <div class=newpost>
     <% if user_signed_in? %>
+     
       <% if current_user.syurui != 0 %>
         <%= link_to new_post_path do%>
          <i class="fa-solid fa-circle-plus"></i>
         <% end %>
       <% end %>
+    <% else %>
+
     <% end %>
     </div>
     </main>
@@ -174,7 +179,7 @@
       <%= link_to posts_mailform_path do %>
         お問い合わせ
       <% end %>
-      <p>© 2022 Shogo Ishifuro</p>
+      <p>© 2022 Shogo Ishifuro　</p>
     </footer>
     </body>
 </html>
