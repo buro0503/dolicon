@@ -16,6 +16,8 @@ class User < ApplicationRecord
   
 
 
+
+
   def already_liked?(post_id)
     likes.where(post_id: post_id).exists?
   end

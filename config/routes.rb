@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'calendar/index'
   get 'calendar/callback'
   resources :labels
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   resources :comments, only: [:create]
   end
  resources :users
+
+
  
  get 'hello/index' => 'hello#index'
  root 'posts#index'

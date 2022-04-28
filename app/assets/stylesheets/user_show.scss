@@ -98,3 +98,19 @@
     line-height: 2em;
     margin-top: 2em;
 }
+
+
+@media(max-width:550px){
+
+.user_post{
+}
+
+.user_post h2{
+    font-size: 1em;
+}
+
+.user_post_each{
+    font-size: 0.7em;
+    margin-top: 0.5em;
+}
+}

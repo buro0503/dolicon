@@ -1,6 +1,11 @@
 <%= stylesheet_link_tag 'user_show', :media => "all" %>
 
 <% if user_signed_in? %>
+
+
+
+
+
     <% if current_user.id == @user.id || current_user.id==1%>
       <div class="title">
        <% provide(:title, 'マイページ') %>
@@ -79,7 +84,7 @@
      <% if @user.posts.present? %>
       <% @user.posts.order("start_time DESC").each do |t| %>
       <div class="user_post_each">
-        <br><%= t.start_time.strftime("%Y年%-m月%-d日") %>
+        <%= t.start_time.strftime("%Y年%-m月%-d日") %>
         <br><%= t.name1 %> 
         <%= link_to "詳細へ", post_path(t.id) %>
       </div>

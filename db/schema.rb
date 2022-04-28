@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_26_022948) do
+ActiveRecord::Schema.define(version: 2022_04_28_165310) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(version: 2022_04_26_022948) do
     t.float "longitude"
     t.datetime "start_time"
     t.string "caption"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
