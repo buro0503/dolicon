@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .field{
+    padding-bottom: 1%;
     margin: 2%;
     line-height: normal;
     background: none;
@@ -60,4 +61,14 @@
 
 .submit{
     text-align: center;
+}
+
+.field h{
+    font-size: smaller;
+    white-space: nowrap;
+}
+
+.tyuuoubox i{
+    margin-left: 35%;
+    font-size: larger;
 }

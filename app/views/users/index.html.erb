@@ -28,67 +28,71 @@
   <details>
     <summary>目次</summary>
     <ul>
-    <% if @users_1.present? %><li><%= link_to "北海道", users_path(anchor: "1") %><% end %>
-    <% if @users_2.present? %><li><%= link_to "青森県", users_path(anchor: "2") %><% end %>
-    <% if @users_3.present? %><li><%= link_to "岩手県", users_path(anchor: "3") %><% end %>
-    <% if @users_4.present? %><li><%= link_to "宮城県", users_path(anchor: "4") %><% end %>
-    <% if @users_5.present? %><li><%= link_to "秋田県", users_path(anchor: "5") %><% end %>
-    <% if @users_6.present? %><li><%= link_to "山形県", users_path(anchor: "6") %><% end %>
-    <% if @users_7.present? %><li><%= link_to "福島県", users_path(anchor: "7") %><% end %>
-    <% if @users_8.present? %><li><%= link_to "茨城県", users_path(anchor: "8") %><% end %>
-    <% if @users_9.present? %><li><%= link_to "栃木県", users_path(anchor: "9") %><% end %>
-    <% if @users_10.present? %><li><%= link_to "群馬県", users_path(anchor: "10") %><% end %>
-    <% if @users_11.present? %><li><%= link_to "埼玉県", users_path(anchor: "11") %><% end %>
-    <% if @users_12.present? %><li><%= link_to "千葉県", users_path(anchor: "12") %><% end %>
-    <% if @users_13.present? %><li><%= link_to "東京都", users_path(anchor: "13") %><% end %>
-    <% if @users_14.present? %><li><%= link_to "神奈川県", users_path(anchor: "14") %><% end %>
-    <% if @users_15.present? %><li><%= link_to "新潟県", users_path(anchor: "15") %><% end %>
-    <% if @users_16.present? %><li><%= link_to "富山県", users_path(anchor: "16") %><% end %>
-    <% if @users_17.present? %><li><%= link_to "石川県", users_path(anchor: "17") %><% end %>
-    <% if @users_18.present? %><li><%= link_to "福井県", users_path(anchor: "18") %><% end %>
-    <% if @users_19.present? %><li><%= link_to "山梨県", users_path(anchor: "19") %><% end %>
-    <% if @users_20.present? %><li><%= link_to "長野県", users_path(anchor: "20") %><% end %>
-    <% if @users_21.present? %><li><%= link_to "岐阜県", users_path(anchor: "21") %><% end %>
-    <% if @users_22.present? %><li><%= link_to "静岡県", users_path(anchor: "22") %><% end %>
-    <% if @users_23.present? %><li><%= link_to "愛知県", users_path(anchor: "23") %><% end %>
-    <% if @users_24.present? %><li><%= link_to "三重県", users_path(anchor: "24") %><% end %>
-    <% if @users_25.present? %><li><%= link_to "滋賀県", users_path(anchor: "25") %><% end %>
-    <% if @users_26.present? %><li><%= link_to "京都府", users_path(anchor: "26") %><% end %>
-    <% if @users_27.present? %><li><%= link_to "大阪府", users_path(anchor: "27") %><% end %>
-    <% if @users_28.present? %><li><%= link_to "兵庫県", users_path(anchor: "28") %><% end %>
-    <% if @users_29.present? %><li><%= link_to "奈良県", users_path(anchor: "29") %><% end %>
-    <% if @users_30.present? %><li><%= link_to "和歌山県", users_path(anchor: "30") %><% end %>
-    <% if @users_31.present? %><li><%= link_to "鳥取県", users_path(anchor: "31") %><% end %>
-    <% if @users_32.present? %><li><%= link_to "島根県", users_path(anchor: "32") %><% end %>
-    <% if @users_33.present? %><li><%= link_to "岡山県", users_path(anchor: "33") %><% end %>
-    <% if @users_34.present? %><li><%= link_to "広島県", users_path(anchor: "34") %><% end %>
-    <% if @users_35.present? %><li><%= link_to "山口県", users_path(anchor: "35") %><% end %>
-    <% if @users_36.present? %><li><%= link_to "徳島県", users_path(anchor: "36") %><% end %>
-    <% if @users_37.present? %><li><%= link_to "香川県", users_path(anchor: "37") %><% end %>
-    <% if @users_38.present? %><li><%= link_to "愛媛県", users_path(anchor: "38") %><% end %>
-    <% if @users_39.present? %><li><%= link_to "高知県", users_path(anchor: "39") %><% end %>
-    <% if @users_40.present? %><li><%= link_to "福岡県", users_path(anchor: "40") %><% end %>
-    <% if @users_41.present? %><li><%= link_to "佐賀県", users_path(anchor: "41") %><% end %>
-    <% if @users_42.present? %><li><%= link_to "長崎県", users_path(anchor: "42") %><% end %>
-    <% if @users_43.present? %><li><%= link_to "熊本県", users_path(anchor: "43") %><% end %>
-    <% if @users_44.present? %><li><%= link_to "大分県", users_path(anchor: "44") %><% end %>
-    <% if @users_45.present? %><li><%= link_to "宮崎県", users_path(anchor: "45") %><% end %>
-    <% if @users_46.present? %><li><%= link_to "鹿児島県", users_path(anchor: "46") %><% end %>
-    <% if @users_47.present? %><li><%= link_to "沖縄県", users_path(anchor: "47") %><% end %>
-    <ul>
+    <% if @users_1.present? %><li><%= link_to Prefecture.find(prefecture_id=1).name, users_path(anchor: "1") %><% end %>
+    <% if @users_2.present? %><li><%= link_to Prefecture.find(prefecture_id=2).name, users_path(anchor: "2") %><% end %>
+    <% if @users_3.present? %><li><%= link_to Prefecture.find(prefecture_id=3).name, users_path(anchor: "3") %><% end %>
+    <% if @users_4.present? %><li><%= link_to Prefecture.find(prefecture_id=4).name, users_path(anchor: "4") %><% end %>
+    <% if @users_5.present? %><li><%= link_to Prefecture.find(prefecture_id=5).name, users_path(anchor: "5") %><% end %>
+    <% if @users_6.present? %><li><%= link_to Prefecture.find(prefecture_id=6).name, users_path(anchor: "6") %><% end %>
+    <% if @users_7.present? %><li><%= link_to Prefecture.find(prefecture_id=7).name, users_path(anchor: "7") %><% end %>
+    <% if @users_8.present? %><li><%= link_to Prefecture.find(prefecture_id=8).name, users_path(anchor: "8") %><% end %>
+    <% if @users_9.present? %><li><%= link_to Prefecture.find(prefecture_id=9).name, users_path(anchor: "9") %><% end %>
+    <% if @users_10.present? %><li><%= link_to Prefecture.find(prefecture_id=10).name, users_path(anchor: "10") %><% end %>
+    <% if @users_11.present? %><li><%= link_to Prefecture.find(prefecture_id=11).name, users_path(anchor: "11") %><% end %>
+    <% if @users_12.present? %><li><%= link_to Prefecture.find(prefecture_id=12).name, users_path(anchor: "12") %><% end %>
+    <% if @users_13.present? %><li><%= link_to Prefecture.find(prefecture_id=13).name, users_path(anchor: "13") %><% end %>
+    <% if @users_14.present? %><li><%= link_to Prefecture.find(prefecture_id=14).name, users_path(anchor: "14") %><% end %>
+    <% if @users_15.present? %><li><%= link_to Prefecture.find(prefecture_id=15).name, users_path(anchor: "15") %><% end %>
+    <% if @users_16.present? %><li><%= link_to Prefecture.find(prefecture_id=16).name, users_path(anchor: "16") %><% end %>
+    <% if @users_17.present? %><li><%= link_to Prefecture.find(prefecture_id=17).name, users_path(anchor: "17") %><% end %>
+    <% if @users_18.present? %><li><%= link_to Prefecture.find(prefecture_id=18).name, users_path(anchor: "18") %><% end %>
+    <% if @users_19.present? %><li><%= link_to Prefecture.find(prefecture_id=19).name, users_path(anchor: "19") %><% end %>
+    <% if @users_20.present? %><li><%= link_to Prefecture.find(prefecture_id=20).name, users_path(anchor: "20") %><% end %>
+    <% if @users_21.present? %><li><%= link_to Prefecture.find(prefecture_id=21).name, users_path(anchor: "21") %><% end %>
+    <% if @users_22.present? %><li><%= link_to Prefecture.find(prefecture_id=22).name, users_path(anchor: "22") %><% end %>
+    <% if @users_23.present? %><li><%= link_to Prefecture.find(prefecture_id=23).name, users_path(anchor: "23") %><% end %>
+    <% if @users_24.present? %><li><%= link_to Prefecture.find(prefecture_id=24).name, users_path(anchor: "24") %><% end %>
+    <% if @users_25.present? %><li><%= link_to Prefecture.find(prefecture_id=25).name, users_path(anchor: "25") %><% end %>
+    <% if @users_26.present? %><li><%= link_to Prefecture.find(prefecture_id=26).name, users_path(anchor: "26") %><% end %>
+    <% if @users_27.present? %><li><%= link_to Prefecture.find(prefecture_id=27).name, users_path(anchor: "27") %><% end %>
+    <% if @users_28.present? %><li><%= link_to Prefecture.find(prefecture_id=28).name, users_path(anchor: "28") %><% end %>
+    <% if @users_29.present? %><li><%= link_to Prefecture.find(prefecture_id=29).name, users_path(anchor: "29") %><% end %>
+    <% if @users_30.present? %><li><%= link_to Prefecture.find(prefecture_id=30).name, users_path(anchor: "30") %><% end %>
+    <% if @users_31.present? %><li><%= link_to Prefecture.find(prefecture_id=31).name, users_path(anchor: "31") %><% end %>
+    <% if @users_32.present? %><li><%= link_to Prefecture.find(prefecture_id=32).name, users_path(anchor: "32") %><% end %>
+    <% if @users_33.present? %><li><%= link_to Prefecture.find(prefecture_id=33).name, users_path(anchor: "33") %><% end %>
+    <% if @users_34.present? %><li><%= link_to Prefecture.find(prefecture_id=34).name, users_path(anchor: "34") %><% end %>
+    <% if @users_35.present? %><li><%= link_to Prefecture.find(prefecture_id=35).name, users_path(anchor: "35") %><% end %>
+    <% if @users_36.present? %><li><%= link_to Prefecture.find(prefecture_id=36).name, users_path(anchor: "36") %><% end %>
+    <% if @users_37.present? %><li><%= link_to Prefecture.find(prefecture_id=37).name, users_path(anchor: "37") %><% end %>
+    <% if @users_38.present? %><li><%= link_to Prefecture.find(prefecture_id=38).name, users_path(anchor: "38") %><% end %>
+    <% if @users_39.present? %><li><%= link_to Prefecture.find(prefecture_id=39).name, users_path(anchor: "39") %><% end %>
+    <% if @users_40.present? %><li><%= link_to Prefecture.find(prefecture_id=40).name, users_path(anchor: "40") %><% end %>
+    <% if @users_41.present? %><li><%= link_to Prefecture.find(prefecture_id=41).name, users_path(anchor: "41") %><% end %>
+    <% if @users_42.present? %><li><%= link_to Prefecture.find(prefecture_id=42).name, users_path(anchor: "42") %><% end %>
+    <% if @users_43.present? %><li><%= link_to Prefecture.find(prefecture_id=43).name, users_path(anchor: "43") %><% end %>
+    <% if @users_44.present? %><li><%= link_to Prefecture.find(prefecture_id=44).name, users_path(anchor: "44") %><% end %>
+    <% if @users_45.present? %><li><%= link_to Prefecture.find(prefecture_id=45).name, users_path(anchor: "45") %><% end %>
+    <% if @users_46.present? %><li><%= link_to Prefecture.find(prefecture_id=46).name, users_path(anchor: "46") %><% end %>
+    <% if @users_47.present? %><li><%= link_to Prefecture.find(prefecture_id=47).name, users_path(anchor: "47") %><% end %>
+            <ul>
   </details>
 </div>
 
 
 
   <p id="1">
-  <% if @users_1.present? %>   <div class="prefecture_each"> 【北海道】  <% end %>
+  <% if @users_1.present? %>
+    <div class="prefecture_each">
+    【<%= Prefecture.find(prefecture_id=1).name%>】
+  <% end %>
   <ul class="users">
     <% @users_1.each do |user| %>
       <ul>
         <li>  <%= link_to user.name, user %>
       </ul>
-    <% end %>   </div>
+    <% end %>
+    </div>
   </ul>
 
   <p id="2">

@@ -1,5 +1,7 @@
 <div class="mainbox">
-  
+<div class="tyuuoubox">
+<i>投稿編集</i>
+
   <div class="field">
     <%= form_for @post do |f| %>
     <%= f.label :演奏会名 %>
@@ -33,6 +35,7 @@
 
   <div class="field">
     <%= f.label :実施日、開演時間 %>
+    <br><h>開演時間が未定の場合は00:00としてください</h>
     <br><%= f.datetime_field :start_time %>
   </div>
 
@@ -49,4 +52,5 @@
  <% end %>
  <% end %>
 
+</div>
 </div>
