@@ -63,20 +63,7 @@ class UsersController < ApplicationController
 
 
           before_action :authenticate_user!, except: [:index, :show]
-          before_action :set_user, only: [:followings, :followers]
-          #省略
-            def followings
-              @users = @user.followings
-            end
-          
-            def followers
-              @users = @user.followers
-            end
-          
-          private
-            def set_user
-              @user = User.find(params[:id])
-            end
+
 
     def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :profile, :syurui, :ryakusyou, :prefecture, :prefecture_id])
