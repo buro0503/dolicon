@@ -27,6 +27,5 @@ Rails.application.routes.draw do
  get 'users' => 'users#index'
  get 'post/detail_search' => 'posts#detail_search'
 
- get "calendar/index", to:"calendar#index"
- get "oauth2callback", to:"calendar#callback"
+
 end
