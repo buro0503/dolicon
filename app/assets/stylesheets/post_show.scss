@@ -45,6 +45,15 @@ margin: 1em 0em 1em 0em;
 line-height: 1.5em;
 }
 
+.line_kyouyuu{
+    width: fit-content;
+    text-align: center;
+}
+
+.line_kyouyuu j{
+    font-size: 1em;
+}
+
 @media(max-width:2000px){
     .post_shousai h2{
         font-size: 1.5em;

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'calendar/index'
+  get 'calendar/callback'
   resources :labels
   get 'posts/index_likes' => 'posts#index_likes'
   get 'posts/index_new' => 'posts#index_new'
@@ -24,4 +26,7 @@ Rails.application.routes.draw do
  delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
  get 'users' => 'users#index'
  get 'post/detail_search' => 'posts#detail_search'
+
+ get "calendar/index", to:"calendar#index"
+ get "oauth2callback", to:"calendar#callback"
 end
