@@ -12,11 +12,11 @@
       <% if @user.nicname == nil %>
         <p>名前 : <%= @user.name %></p>
         <p>メールアドレス : <%= @user.email %></p>
-        <p>プロフィール : <%= @user.profile %></p>
         <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
-        <p>Twiiter : <a href="https://twitter.com/<%= @user.twitterid %>">@<%= @user.twitterid %></a></p>
+        <p>Twiiter :@ <a href="https://twitter.com/<%= @user.twitterid %>"><%= @user.twitterid %></a></p>
         <p>Instagram : <a href="https://www.instagram.com/<%= @user.insta_name %>"><%= @user.insta_name %></a></p>
-      <% else %>
+        <p>プロフィール : <%= @user.profile %></p>
+        <% else %>
         <p>ニックネーム : <%= @user.nicname %></p>
         <p>メールアドレス : <%= @user.email %></p>
       <% end %>
