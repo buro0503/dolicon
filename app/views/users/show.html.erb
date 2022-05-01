@@ -40,8 +40,8 @@
         <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
       <% end %>
       <% if @user.twitterid!=nil %>
-        <p>Twiiter : 
-        <a href="https://twitter.com/<%= @user.twitterid %>">@<%= @user.twitterid %></a></p>
+        <p>Twiiter : @
+        <a href="https://twitter.com/<%= @user.twitterid %>"><%= @user.twitterid %></a></p>
       <% end %>
       <% if @user.insta_name!=nil %>
         <p>Instagram : 
@@ -66,8 +66,8 @@
       <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
     <% end %>
     <% if @user.twitterid!=nil %>
-      <p>Twiiter : 
-      <a href="https://twitter.com/<%= @user.twitterid %>">@<%= @user.twitterid %></a></p>
+      <p>Twiiter : @
+      <a href="https://twitter.com/<%= @user.twitterid %>"><%= @user.twitterid %></a></p>
     <% end %>
     <% if @user.insta_name!=nil %>
       <p>Instagram : 
