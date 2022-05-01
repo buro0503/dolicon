@@ -15,6 +15,10 @@
             document . getElementById('user_profile') . style . display = "none"; 
             document . Form1["user[url]"] . disabled = false;
             document . getElementById('user_url') . style . display = "none"; 
+            document . Form1["user[twitterid]"] . disabled = false;
+            document . getElementById('user_twitterid') . style . display = "none"; 
+            document . Form1["user[insta_name]"] . disabled = false;
+            document . getElementById('user_insta_name') . style . display = "none"; 
             document . Form1["user[nicname]"] . disabled = false;
             document . getElementById('user_nicname') . style . display = "inline"; 
 
@@ -29,6 +33,10 @@
               document . getElementById('user_profile') . style . display = "inline";
               document . Form1["user[url]"] . disabled = false;
               document . getElementById('user_url') . style . display = "inline"; 
+              document . Form1["user[twitterid]"] . disabled = false;
+              document . getElementById('user_twitterid') . style . display = "inline"; 
+              document . Form1["user[insta_name]"] . disabled = false;
+              document . getElementById('user_insta_name') . style . display = "inline"; 
               document . Form1["user[nicname]"] . disabled = true; 
               document . getElementById('user_nicname') . style . display = "none"; 
           }
@@ -136,6 +144,20 @@
 <div class="field1" id="user_url" style="display:none;">
 <label for="user_公式HP URL"><br>公式HP URL<c>任意</c></label><br>
 <input autofocus="autofocus" size="30" type="url" name="user[url]" >
+</div>
+</div>
+
+<div class="field">
+<div class="field1" id="user_twitterid" style="display:none;">
+<label for="twitter id（@の次から）"><br>twitter id（@の次から）<c>任意</c></label><br>
+<input autofocus="autofocus" size="30" type="text" name="user[twitterid]" >
+</div>
+</div>
+
+<div class="field">
+<div class="field1" id="user_insta_name" style="display:none;">
+<label for="インスタのユーザーネーム"><br>インスタのユーザーネーム<c>任意</c></label><br>
+<input autofocus="autofocus" size="30" type="text" name="user[insta_name]" >
 </div>
 </div>
 

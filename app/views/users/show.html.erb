@@ -3,60 +3,77 @@
 
 
 <% if user_signed_in? %>
-
-
-    <% if current_user.id == @user.id || current_user.id==1%>
-      <div class="title">
-       <% provide(:title, 'マイページ') %>
-       <h1>マイページ</h1>
-      </div>
-
-
-  <div class="contents">
+  <% if current_user.id == @user.id %>
+    <div class="title">
+      <% provide(:title, 'マイページ') %>
+      <h1>マイページ</h1>
+    </div>
+    <div class="contents">
       <% if @user.nicname == nil %>
-      <p>名前 : <%= @user.name %></p>
-      <p>メールアドレス : <%= @user.email %></p>
-      <p>プロフィール : <%= @user.profile %></p>
-      <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
+        <p>名前 : <%= @user.name %></p>
+        <p>メールアドレス : <%= @user.email %></p>
+        <p>プロフィール : <%= @user.profile %></p>
+        <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
+        <p>Twitter id : @<%= @user.twitterid %></p>
+        <p>instagram : <%= @user.insta_name %></p>
       <% else %>
-      <p>ニックネーム : <%= @user.nicname %></p>
-      <p>メールアドレス : <%= @user.email %></p>
+        <p>ニックネーム : <%= @user.nicname %></p>
+        <p>メールアドレス : <%= @user.email %></p>
       <% end %>
       <%= link_to "編集する", edit_user_registration_path %>
+    </div>
+  <% end %>
+
+
+  <% if current_user.id != @user.id %>
+    <div class="title">
+      <% provide(:title, '団体ページ') %>
+      <h1>団体ページ</h1>
+    </div>
+    <div class="contents">
+      <h2> <%= @user.name %></h2>
+      <p>活動県 : <%= Prefecture.find(@user.prefecture_id).name %></p>
+      <% if @user.profile.present? %>
+        <p><%= @user.profile %></p>
+      <% end %>
+      <% if @user.url!=nil %>
+        <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
+      <% end %>
+      <% if @user.twitterid!=nil %>
+        <p>Twiiter : 
+        <a href="https://twitter.com/<%= @user.twitterid %>">@<%= @user.twitterid %></a></p>
+      <% end %>
+      <% if @user.insta_name!=nil %>
+        <p>Instagram : 
+        <a href="https://www.instagram.com/<%= @user.insta_name %>"><%= @user.insta_name %></a></p>
+      <% end %>
+    </div>
+  <% end %>
+
+<% else %>
+
+  <div class="title">
+    <% provide(:title, '団体ページ') %>
+    <h1>団体ページ</h1>
+  </div>
+  <div class="contents">
+    <h2> <%= @user.name %></h2>
+    <p>活動県 : <%= Prefecture.find(@user.prefecture_id).name %></p>
+    <% if @user.profile.present? %>
+      <p><%= @user.profile %></p>
+    <% end %>
+    <% if @user.url!=nil %>
+      <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
+    <% end %>
+    <% if @user.twitterid!=nil %>
+      <p>Twiiter : 
+      <a href="https://twitter.com/<%= @user.twitterid %>">@<%= @user.twitterid %></a></p>
+    <% end %>
+    <% if @user.insta_name!=nil %>
+      <p>Instagram : 
+      <a href="https://www.instagram.com/<%= @user.insta_name %>"><%= @user.insta_name %></a></p>
     <% end %>
   </div>
-
-    <% if current_user.id != @user.id %>
-      <div class="title">
-        <% provide(:title, '団体ページ') %>
-        <h1>団体ページ</h1>
-      </div>
-      <div class="contents">
-      <h2> <%= @user.name %></h2>
-      <p>活動県 : <%= Prefecture.find(@user.prefecture_id).name %></p>
-      <% if @user.profile.present? %>
-        <p><%= @user.profile %></p>
-      <% end %>
-      <% if @user.url!=nil %>
-        <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
-      <% end %>
-      </div>
-    <% end %>
-<% else %>
-      <div class="title">
-        <% provide(:title, '団体ページ') %>
-        <h1>団体ページ</h1>
-      </div>
-      <div class="contents">
-      <h2> <%= @user.name %></h2>
-      <p>活動県 : <%= Prefecture.find(@user.prefecture_id).name %></p>
-      <% if @user.profile.present? %>
-        <p><%= @user.profile %></p>
-      <% end %>
-      <% if @user.url!=nil %>
-        <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
-      <% end %>
-      </div>
 <% end %>
 
 <div class="mainbox" >
