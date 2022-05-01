@@ -66,7 +66,7 @@ class UsersController < ApplicationController
 
 
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :profile, :syurui, :ryakusyou, :prefecture, :prefecture_id, :url])
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :profile, :syurui, :ryakusyou, :prefecture, :prefecture_id, :url, :twitterid, :insta_name])
       end
 
 
