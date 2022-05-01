@@ -29,6 +29,11 @@
     <%= f.text_area :profile, autocomplete: "profile", size: "30x7" %>
     </div>
 
+    <div class="field">
+    <%= f.label :公式HP URL %><br />
+    <%= f.url_field :url, autofocus: true %>
+  </div>
+
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>

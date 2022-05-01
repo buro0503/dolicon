@@ -37,7 +37,7 @@
       <% if @user.profile.present? %>
         <p><%= @user.profile %></p>
       <% end %>
-      <% if @user.url.present? %>
+      <% if @user.url!=nil %>
         <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
       <% end %>
       </div>
@@ -53,7 +53,7 @@
       <% if @user.profile.present? %>
         <p><%= @user.profile %></p>
       <% end %>
-      <% if @user.url.present? %>
+      <% if @user.url!=nil %>
         <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
       <% end %>
       </div>
