@@ -30,9 +30,11 @@
     </div>
 
     <div class="field">
-    <%= f.label :公式HP URL %><br />
-    <%= f.url_field :url, autofocus: true %>
-  </div>
+    <%= f.label :公式HP %><br />
+    <%= f.url_field :url, autocomplete: "url", size: "30x7" %>
+    </div>
+
+    
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
