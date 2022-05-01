@@ -46,12 +46,15 @@ line-height: 1.5em;
 }
 
 .line_kyouyuu{
+    margin-top: 1em;
     width: fit-content;
     text-align: center;
 }
 
 .line_kyouyuu j{
-    font-size: 1em;
+    font-size: 0.5em;
+    position: relative;
+    bottom: 2em;
 }
 
 @media(max-width:2000px){
