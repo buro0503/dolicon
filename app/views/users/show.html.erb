@@ -36,14 +36,14 @@
       <% if @user.profile.present? %>
         <p><%= @user.profile %></p>
       <% end %>
-      <% if @user.url!=nil %>
+      <% if @user.url.present? %>
         <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
       <% end %>
-      <% if @user.twitterid!=nil %>
-        <p>Twiiter : @
-        <a href="https://twitter.com/<%= @user.twitterid %>"><%= @user.twitterid %></a></p>
+      <% if @user.twitterid!.present? %>
+        <p>Twiiter : 
+        <a href="https://twitter.com/<%= @user.twitterid %>">@<%= @user.twitterid %></a></p>
       <% end %>
-      <% if @user.insta_name!=nil %>
+      <% if @user.insta_name.present? %>
         <p>Instagram : 
         <a href="https://www.instagram.com/<%= @user.insta_name %>"><%= @user.insta_name %></a></p>
       <% end %>
@@ -62,14 +62,14 @@
     <% if @user.profile.present? %>
       <p><%= @user.profile %></p>
     <% end %>
-    <% if @user.url!=nil %>
+    <% if @user.url.present? %>
       <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
     <% end %>
-    <% if @user.twitterid!=nil %>
-      <p>Twiiter : @
-      <a href="https://twitter.com/<%= @user.twitterid %>"><%= @user.twitterid %></a></p>
+    <% if @user.twitterid.present? %>
+      <p>Twiiter : 
+      <a href="https://twitter.com/<%= @user.twitterid %>">@<%= @user.twitterid %></a></p>
     <% end %>
-    <% if @user.insta_name!=nil %>
+    <% if @user.insta_name.present? %>
       <p>Instagram : 
       <a href="https://www.instagram.com/<%= @user.insta_name %>"><%= @user.insta_name %></a></p>
     <% end %>
