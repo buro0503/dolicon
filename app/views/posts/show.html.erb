@@ -25,8 +25,8 @@
     <p><%= @post.address %></p>
     <p>公演日 <%= @post.start_time.strftime("%-m/%-d(%a.)") %></p>
     <p>開演時間 
-    <% if @post.start_time.strftime("%H:%M")=="00:00" %></p>
-    未定
+    <% if @post.start_time.strftime("%H:%M")=="00:00" %>
+    未定</p>
     <% else %>
     <%= @post.start_time.strftime("%-H:%M") %></p>
     <% end %>
