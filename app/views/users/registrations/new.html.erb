@@ -4,29 +4,33 @@
       <meta charset="utf-8">
       <script type="text/javascript">
       function changeDisplay() {
-          if ( document.Form1["user[syurui]"][0].checked ) { // 「その他」のラジオボタンをクリックしたとき
-            document . Form1["user[prefecture_id]"] . disabled = true; // 「その他」のラジオボタンの横のテキスト入力欄を無効化
-            document . getElementById('user_prefecture_id') . style . display = "none"; // 「その他」のラジオボタンの横のテキスト入力欄を非表示
-            document . Form1["user[ryakusyou]"] . disabled = true; // 「その他」のラジオボタンの横のテキスト入力欄を無効化
-            document . getElementById('user_ryakusyou') . style . display = "none"; // 「その他」のラジオボタンの横のテキスト入力欄を非表示
-            document . Form1["user[name]"] . disabled = true; // 「その他」のラジオボタンの横のテキスト入力欄を無効化
-            document . getElementById('user_name') . style . display = "none"; // 「その他」のラジオボタンの横のテキスト入力欄を非表示
-            document . Form1["user[profile]"] . disabled = false; // 「その他」のラジオボタンの横のテキスト入力欄を有効化
-            document . getElementById('user_profile') . style . display = "none"; // 「その他」のラジオボタンの横のテキスト入力欄を非表示
-            document . Form1["user[nicname]"] . disabled = false; // 「その他」のラジオボタンの横のテキスト入力欄を有効化
-            document . getElementById('user_nicname') . style . display = "inline"; // 「その他」のラジオボタンの横のテキスト入力欄を表示
+          if ( document.Form1["user[syurui]"][0].checked ) { 
+            document . Form1["user[prefecture_id]"] . disabled = true; 
+            document . getElementById('user_prefecture_id') . style . display = "none"; 
+            document . Form1["user[ryakusyou]"] . disabled = true; 
+            document . getElementById('user_ryakusyou') . style . display = "none"; 
+            document . Form1["user[name]"] . disabled = true; 
+            document . getElementById('user_name') . style . display = "none"; 
+            document . Form1["user[profile]"] . disabled = false;
+            document . getElementById('user_profile') . style . display = "none"; 
+            document . Form1["user[url]"] . disabled = false;
+            document . getElementById('user_url') . style . display = "none"; 
+            document . Form1["user[nicname]"] . disabled = false;
+            document . getElementById('user_nicname') . style . display = "inline"; 
 
-          } else { // 「その他」のラジオボタン以外をクリックしたとき
-              document . Form1["user[prefecture_id]"] . disabled = false; // 「その他」のラジオボタンの横のテキスト入力欄を有効化
-              document . getElementById('user_prefecture_id') . style . display = "inline"; // 「その他」のラジオボタンの横のテキスト入力欄を表示
-              document . Form1["user[ryakusyou]"] . disabled = false; // 「その他」のラジオボタンの横のテキスト入力欄を有効化
-              document . getElementById('user_ryakusyou') . style . display = "inline"; // 「その他」のラジオボタンの横のテキスト入力欄を表示
-              document . Form1["user[name]"] . disabled = false; // 「その他」のラジオボタンの横のテキスト入力欄を有効化
-              document . getElementById('user_name') . style . display = "inline"; // 「その他」のラジオボタンの横のテキスト入力欄を表示
-              document . Form1["user[profile]"] . disabled = false; // 「その他」のラジオボタンの横のテキスト入力欄を有効化
-              document . getElementById('user_profile') . style . display = "inline"; // 「その他」のラジオボタンの横のテキスト入力欄を表示
-              document . Form1["user[nicname]"] . disabled = true; // 「その他」のラジオボタンの横のテキスト入力欄を無効化
-              document . getElementById('user_nicname') . style . display = "none"; // 「その他」のラジオボタンの横のテキスト入力欄を非表示
+          } else { 
+              document . Form1["user[prefecture_id]"] . disabled = false;
+              document . getElementById('user_prefecture_id') . style . display = "inline"; 
+              document . Form1["user[ryakusyou]"] . disabled = false;
+              document . getElementById('user_ryakusyou') . style . display = "inline"; 
+              document . Form1["user[name]"] . disabled = false;
+              document . getElementById('user_name') . style . display = "inline"; 
+              document . Form1["user[profile]"] . disabled = false;
+              document . getElementById('user_profile') . style . display = "inline";
+              document . Form1["user[url]"] . disabled = false;
+              document . getElementById('user_url') . style . display = "inline"; 
+              document . Form1["user[nicname]"] . disabled = true; 
+              document . getElementById('user_nicname') . style . display = "none"; 
           }
       }
       window.onload = changeDisplay; // ページを表示したとき、changeDisplay() を呼び出す
@@ -127,6 +131,12 @@
 <textarea autofocus="autofocus" name="user[profile]" cols="30" rows="7" placeholder="マイページから編集できます">
 </textarea>
 </div>
+
+<div class="field">
+<div class="field1" id="user_url" style="display:none;">
+<label for="user_公式HP URL"><br>公式HP URL<c>任意</c></label><br>
+<input autofocus="autofocus" size="30" type="url" name="user[url]" >
+</div>
 </div>
 
 <div class="field">
@@ -155,15 +165,6 @@
 
 <a href="/users/sign_in">ログイン</a><br />
 </div>
-
-
-
-
-
-
-
-
-
 
 
 
