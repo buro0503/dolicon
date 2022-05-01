@@ -14,8 +14,8 @@
         <p>メールアドレス : <%= @user.email %></p>
         <p>プロフィール : <%= @user.profile %></p>
         <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
-        <p>Twitter id : @<%= @user.twitterid %></p>
-        <p>instagram : <%= @user.insta_name %></p>
+        <p>Twiiter : <a href="https://twitter.com/<%= @user.twitterid %>">@<%= @user.twitterid %></a></p>
+        <p>Instagram : <a href="https://www.instagram.com/<%= @user.insta_name %>"><%= @user.insta_name %></a></p>
       <% else %>
         <p>ニックネーム : <%= @user.nicname %></p>
         <p>メールアドレス : <%= @user.email %></p>
