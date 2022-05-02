@@ -10,20 +10,6 @@ module ApplicationHelper
           twitter: default_twitter_card
         }
       end
-
-        require "uri"
-      
-      def text_url_to_link text
-      
-        URI.extract(text, ['http','https'] ).uniq.each do |url|
-          sub_text = ""
-          sub_text << "<a href=" << url << " target=\"_blank\">" << url << "</a>"
-      
-          text.gsub!(url, sub_text)
-        end
-      
-        return text
-      end
       
       private
       
@@ -40,8 +26,8 @@ module ApplicationHelper
         {
           card: 'summary_large_image', # または summary
           site: '@buro_gm',            # twitter ID
-          title: 'マンドリン演奏会情報サイト',
-          description: '全国のマンドリンの演奏会情報を投稿・閲覧できるサイトです',
+          title: 'マンドリン演奏会情報',
+          description: '全国のマンドリンの演奏会情報を投稿・閲覧できるサイト',
           image: '/twitter_image.png'
         }
       end
