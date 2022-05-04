@@ -29,6 +29,5 @@ Rails.application.routes.draw do
  delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
  get 'users' => 'users#index'
  get 'post/detail_search' => 'posts#detail_search'
- get 'download', to: 'config_creators#download'
-
+ get  'download'  => 'get#download'
 end
