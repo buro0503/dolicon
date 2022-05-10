@@ -1,60 +1,175 @@
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+  function changeDisplay() {
+      if ( document.Form2["post[postsyurui]"][0].checked ) { 
+        document . Form2["post[name1]"] . disabled = false; 
+        document . getElementById('post_name1') . style . display = "inline"; 
+        document . Form2["post[hikukainame]"] . disabled = false; 
+        document . getElementById('post_hikukainame') . style . display = "none"; 
+        document . Form2["post[hikukairyakusyou]"] . disabled = false; 
+        document . getElementById('post_hikukairyakusyou') . style . display = "none"; 
+        document . Form2["post[music]"] . disabled = false; 
+        document . getElementById('post_music') . style . display = "inline"; 
+        document . Form2["post[image2]"] . disabled = false; 
+        document . getElementById('post_image2') . style . display = "inline"; 
+        document . getElementById('ensoukai') . style . display = "inline"; 
+        document . getElementById('hikukai') . style . display = "none"; 
+
+      } else { 
+        document . Form2["post[name1]"] . disabled = true;
+        document . getElementById('post_name1') . style . display = "none"; 
+        document . Form2["post[hikukainame]"] . disabled = false;
+        document . getElementById('post_hikukainame') . style . display = "inline"; 
+        document . Form2["post[hikukairyakusyou]"] . disabled = false;
+        document . getElementById('post_hikukairyakusyou') . style . display = "inline"; 
+        document . Form2["post[music]"] . disabled = true;
+        document . getElementById('post_music') . style . display = "none"; 
+        document . Form2["post[image2]"] . disabled = true;
+        document . getElementById('post_image2') . style . display = "none"; 
+        document . getElementById('ensoukai') . style . display = "none"; 
+        document . getElementById('hikukai') . style . display = "inline"; 
+      }
+  }
+  window.onload = changeDisplay; // ページを表示したとき、changeDisplay() を呼び出す
+  </script>
+</head>
+
 <%= stylesheet_link_tag 'posts', :media => "all" %>
 
 <div class="toukou-zentai">
 <h3>新規投稿</h3>
-<%= form_for @post do |f| %>
+<form name="Form2" class="new_post" id="new_post" enctype="multipart/form-data" action="/posts" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="z7o5psCpJt0ahCPMjgypAESchG_ubBjKiG0IFN6k2UMu0bvkzijJvZHagVqlfnVK5aIaqDAGWGGGy6W-eCaXOg" />
+
+<div class="field">
+<label for="post_投稿区分">投稿区分</label><br>
+<input type="radio" value="0" name="post[postsyurui]" id="post_postsyurui_0" checked onClick="changeDisplay()"/>
+<label for='post_postsyurui_0'>演奏会</label>
+<input type="radio" value="1" name="post[postsyurui]" id="post_postsyurui_1" onClick="changeDisplay()"/>
+<label for='post_postsyurui_1'>弾く会</label>
+</div>
+
   <div class="field">
-    <%= f.label :演奏会名（団体名は含めない） %>
+  <div class="field" id="post_name1" style="display:none;">
+    <label for="post_演奏会名（団体名は含めない）">演奏会名（団体名は含めない）</label>
     <b>必須</b>
-    <br><%= f.text_field :name1,size: 30 %>
+    <br><input size="30" type="text" name="post[name1]" required/>
+  </div>
   </div>
 
   <div class="field">
-    <%= f.label :曲目 %>
+  <div class="field" id="post_hikukainame" style="display:none;">
+    <label for="タイトル">タイトル</label>
+    <b>必須</b>
+    <br><input size="30" type="text" name="post[hikukainame]" required/>
+  </div>
+  </div>
+
+  <div class="field">
+  <div class="field" id="post_hikukairyakusyou" style="display:none;">
+    <label for="略称">略称</label>
     <c>任意</c>
-    <br><%= f.text_area :music, size: "30x7" %>
+    <br><h>カレンダーでの表示名</h></label>
+    <br><input size="30" type="text" name="post[hikukairyakusyou]" required/>
+  </div>
+  </div>
+
+  <div class="field" id="post_music" style="display:none;">
+    <label for="post_曲目">曲目</label>
+    <c>任意</c>
+    <br><textarea name="post[music]" cols="30" rows="7">
+</textarea>
   </div>
 
   <div class="field">
-    <%= f.label :開催地域 %>
+    <label for="post_開催地域">開催地域</label>
     <b>必須</b>
-    <br><%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}) %>
+    <br><select name="post[prefecture_id]" id="post_prefecture_id" required/><option value="">選択して下さい</option>
+<option value="1">北海道</option>
+<option value="2">青森県</option>
+<option value="3">岩手県</option>
+<option value="4">宮城県</option>
+<option value="5">秋田県</option>
+<option value="6">山形県</option>
+<option value="7">福島県</option>
+<option value="8">茨城県</option>
+<option value="9">栃木県</option>
+<option value="10">群馬県</option>
+<option value="11">埼玉県</option>
+<option value="12">千葉県</option>
+<option value="13">東京都</option>
+<option value="14">神奈川県</option>
+<option value="15">新潟県</option>
+<option value="16">富山県</option>
+<option value="17">石川県</option>
+<option value="18">福井県</option>
+<option value="19">山梨県</option>
+<option value="20">長野県</option>
+<option value="21">岐阜県</option>
+<option value="22">静岡県</option>
+<option value="23">愛知県</option>
+<option value="24">三重県</option>
+<option value="25">滋賀県</option>
+<option value="26">京都府</option>
+<option value="27">大阪府</option>
+<option value="28">兵庫県</option>
+<option value="29">奈良県</option>
+<option value="30">和歌山県</option>
+<option value="31">鳥取県</option>
+<option value="32">島根県</option>
+<option value="33">岡山県</option>
+<option value="34">広島県</option>
+<option value="35">山口県</option>
+<option value="36">徳島県</option>
+<option value="37">香川県</option>
+<option value="38">愛媛県</option>
+<option value="39">高知県</option>
+<option value="40">福岡県</option>
+<option value="41">佐賀県</option>
+<option value="42">長崎県</option>
+<option value="43">熊本県</option>
+<option value="44">大分県</option>
+<option value="45">宮崎県</option>
+<option value="46">鹿児島県</option>
+<option value="47">沖縄県</option></select>
   </div>
 
   <div class="field">
-  <%= f.label :自由記述 %>
+  <label for="post_自由記述">自由記述</label>
   <c>任意</c>
-  <br><%= f.text_area :detail, size: "30x7" %>
+  <br><textarea name="post[detail]" id="post_detail" cols="30" rows="7">
+</textarea>
   </div>
 
   <div class="field">
-    <%= f.label :チラシ画像（表） %>
+    <label for="post_チラシ画像（表）">チラシ画像（表）</label>
     <c>任意</c>
-    <br><%= f.file_field :image ,accept:'image/jpeg,image/png,image/jfif,text/html' %>
+    <br><input accept="image/jpeg,image/png,image/jfif,text/html" type="file" name="post[image]" id="post_image" />
   </div>
 
-  <div class="field">
-    <%= f.label :チラシ画像（裏） %>
+  <div class="field" id="post_image2" style="display:none;">
+    <label for="post_チラシ画像（裏）">チラシ画像（裏）</label>
     <c>任意</c>
-    <br><%= f.file_field :image2 ,accept:'image/jpeg,image/png,image/jfif' %>
+    <br><input accept="image/jpeg,image/png,image/jfif" type="file" name="post[image2]" />
   </div>
 
   <div class="field">
-    <%= f.label :公演日、開演時間 %><b>必須</b>
-    <br><h>開演時間が未定の場合は00:00としてください</h>
-    <br><%= f.datetime_field :start_time %>
+    <label for="post_公演日、開演時間" id="ensoukai">公演日、開演時間<b>必須</b>
+    <br><h>開演時間が未定の場合は00:00としてください</h></label>
+    <label for="post_日程、開始時間" id="hikukai">日程、開始時間<b>必須</b>
+    <br><h>開始時間が未定の場合は00:00としてください</h></label>
+    <br><input type="datetime-local" name="post[start_time]" id="post_start_time" required/>
   </div>
 
- <%= form_with(model: @post) do |f| %>
+ <form action="/posts" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="nisCHrknEpzVsMxQ2q2QMKaneX0mJg1DaUizdIA0ER1_QIBct6b9_F7ubsbx30x6B5nnuvhMTehn7h7eJrZfZA" />
 
   <div class="field my-3">
-    <%= f.label :開催場所 %>
-    <b>必須</b>
-    <br><%= f.text_field :address %>
+    <label for="post_開催場所">開催場所</label>
+    <c>任意</c>
+    <br><input type="text" name="post[address]" id="post_address" required/>
   </div>
   <div class="actions">
-    <%= f.submit "投稿する", type: 'button', onclick: 'submit();' %>
+    <input type="button" name="commit" value="投稿する" onclick="submit();" data-disable-with="投稿する" />
   </div>
- <% end %>
-</div>
-<% end %>
+</form></div>
+</form>

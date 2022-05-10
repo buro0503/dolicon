@@ -11,8 +11,8 @@ class Post < ApplicationRecord
   geocoded_by :address
 after_validation :geocode, if: :address_changed?
 validates :start_time, presence: true
-validates :name1, presence: true
+validates :name1, presence: true, unless: :hikukainame?
+validates :hikukainame ,presence: true, unless: :name1?
 validates :prefecture_id, presence: true
-validates :start_time, presence: true
 
 end

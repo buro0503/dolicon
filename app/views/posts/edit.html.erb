@@ -2,10 +2,37 @@
 <div class="tyuuoubox">
 <i>投稿編集</i>
 
-  <div class="field">
     <%= form_for @post do |f| %>
+
+<% if @post.postsyurui == 0 %>
+  
+  <div class="field">
     <%= f.label :演奏会名 %>
     <br><%= f.text_field :name1,size: 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :曲目 %>
+    <br><%= f.text_area :music, size: "30x7" %>
+  </div>
+
+<% else %>
+
+  <div class="field">
+    <%= f.label :タイトル %>
+    <br><%= f.text_field :hikukainame,size: 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :略称 %>
+    <br><%= f.text_field :hikukairyakusyou,size: 30 %>
+  </div>
+
+<% end %>
+
+  <div class="field">
+    <%= f.label :開催地域 %>
+    <br><%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}) %>
   </div>
 
   <div class="field">
@@ -14,24 +41,16 @@
   </div>
 
   <div class="field">
-    <%= f.label :曲目 %>
-    <br><%= f.text_area :music, size: "30x7" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :開催地域 %>
-    <br><%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}) %>
-  </div>
-
-  <div class="field">
     <%= f.label :チラシ画像（表） %>
     <br><%= f.file_field :image %>
   </div>
 
+<% if @post.postsyurui == 0 %>
   <div class="field">
     <%= f.label :チラシ画像（裏） %>
     <br><%= f.file_field :image2 %>
   </div>
+<% end %>rails s
 
   <div class="field">
     <%= f.label :実施日、開演時間 %>

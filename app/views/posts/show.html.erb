@@ -19,10 +19,18 @@
 <div class="post_show">
   <div class="post_shousai">
   <div class="post_tyuuou">
+    <% if @post.hikukainame.present? %>
+    <h2><p><%= @post.hikukainame %></p></h2>
+    <% else %>
     <h2><p><%= link_to User.find(@post.user_id).name, user_path(@post.user_id) %></p></h2>
     <h2><p><%= @post.name1 %></p></h2>
+    <% end %>
     <p>【<%= Prefecture.find(@post.prefecture_id).name %>】</p>
+    <% if @post.address.present? %>
     <p>場所 <%= @post.address %></p>
+    <% else %>
+    <p>場所 未定</p>
+    <% end %>
     <p>公演日 <%= @post.start_time.strftime("%-m/%-d(%a.)") %></p>
     <p>開演時間 
     <% if @post.start_time.strftime("%H:%M")=="00:00" %>

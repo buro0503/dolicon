@@ -106,6 +106,7 @@
       <div class="user_post_each">
         <%= t.start_time.strftime("%Y年%-m月%-d日") %>
         <br><%= t.name1 %> 
+        <%= t.hikukainame %>
         <%= link_to "詳細へ", post_path(t.id) %>
       </div>
       <% end %>

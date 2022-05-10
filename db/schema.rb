@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_01_161310) do
+ActiveRecord::Schema.define(version: 2022_05_07_131523) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 2022_05_01_161310) do
     t.string "caption"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "hikukainame"
+    t.text "hikukairyakusyou"
+    t.integer "postsyurui"
   end
 
   create_table "relationships", force: :cascade do |t|
