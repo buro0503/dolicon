@@ -7,6 +7,7 @@ module ApplicationHelper
           reverse: true,
           separator: '|',
           og: defalut_og,
+          keywords: 'マンドリン演奏会',
           twitter: default_twitter_card
         }
       end
