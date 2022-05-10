@@ -8,6 +8,7 @@ module ApplicationHelper
           separator: '|',
           og: defalut_og,
           twitter: default_twitter_card
+          image: '/twitter_image.png'
         }
       end
       
