@@ -16,7 +16,8 @@ module ApplicationHelper
       
       def defalut_og
         {
-          title: 'テストタイトル',          # :full_title とすると、サイトに表示される <title> と全く同じものを表示できる
+          site: 'マンドリン演奏会情報サイト',
+          title: :full_title,          # :full_title とすると、サイトに表示される <title> と全く同じものを表示できる
           description: :full_description,   # 上に同じ
           url: request.url,
           image: 'twitter/twitter_image.png'
