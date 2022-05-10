@@ -29,7 +29,7 @@ module ApplicationHelper
           site: '@buro_gm',            # twitter ID
           title: 'マンドリン演奏会情報サイト',
           description: '全国のマンドリンの演奏会情報を投稿・閲覧できるサイトです',
-          image: image_url('twitter_image.png')
+          image: image_url('/twitter_image.png')
         }
       end
 end
