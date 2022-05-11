@@ -2,9 +2,7 @@
 
 <html>
 <head>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+
 </head>
 <body>
 
@@ -52,10 +50,16 @@
               <% else %>
               <p><e><%= link_to User.find(post.user_id).name, user_path(post.user_id) %></p></d></e></p>
               <% end %>
-              <d><p><%= link_to post.image_url, "data-lightbox" => post.image_url do %>
-              <%= image_tag post.image_url, size: "189x267" if post.image? %></p></d>
+              <% if  post.image.present? %>
+              <d><p><a href="<%=Post.find(post.id).image_url%>" rel="lightbox[<%=post.id%>]"><img width="189" height="267" src="<%=Post.find(post.id).image_url%>" alt="" /></a></p></d>
+              <% end %>
+              <% if  post.image2.present? %>
+               <div class="image2">
+                <d><p><a href="<%=Post.find(post.id).image2_url%>" rel="lightbox[<%=post.id%>]"><img width="189" height="267" src="<%=Post.find(post.id).image2_url%>" alt="" /></a></p></d>
+               </div>
               <% end %>
             </div>
+
 
               <div class="likes_buttons" id="likes_buttons_<%= post.id %>">
                 <e><%= render partial: 'likes/like', locals: {post: post} %></e>
@@ -63,11 +67,8 @@
               <div class="index_shousai">
                 <e><p><%= link_to "詳細へ", post_path(post.id) %></p></e>
               </div>
-
           </div>
         </div>  
-  
-
       </div>
     <% end %>
   </div>
