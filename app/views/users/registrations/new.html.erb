@@ -10,13 +10,13 @@
             document . getElementById('user_ryakusyou') . style . display = "none"; 
             document . Form1["user[name]"] . disabled = true; 
             document . getElementById('user_name') . style . display = "none"; 
-            document . Form1["user[profile]"] . disabled = false;
+            document . Form1["user[profile]"] . disabled = true;
             document . getElementById('user_profile') . style . display = "none"; 
-            document . Form1["user[url]"] . disabled = false;
+            document . Form1["user[url]"] . disabled = true;
             document . getElementById('user_url') . style . display = "none"; 
-            document . Form1["user[twitterid]"] . disabled = false;
+            document . Form1["user[twitterid]"] . disabled = true;
             document . getElementById('user_twitterid') . style . display = "none"; 
-            document . Form1["user[insta_name]"] . disabled = false;
+            document . Form1["user[insta_name]"] . disabled = true;
             document . getElementById('user_insta_name') . style . display = "none"; 
             document . Form1["user[nicname]"] . disabled = false;
             document . getElementById('user_nicname') . style . display = "inline"; 
@@ -39,7 +39,10 @@
               document . Form1["user[nicname]"] . disabled = true; 
               document . getElementById('user_nicname') . style . display = "none"; 
           }
-      }
+      }      
+
+
+
       window.onload = changeDisplay; // ページを表示したとき、changeDisplay() を呼び出す
       </script>
   </head>
@@ -72,7 +75,7 @@
 </div>
 
 <div class="field2" id="user_nicname" style="display:none;">
-<label for="user_正式団体名"><br>ニックネーム</label><br>
+<label for="ニックネーム"><br>ニックネーム</label><br>
 <input autofocus="autofocus" size="30" type="text" name="user[nicname]" required/>
 </div>
 
@@ -135,34 +138,34 @@
 
 <div class="field1" id="user_profile" style="display:none;">
 <br><br><label for="user_プロフィール">プロフィール<c>任意</c></label><br />
-<textarea autofocus="autofocus" name="user[profile]" cols="30" rows="7" placeholder="マイページから編集できます">
+<textarea name="user[profile]" cols="30" rows="7" placeholder="マイページから編集できます">
 </textarea>
 </div>
 
 <div class="field1">
 <div class="field1" id="user_url" style="display:none;">
 <label for="user_公式HP URL"><br>公式HP URL<c>任意</c></label><br>
-<input autofocus="autofocus" size="30" type="url" name="user[url]" >
+<input size="30" type="url" name="user[url]" >
 </div>
 </div>
 
 <div class="field1">
 <div class="field1" id="user_twitterid" style="display:none;">
 <label for="twitter id"><br>twitter id<c>任意</c></label><br>
-<input autofocus="autofocus" size="30" type="text" name="user[twitterid]" placeholder="@は含めないでください">
+<input size="30" type="text" name="user[twitterid]" placeholder="@は含めないでください">
 </div>
 </div>
 
 <div class="field1">
 <div class="field1" id="user_insta_name" style="display:none;">
 <label for="インスタのユーザーネーム"><br>インスタのユーザーネーム<c>任意</c></label><br>
-<input autofocus="autofocus" size="30" type="text" name="user[insta_name]" >
+<input size="30" type="text" name="user[insta_name]" >
 </div>
 </div>
 
 <div class="field">
 <label for="user_email">メールアドレス</label><br />
-<input autofocus="autofocus" autocomplete="email" size="30" type="email" value="" name="user[email]" id="user_email" required/>
+<input autocomplete="email" size="30" type="email" value="" name="user[email]" id="user_email" required/>
 </div>
 
 <div class="field">
@@ -186,11 +189,19 @@
 
 <a href="/users/sign_in">ログイン</a><br />
 </div>
-
-
-
-
-
 </div>
 </div>
 
+<script>
+function CheckPassword(confirm){
+  // 入力値取得
+  var input1 = user_password.value;
+  var input2 = user_password_confirmation.value;
+  // パスワード比較
+  if(input1 != input2){
+    user_password.setCustomValidity("入力値が一致しません。");
+  }else{
+    user_password.setCustomValidity('');
+  }
+}
+</script>
