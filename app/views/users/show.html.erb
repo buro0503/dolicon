@@ -1,14 +1,10 @@
-<meta name="twitter:title" content="団体一覧" />
-
+<% set_meta_tags title:@user.name, description:@user.profile %>
 
 <%= stylesheet_link_tag 'user_show', :media => "all" %>
-
-
 
 <% if user_signed_in? %>
   <% if current_user.id == @user.id %>
     <div class="title">
-      <% provide(:title, 'マイページ') %>
       <h1>マイページ</h1>
     </div>
     <div class="contents">
@@ -31,7 +27,6 @@
 
   <% if current_user.id != @user.id %>
     <div class="title">
-      <% provide(:title, '団体ページ') %>
       <h1>団体ページ</h1>
     </div>
     <div class="contents">
@@ -57,7 +52,6 @@
 <% else %>
 
   <div class="title">
-    <% provide(:title, '団体ページ') %>
     <h1>団体ページ</h1>
   </div>
   <div class="contents">
