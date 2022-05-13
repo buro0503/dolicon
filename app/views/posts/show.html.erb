@@ -1,5 +1,5 @@
 
-<% set_meta_tags title: User.find(@post.user_id).ryakusyou + @post.name1, og:{image: image_url(url_for(@post.image_url))}, twitter:{image: image_url(url_for(@post.image_url))} %>
+<% set_meta_tags title: User.find(@post.user_id).ryakusyou + @post.name1, description: @post.detail, og:{image: image_url(url_for(@post.image_url))}, twitter:{image: image_url(url_for(@post.image_url))} %>
 
 <%= stylesheet_link_tag 'post_show', :media => "all" %>
 
