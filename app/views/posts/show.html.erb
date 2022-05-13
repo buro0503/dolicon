@@ -67,11 +67,16 @@
       <%= render partial: 'likes/like', locals: {post: @post} %>
     </div>
 
+    <ul>
     <div class="line_kyouyuu">
-    <div class="line-it-button" data-lang="ja" data-type="share-b" data-env="REAL" data-url="https://dolicon.herokuapp.com/posts/<%= @post.id %>" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
+    <li><div class="line-it-button" data-lang="ja" data-type="share-b" data-env="REAL" data-url="https://dolicon.herokuapp.com/posts/<%= @post.id %>" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
     <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
     <br><j>LINEで共有</j>
     </div>
+    <li><%= link_to ""https://dolicon.herokuapp.com/posts/<%= @post.id %>"&text=マンドリン演奏会情報サイト do %></li>
+      <i class="fa-brands fa-twitter"></i> twitterで<br>　　共有　　
+      <% end %>
+    </ul>
   </div>
   </div>
 
