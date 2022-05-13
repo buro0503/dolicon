@@ -1,12 +1,11 @@
 <%= stylesheet_link_tag 'users', :media => "all" %>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
-<meta name="theme-color" content="#371917">
-<title>団体一覧</title>
-<meta name="description" content="登録団体の一覧です">
+<meta property="og:title" content="団体一覧">
+<meta property="og:description" content="登録団体の一覧です">
 <div class="dantaiitiran">
 
   <div class="title">
+    <% provide(:title, '団体一覧') %>
     <h1>団体一覧</h1>
   </div>
 
