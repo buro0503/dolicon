@@ -38,9 +38,14 @@
             <% else %>
             <p><e><%= link_to User.find(post.user_id).name, user_path(post.user_id) %></p></d></e></p>
             <% end %>
-            <d><p><%= link_to post.image_url, "data-lightbox" => post.image_url do %>
-            <%= image_tag post.image_url, size: "189x267" if post.image? %></p></d>
-            <% end %>            
+            <% if  post.image.present? %>
+            <d><p><a href="<%=Post.find(post.id).image_url%>" rel="lightbox[<%=post.id%>]"><img width="189" height="267" src="<%=Post.find(post.id).image_url%>" alt="" /></a></p></d>
+            <% end %>
+            <% if  post.image2.present? %>
+             <div class="image2">
+              <d><p><a href="<%=Post.find(post.id).image2_url%>" rel="lightbox[<%=post.id%>]"><img width="189" height="267" src="<%=Post.find(post.id).image2_url%>" alt="" /></a></p></d>
+             </div>
+            <% end %>       
           </div>
 
           <div class="likes_buttons" id="likes_buttons_<%= post.id %>">
