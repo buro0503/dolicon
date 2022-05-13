@@ -7,7 +7,7 @@ module ApplicationHelper
           reverse: true,
           separator: '|',
           og: defalut_og,
-          keywords: 'マンドリン演奏会',
+          keywords: 'マンドリン演奏会,マンドリン,演奏会',
           twitter: default_twitter_card
         }
       end
@@ -20,7 +20,7 @@ module ApplicationHelper
           title: :full_title,          # :full_title とすると、サイトに表示される <title> と全く同じものを表示できる
           description: :full_description,   # 上に同じ
           url: request.url,
-          image: 'twitter/line_image.png'
+          image: image_url('twitter/line_image.png')
         }
       end
       
