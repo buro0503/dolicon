@@ -3,7 +3,6 @@ module ApplicationHelper
     def default_meta_tags
         {
           site: 'マンドリン演奏会情報サイト',
-          title: 'タイトルdefo',
           description: "全国のマンドリンの演奏会情報を投稿・閲覧できるサイトです",
           reverse: true,
           separator: '|',
@@ -17,10 +16,11 @@ module ApplicationHelper
       
       def defalut_og
         {
-          site_name: 'マンドリン演奏会情報サイト.',
-          title: 'タイトル',          # :full_title とすると、サイトに表示される <title> と全く同じものを表示できる
+          site_name: :site,
+          title: full_title,          # :full_title とすると、サイトに表示される <title> と全く同じものを表示できる
           description: :full_description,   # 上に同じ
           url: request.url,
+          type: 'website',
           image: image_url('twitter/line_image.png')
         }
       end
