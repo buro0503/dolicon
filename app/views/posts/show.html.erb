@@ -26,10 +26,10 @@
     <p>場所 未定</p>
     <% end %>
     <p>公演日 <%= @post.start_time.strftime("%-m/%-d(%a.)") %></p>
-    <% if @post.postsyurui==0 %>
-    <p>開演時間 
+    <% if @post.postsyurui==1 %>
+    <p>集合時間 
     <% else %>
-    <p>集合時間
+    <p>開演時間
     <% end %>
     <% if @post.start_time.strftime("%H:%M")=="00:00" %>
     未定</p>
