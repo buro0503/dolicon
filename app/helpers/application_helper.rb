@@ -3,6 +3,7 @@ module ApplicationHelper
     def default_meta_tags
         {
           site: 'マンドリン演奏会情報サイト',
+          title: 'タイトルdefo',
           description: "全国のマンドリンの演奏会情報を投稿・閲覧できるサイトです",
           reverse: true,
           separator: '|',
