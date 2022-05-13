@@ -28,8 +28,8 @@ module ApplicationHelper
         {
           card: 'summary_large_image', # または summary
           site: '@buro_gm',            # twitter ID
-          title: 'マンドリン演奏会情報サイト',
-          description: '全国のマンドリンの演奏会情報を投稿・閲覧できるサイトです',
+          title: :full_title,
+          description: :full_description,
           image: image_url('twitter/twitter_image.png')
         }
       end
