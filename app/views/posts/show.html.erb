@@ -1,8 +1,7 @@
-<% if @post.postsyurui==0 %>
-<% set_meta_tags title: User.find(@post.user_id).ryakusyou + @post.name1, description: @post.detail, og:{image: image_url(url_for(@post.image_url))}, twitter:{image: image_url(url_for(@post.image_url))} %>
-<% end %>
 <% if @post.postsyurui==1 %>
 <% set_meta_tags title: @post.hikukainame, description: @post.detail, og:{image: image_url(url_for(@post.image_url))}, twitter:{image: image_url(url_for(@post.image_url))} %>
+<% else %>
+<% set_meta_tags title: User.find(@post.user_id).ryakusyou + @post.name1, description: @post.detail, og:{image: image_url(url_for(@post.image_url))}, twitter:{image: image_url(url_for(@post.image_url))} %>
 <% end %>
 <%= stylesheet_link_tag 'post_show', :media => "all" %>
 
