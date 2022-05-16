@@ -77,7 +77,7 @@ end
  def calendar
    @place= JpPrefecture::Prefecture.all
    @q = Post.ransack(params[:q])
-   @post = @q.result(distinct: true) 
+   @posts = @q.result(distinct: true) 
    @post_1 = @q.result(distinct: true) .where(prefecture_id: 1)
    @post_2 = @q.result(distinct: true) .where(prefecture_id: 2)
 @post_3 = @q.result(distinct: true) .where(prefecture_id: 3)
@@ -127,16 +127,10 @@ end
 @post_47 = @q.result(distinct: true) .where(prefecture_id: 47)
 
 
-  if params[:search1] == nil
-    @posts= Post.all.page(params[:page])
-   elsif params[:search1] == ''
-    @posts= Post.all.page(params[:page])
-   else
-    @posts = Post.where("prefecture LIKE ? ",'%' + params[:search1] + '%').page(params[:page])
-  end
+
  end
 
- def detail_search
+def detail_search
   @q = Post.ransack(params[:q])
   @posts = @q.result(distinct: true)
   @prefectureName = Address.where('prefecture_id IN(?)', params[:prefecture_id])
