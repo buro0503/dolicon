@@ -42,8 +42,7 @@
 
     <% if @post.image.present? %>
 
-      <p><%= safe_join(@post.detail.split("\n"),tag(:br)) %></p>
-
+      <p><%= convert_url_into_a_tag(safe_join(h(@post.detail).split("\n"),tag(:br))).html_safe %></p>
       <div class="gazou">
         <a href="<%=@post.image_url%>" rel="lightbox[plants]"><img width="210" height="297" src="<%=@post.image_url%>" alt="" /></a>
         <% if  @post.image2.present? %>
@@ -51,7 +50,7 @@
         <% end %>
       </div>
     <% else %>
-      <p> <%= safe_join(@post.detail.split("\n"),tag(:br)) %></p>
+      <p><%= convert_url_into_a_tag(safe_join(h(@post.detail).split("\n"),tag(:br))).html_safe %></p>
       <% if  @post.music.present? %>
        <p> 曲目</p>
        <p> <%= safe_join(@post.music.split("\n"),tag(:br)) %></p>

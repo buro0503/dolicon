@@ -33,7 +33,7 @@
       <h2> <%= @user.name %></h2>
       <p>活動県 : <%= Prefecture.find(@user.prefecture_id).name %></p>
       <% if @user.profile.present? %>
-        <p><%= safe_join(@user.profile.split("\n"),tag(:br)) %></p>
+        <p><%= convert_url_into_a_tag(safe_join(h(@user.profile).split("\n"),tag(:br))).html_safe %></p>
       <% end %>
       <% if @user.url.present? %>
         <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
@@ -58,7 +58,7 @@
     <h2> <%= @user.name %></h2>
     <p>活動県 : <%= Prefecture.find(@user.prefecture_id).name %></p>
     <% if @user.profile.present? %>
-    <p><%= safe_join(@user.profile.split("\n"),tag(:br)) %></p>
+    <p><%= convert_url_into_a_tag(safe_join(h(@user.profile).split("\n"),tag(:br))).html_safe %></p>
     <% end %>
     <% if @user.url.present? %>
       <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
