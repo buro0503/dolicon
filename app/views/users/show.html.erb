@@ -14,7 +14,7 @@
         <p>公式HP : <a href= <%= @user.url %> target=\"_blank\"> <%= @user.url %> </a></p>
         <p>Twiiter :@ <a href="https://twitter.com/<%= @user.twitterid %>"><%= @user.twitterid %></a></p>
         <p>Instagram : <a href="https://www.instagram.com/<%= @user.insta_name %>"><%= @user.insta_name %></a></p>
-        <p>プロフィール :<%= safe_join(@user.profile.split("\n"),tag(:br)) %></p>
+        <p>プロフィール :<%= convert_url_into_a_tag(safe_join(h(@user.profile).split("\n"),tag(:br))).html_safe %></p>
 
         <% else %>
         <p>ニックネーム : <%= @user.nicname %></p>
