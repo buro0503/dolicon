@@ -75,12 +75,12 @@
 </div>
 
 <div class="field2" id="user_nicname" style="display:none;">
-<label for="ニックネーム"><br>ニックネーム</label><br>
+<label for="ニックネーム"><br>ニックネーム（コメント時に表示されます）</label><br>
 <input autofocus="autofocus" size="30" type="text" name="user[nicname]" required/>
 </div>
 
 <div class="field1" id="user_ryakusyou" style="display:none;">
-<br><br><label for="user_略称">略称</label><br />
+<br><br><label for="user_略称">略称（アルファベットのみの表記は非推奨）</label><br />
 <input size="30" type="text" name="user[ryakusyou]" id="input-number" placeholder="唯一に定まる最短の名前　非推奨:〇〇MC" required/>
 </div>
 
@@ -180,6 +180,15 @@
 <input autocomplete="new-password" size="30" type="password" name="user[password_confirmation]" id="user_password_confirmation" minlength="6" required/>
 </div>
 
+<div class="field">
+<%= link_to "プライバシーポリシー", policy_privacypolicy_path %><br />
+<%= link_to "利用規約", policy_riyoukiyaku_path %><br />
+<div>
+<input type="checkbox" id="プライバシーポリシー及び利用規約に同意する" name="プライバシーポリシー及び利用規約に同意する" required/>
+<label for="プライバシーポリシー及び利用規約に同意する">プライバシーポリシー及び利用規約に同意する</label>
+</div></div>
+
+
 <div class="button_login">
   <div class="actions">
     <input type="submit" name="commit" value="新規登録" data-disable-with="新規登録" />
@@ -192,16 +201,4 @@
 </div>
 </div>
 
-<script>
-function CheckPassword(confirm){
-  // 入力値取得
-  var input1 = user_password.value;
-  var input2 = user_password_confirmation.value;
-  // パスワード比較
-  if(input1 != input2){
-    user_password.setCustomValidity("入力値が一致しません。");
-  }else{
-    user_password.setCustomValidity('');
-  }
-}
-</script>
+

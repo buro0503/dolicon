@@ -19,7 +19,8 @@ Rails.application.routes.draw do
  resources :users
 
 
- 
+ get 'policy/riyoukiyaku' => 'policy#riyoukiyaku'
+ get 'policy/privacypolicy' => 'policy#privacypolicy'
  get 'hello/index' => 'hello#index'
  root 'posts#index'
  get 'post/this_month' => 'posts#this_month'
