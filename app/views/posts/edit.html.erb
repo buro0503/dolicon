@@ -4,7 +4,7 @@
 
     <%= form_for @post do |f| %>
 
-<% if @post.postsyurui == 0 %>
+<% if @post.postsyurui != 1 %>
   
   <div class="field">
     <%= f.label :演奏会名 %>
@@ -45,12 +45,12 @@
     <br><%= f.file_field :image %>
   </div>
 
-<% if @post.postsyurui == 0 %>
+<% if @post.postsyurui != 1 %>
   <div class="field">
     <%= f.label :チラシ画像（裏） %>
     <br><%= f.file_field :image2 %>
   </div>
-<% end %>rails s
+<% end %>
 
   <div class="field">
     <%= f.label :実施日、開演時間 %>
