@@ -54,9 +54,9 @@
   <div class="login_title">
    <h2>新規登録</h2>
   </div>
-  
+
   <% if @user.errors.any? %>
-  <div id="error_explanation" class="alert alert-danger">
+  <div id="error_explanation" class="alert-alert-danger">
     <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
