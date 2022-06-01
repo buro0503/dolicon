@@ -30,5 +30,8 @@ Rails.application.routes.draw do
  delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
  get 'users' => 'users#index'
  get 'post/detail_search' => 'posts#detail_search'
- get  'download'  => 'get#download'
+ get  'download'  => 'posts#download'
+ get  'downloade'  => 'posts#downloade'
+ get 'get' =>'posts#get'
+
 end

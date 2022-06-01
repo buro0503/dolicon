@@ -144,3 +144,23 @@
 
 </body>
 </html>
+
+
+
+
+<%= f = File.open("#{User.find(@post.user_id).name+@post.name1}.ics", 'w') %>
+<%= f.puts "BEGIN:VCALENDAR
+PRODID:-//dolicon.herokuapp.com//website//EN
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:#{@post.start_time.strftime("%Y%m%d")}T040000Z
+DTEND:#{@post.start_time.strftime("%Y%m%d")}T060000Z
+DTSTAMP:Datetime.now
+DESCRIPTION:#{@post.start_time.strftime("%Y年%m月%d日（%a.）")}#{convert_url_into_a_tag(safe_join(h(@post.detail).split("\n"),tag(:br))).html_safe}\nbills 大阪(大阪/洋食・西洋料理、オセアニア料理、その他)\n※予約日時等を変更した場合は自動反映されないため、マイページからご確認ください\nhttps://spn.ozmall.co.jp/ozpoint/confirm/
+LOCATION:#{@post.address}
+SUMMARY:#{User.find(@post.user_id).name+@post.name1}
+END:VEVENT
+END:VCALENDAR" %>
+<%= f.close %>
+
+
