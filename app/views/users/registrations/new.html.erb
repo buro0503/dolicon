@@ -54,7 +54,16 @@
   <div class="login_title">
    <h2>新規登録</h2>
   </div>
-
+  
+  <% if @user.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <div class="field">
 <form name="Form1" class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="tdcIhDD9jK3m-dZOlDS-ldMd59ix9byFAiv78MVgnDBDk_Xy093ZvFj-fVGPir2L_urcnt33gfgXEC2PzYO5cA" />
