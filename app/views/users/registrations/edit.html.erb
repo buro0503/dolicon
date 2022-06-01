@@ -71,8 +71,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :現在のパスワード %> <i><b>必須</b></i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <label for="user_現在のパスワード">現在のパスワード</label> <i><b>必須</b></i><br />
+    <input autocomplete="current-password" type="password" name="user[current_password]" id="user_current_password" required/>
   </div>
 
   <div class="actions">
