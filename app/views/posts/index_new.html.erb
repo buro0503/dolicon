@@ -24,8 +24,9 @@
   </div>  <%= page_entries_info @posts %>
 </div>
 
+<div class="scroll-list jscroll">
+  <div class="post-zentai">
 
-<div class="post-zentai">
     <% @posts.each do |post| %>
       <div class="posts-container">
         <div class="post">
@@ -46,27 +47,19 @@
               <d><p><a href="<%=Post.find(post.id).image2_url%>" rel="lightbox[<%=post.id%>]"><img width="189" height="267" src="<%=Post.find(post.id).image2_url%>" alt="" /></a></p></d>
              </div>
             <% end %>       
+            </div>
+
+            <div class="likes_buttons" id="likes_buttons_<%= post.id %>">
+            <e><%= render partial: 'likes/like', locals: {post: post} %></e>
+            </div>
+            <div class="index_shousai">
+             <e><p><%= link_to "詳細へ", post_path(post.id) %></p></e>
+            </div>
           </div>
-
-          <div class="likes_buttons" id="likes_buttons_<%= post.id %>">
-          <e><%= render partial: 'likes/like', locals: {post: post} %></e>
-        </div>
-        <div class="index_shousai">
-          <e><p><%= link_to "詳細へ", post_path(post.id) %></p></e>
-        </div>
-
-    </div>
-  </div>  
-
-
-</div>
-<% end %>
+        </div>  
+      </div>
+    <% end %>
   </div>
-
-
-
-
-
 </div>
 
 <div class="pagenate_end">
