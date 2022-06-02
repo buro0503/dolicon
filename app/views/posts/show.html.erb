@@ -151,7 +151,7 @@
 </body>
 </html>
 
-
+<div class="calfile">
 <% if @post.start_time.strftime("%H:%M")=="00:00" %>
 
 <%= f = File.open("#{User.find(@post.user_id).name+@post.name1}.ics", 'w') %>
@@ -163,7 +163,7 @@ DTSTART:#{@post.start_time.strftime("%Y%m%d")}
 DTEND:#{@post.start_time.strftime("%Y%m%d")}
 DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}
 LOCATION:#{@post.address}
-SUMMARY:#{User.find(@post.user_id).name+@post.name1}
+SUMMARY:#{User.find(@post.user_id).name+@post.name1}　開始時間が9:00となっていますが、実際は未定です
 END:VEVENT
 END:VCALENDAR" %>
 <%= f.close %>
@@ -185,3 +185,4 @@ END:VCALENDAR" %>
 <%= f.close %>
 
 <% end %>
+</div>
