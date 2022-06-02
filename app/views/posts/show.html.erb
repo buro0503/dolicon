@@ -156,8 +156,8 @@
 PRODID:-//dolicon.herokuapp.com//website//EN
 VERSION:2.0
 BEGIN:VEVENT
-DTSTART:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}Z
-DTEND:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}Z
+DTSTART:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
+DTEND:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
 DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}
 LOCATION:#{@post.address}
 SUMMARY:#{User.find(@post.user_id).name+@post.name1}
