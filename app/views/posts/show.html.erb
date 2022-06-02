@@ -152,7 +152,23 @@
 </html>
 
 
+<% if @post.start_time.strftime("%H:%M")=="00:00" %>
 
+<%= f = File.open("#{User.find(@post.user_id).name+@post.name1}.ics", 'w') %>
+<%= f.puts "BEGIN:VCALENDAR
+PRODID:-//dolicon.herokuapp.com//website//EN
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:#{@post.start_time.strftime("%Y%m%d")}
+DTEND:#{@post.start_time.strftime("%Y%m%d")}
+DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}
+LOCATION:#{@post.address}
+SUMMARY:#{User.find(@post.user_id).name+@post.name1}
+END:VEVENT
+END:VCALENDAR" %>
+<%= f.close %>
+
+<% else %>
 
 <%= f = File.open("#{User.find(@post.user_id).name+@post.name1}.ics", 'w') %>
 <%= f.puts "BEGIN:VCALENDAR
@@ -168,4 +184,4 @@ END:VEVENT
 END:VCALENDAR" %>
 <%= f.close %>
 
-
+<% end %>
