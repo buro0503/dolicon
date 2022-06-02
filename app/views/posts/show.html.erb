@@ -161,9 +161,9 @@ VERSION:2.0
 BEGIN:VEVENT
 DTSTART:#{@post.start_time.strftime("%Y%m%d")}
 DTEND:#{@post.start_time.strftime("%Y%m%d")}
-DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}
+DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}　開始時間が9:00となっていますが、実際は未定です
 LOCATION:#{@post.address}
-SUMMARY:#{User.find(@post.user_id).name+@post.name1}　開始時間が9:00となっていますが、実際は未定です
+SUMMARY:#{User.find(@post.user_id).name+@post.name1}
 END:VEVENT
 END:VCALENDAR" %>
 <%= f.close %>
