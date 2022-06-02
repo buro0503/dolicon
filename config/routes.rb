@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   get 'calendar/index'
   get 'calendar/callback'
   resources :labels
@@ -31,7 +30,6 @@ Rails.application.routes.draw do
  get 'users' => 'users#index'
  get 'post/detail_search' => 'posts#detail_search'
  get  'download'  => 'posts#download'
- get  'downloade'  => 'posts#downloade'
  get 'get' =>'posts#get'
 
 end

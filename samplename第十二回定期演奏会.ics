@@ -5,8 +5,7 @@ BEGIN:VEVENT
 DTSTART:20220603T040000Z
 DTEND:20220603T060000Z
 DTSTAMP:Datetime.now
-DESCRIPTION:2022年06月03日（Fri.）
-自由記述
+DESCRIPTION:2022年06月03日（Fri.）自由記述
 bills 大阪(大阪/洋食・西洋料理、オセアニア料理、その他)
 ※予約日時等を変更した場合は自動反映されないため、マイページからご確認ください
 https://spn.ozmall.co.jp/ozpoint/confirm/
