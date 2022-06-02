@@ -45,17 +45,32 @@ margin: 1em 0em 1em 0em;
 line-height: 1.5em;
 }
 
-.line_kyouyuu{
-    margin-top: 1em;
-    width: fit-content;
-    text-align: center;
+iframe.line-it-button{
+    padding-left: 0.8em;
 }
 
-.line_kyouyuu j{
-    font-size: 0.8em;
-    position: relative;
-    bottom: 0.5em;
+img.calendar{
+    padding-left: 1.5em;
 }
+
+.kyouyuu{
+    margin-top: 1em;
+}
+
+.kyouyuu li{
+    display: inline;
+}
+
+.kyouyuu k{
+    font-size: smaller;
+    position: static;
+}
+
+.kyouyuu r{
+    font-size: smaller;
+}
+
+
 
 @media(max-width:4000px){
     .post_shousai h2{
