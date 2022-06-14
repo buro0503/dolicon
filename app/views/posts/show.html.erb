@@ -26,7 +26,7 @@
 
     <p>【<%= Prefecture.find(@post.prefecture_id).name %>】</p>
     <% if @post.address.present? %>
-    <p>場所 <%= link_to @post.address, "https://www.google.com/maps/@#{@post.latitude},#{@post.longitude},15z?q=#{@post.latitude},#{@post.longitude}&hl=ja" %></p>
+    <p>場所 <%= link_to @post.address, "https://maps.google.com/maps?q=#{@post.latitude},#{@post.longitude}" %></p>
     <% else %>
     <p>場所 未定</p>
     <% end %>
