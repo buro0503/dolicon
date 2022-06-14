@@ -4,7 +4,7 @@ BEGIN:VCALENDAR
    BEGIN:VEVENT
     DTSTART:20220615T010400J
     DTEND:20220615T010400J
-    DESCRIPTION:https://dolicon.herokuapp.com/posts/69
+    DESCRIPTION:https://dolicon.herokuapp.com/posts/68
    LOCATION:
    SUMMARY:関西マンドリン連盟出演団体：大阪大学,ぶろ,,,
    END:VEVENT
