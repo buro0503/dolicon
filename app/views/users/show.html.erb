@@ -95,20 +95,30 @@
 
 
 
-    <div class="user_post">
-    <% if @user.nicname == nil %>
-     <h2>ユーザーの投稿一覧</h2>
-     <% if @user.posts.present? %>
+  <div class="user_post">
+  <% if @user.nicname == nil %>
+     <h2>ユーザーの演奏会一覧</h2>
+
+    <% @post = Post.where("kyoudou1 = ? or kyoudou2 = ? or kyoudou3 = ? or kyoudou4 = ? or kyoudou5 = ?","#{@user.name}","#{@user.name}","#{@user.name}","#{@user.name}","#{@user.name}").order("start_time DESC") %>
+    <% if @user.posts.present? || @post.present? %>
       <% @user.posts.order("start_time DESC").each do |t| %>
-      <div class="user_post_each">
-        <%= t.start_time.strftime("%Y年%-m月%-d日") %>
-        <br><%= t.name1 %> 
-        <%= t.hikukainame %>
-        <%= link_to "詳細へ", post_path(t.id) %>
-      </div>
+        <% if t.postsyurui != 2 %>
+         <div class="user_post_each">
+            <%= t.start_time.strftime("%Y年%-m月%-d日") %>
+            <br><%= t.name1 %> 
+            <%= t.hikukainame %>
+            <%= link_to "詳細へ", post_path(t.id) %>
+         </div>
+        <% end %>
       <% end %>
-      <% else %>
+
+        <% @post.each do |post| %>
+          <p><%= post.start_time.strftime("%Y年%-m月%-d日") %></p>
+          <p><%= post.name1 %>
+          <%= link_to "詳細へ", post_path(post.id) %></p>
+        <% end %>
+    <% else %>
       <br>投稿はまだありません
-      <% end %>
     <% end %>
-    </div>
+   <% end %>
+  </div>

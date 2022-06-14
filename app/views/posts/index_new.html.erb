@@ -34,11 +34,13 @@
             <div class="left-container">
             <d><p><%= post.start_time.strftime("%-m月%-d日") %></p></d>
             <d><p>【<%= Prefecture.find(post.prefecture_id).name %>】
-            <% if post.hikukainame.present? %>
-            <p><e><%= link_to post.hikukainame, post_path(post.id) %></p></d></e></p>
-            <% else %>
-            <p><e><%= link_to User.find(post.user_id).name, user_path(post.user_id) %></p></d></e></p>
-            <% end %>
+              <% if post.postsyurui ==1 %>
+                <p><e><%= link_to post.hikukainame, post_path(post.id) %></p></d></e></p>
+              <% elsif post.postsyurui == 2 %>
+                <p><e><%= link_to post.name1, post_path(post.id) %></p></d></e></p>
+              <% else %>
+                <p><e><%= link_to User.find(post.user_id).name, user_path(post.user_id) %></p></d></e></p>
+              <% end %>
             <% if  post.image.present? %>
             <d><p><a href="<%=Post.find(post.id).image_url%>" rel="lightbox[<%=post.id%>]"><img width="189" height="267" src="<%=Post.find(post.id).image_url%>" alt="" /></a></p></d>
             <% end %>

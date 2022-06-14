@@ -4,7 +4,7 @@
 
     <%= form_for @post do |f| %>
 
-<% if @post.postsyurui != 1 %>
+<% if @post.postsyurui == 0 %>
   
   <div class="field">
     <%= f.label :演奏会名 %>
@@ -15,6 +15,43 @@
     <%= f.label :曲目 %>
     <br><%= f.text_area :music, size: "30x7" %>
   </div>
+
+<% elsif @post.postsyurui == 2 %>
+
+<div class="field">
+<%= f.label :演奏会名 %>
+<br><%= f.text_field :name1,size: 30 %>
+</div>
+
+<div class="field">
+<%= f.label :曲目 %>
+<br><%= f.text_area :music, size: "30x7" %>
+</div>
+
+<div class="field">
+<%= f.label :参加団体１ %>
+  <br><%= f.text_field :kyoudou1,size: 30 %>
+</div>
+
+<div class="field">
+<%= f.label :参加団体２ %>
+  <br><%= f.text_field :kyoudou2,size: 30 %>
+</div>
+
+<div class="field">
+<%= f.label :参加団体３ %>
+  <br><%= f.text_field :kyoudou3,size: 30 %>
+</div>
+
+<div class="field">
+<%= f.label :参加団体４ %>
+  <br><%= f.text_field :kyoudou4,size: 30 %>
+</div>
+
+<div class="field">
+<%= f.label :参加団体５ %>
+  <br><%= f.text_field :kyoudou5,size: 30 %>
+</div>
 
 <% else %>
 

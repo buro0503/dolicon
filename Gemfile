@@ -60,7 +60,6 @@ gem 'kaminari'
 gem 'carrierwave' , '~> 1.3' ,  '>= 1.3.1'
 gem 'cloudinary'
 
-gem 'dotenv-rails'
 
 #google map
 gem 'dotenv-rails'
@@ -93,3 +92,5 @@ gem 'sitemap_generator'
 gem 'whenever', require: false
 
 gem 'icalendar'
+
+gem 'jquery-ui-rails'

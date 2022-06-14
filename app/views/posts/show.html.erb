@@ -15,12 +15,15 @@
 <div class="post_show">
   <div class="post_shousai">
   <div class="post_tyuuou">
-    <% if @post.hikukainame.present? %>
+    <% if @post.postsyurui==1 %>
     <h2><p><%= @post.hikukainame %></p></h2>
+    <% elsif @post.postsyurui==2 %>
+    <h2><p><%= @post.name1 %></p></h2>
     <% else %>
     <h2><p><%= link_to User.find(@post.user_id).name, user_path(@post.user_id) %></p></h2>
     <h2><p><%= @post.name1 %></p></h2>
     <% end %>
+
     <p>【<%= Prefecture.find(@post.prefecture_id).name %>】</p>
     <% if @post.address.present? %>
     <p>場所 <%= @post.address %></p>
@@ -37,6 +40,47 @@
     未定</p>
     <% else %>
     <%= @post.start_time.strftime("%-H:%M") %></p>
+    <% end %>
+
+    <% if @post.postsyurui==2 %>
+    <p>出演団体</p>
+      ・<%= link_to User.find(@post.user_id).name, user_path(@post.user_id) %>
+    
+      <% if @post.kyoudou1.present? %>
+        <% if User.find_by(name: "#{@post.kyoudou1}")==nil %>
+          <p>・<%= @post.kyoudou1 %></p>
+        <% else %>
+          <p>・<%= link_to @post.kyoudou1, user_path(User.find_by(name: "#{@post.kyoudou1}").id) %></p>
+        <% end %>
+      <% end %>
+      <% if @post.kyoudou2.present? %>
+        <% if User.find_by(name: "#{@post.kyoudou2}")==nil %>
+          <p>・<%= @post.kyoudou2 %></p>
+        <% else %>
+          <p>・<%= link_to @post.kyoudou2, user_path(User.find_by(name: "#{@post.kyoudou2}").id) %></p>
+        <% end %>
+      <% end %>
+      <% if @post.kyoudou3.present? %>
+        <% if User.find_by(name: "#{@post.kyoudou3}")==nil %>
+          <p>・<%= @post.kyoudou3 %></p>
+        <% else %>
+          <p>・<%= link_to @post.kyoudou3, user_path(User.find_by(name: "#{@post.kyoudou3}").id) %></p>
+        <% end %>
+      <% end %>
+      <% if @post.kyoudou4.present? %>
+        <% if User.find_by(name: "#{@post.kyoudou4}")==nil %>
+          <p>・<%= @post.kyoudou4 %></p>
+        <% else %>
+          <p>・<%= link_to @post.kyoudou4, user_path(User.find_by(name: "#{@post.kyoudou4}").id) %></p>
+        <% end %>
+      <% end %>
+      <% if @post.kyoudou5.present? %>
+        <% if User.find_by(name: "#{@post.kyoudou5}")==nil %>
+          <p>・<%= @post.kyoudou5 %></p>
+        <% else %>
+          <p>・<%= link_to @post.kyoudou5, user_path(User.find_by(name: "#{@post.kyoudou5}").id) %></p>
+        <% end %>
+      <% end %>
     <% end %>
 
 
@@ -156,55 +200,88 @@
 
 <% if @post.postsyurui==1 %>
 
-<%= f = File.open("#{@post.hikukainame}.ics", 'w') %>
-<%= f.puts "BEGIN:VCALENDAR
-PRODID:-//dolicon.herokuapp.com//website//EN
-VERSION:2.0
-BEGIN:VEVENT
-DTSTART:#{@post.start_time.strftime("%Y%m%d")}
-DTEND:#{@post.start_time.strftime("%Y%m%d")}
-DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}　開始時間が9:00となっていますが、実際は未定です
-LOCATION:#{@post.address}
-SUMMARY:#{@post.hikukainame}
-END:VEVENT
-END:VCALENDAR" %>
-<%= f.close %>
+  <%= f = File.open("#{@post.hikukainame}.ics", 'w') %>
+  <%= f.puts "BEGIN:VCALENDAR
+  PRODID:-//dolicon.herokuapp.com//website//EN
+  VERSION:2.0
+  BEGIN:VEVENT
+  DTSTART:#{@post.start_time.strftime("%Y%m%d")}
+  DTEND:#{@post.start_time.strftime("%Y%m%d")}
+  DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}　開始時間が9:00となっていますが、実際は未定です
+  LOCATION:#{@post.address}
+  SUMMARY:#{@post.hikukainame}
+  END:VEVENT
+  END:VCALENDAR" %>
+  <%= f.close %>
+
+<% elsif @post.postsyurui==2 %>
+
+  <% if @post.start_time.strftime("%H:%M")=="00:00" %>
+
+    <%= f = File.open("#{@post.name1}.ics", 'w') %>
+    <%= f.puts "BEGIN:VCALENDAR
+    PRODID:-//dolicon.herokuapp.com//website//EN
+    VERSION:2.0
+    BEGIN:VEVENT
+    DTSTART:#{@post.start_time.strftime("%Y%m%d")}
+    DTEND:#{@post.start_time.strftime("%Y%m%d")}
+    DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}　開始時間が9:00となっていますが、実際は未定です
+    LOCATION:#{@post.address}
+    SUMMARY:#{@post.name1}出演団体：#{@post.kyoudou1},#{@post.kyoudou2},#{@post.kyoudou3},#{@post.kyoudou4},#{@post.kyoudou5}
+    END:VEVENT
+    END:VCALENDAR" %>
+    <%= f.close %>
+
+  <% else %>
+
+    <%= f = File.open("#{@post.name1}.ics", 'w') %>
+    <%= f.puts "BEGIN:VCALENDAR
+    PRODID:-//dolicon.herokuapp.com//website//EN
+    VERSION:2.0
+   BEGIN:VEVENT
+    DTSTART:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
+    DTEND:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
+    DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}
+   LOCATION:#{@post.address}
+   SUMMARY:#{@post.name1}出演団体：#{@post.kyoudou1},#{@post.kyoudou2},#{@post.kyoudou3},#{@post.kyoudou4},#{@post.kyoudou5}
+   END:VEVENT
+    END:VCALENDAR" %>
+    <%= f.close %>
+  <% end %>
 
 <% else %>
 
-<% if @post.start_time.strftime("%H:%M")=="00:00" %>
+  <% if @post.start_time.strftime("%H:%M")=="00:00" %>
 
-<%= f = File.open("#{User.find(@post.user_id).name+@post.name1}.ics", 'w') %>
-<%= f.puts "BEGIN:VCALENDAR
-PRODID:-//dolicon.herokuapp.com//website//EN
-VERSION:2.0
-BEGIN:VEVENT
-DTSTART:#{@post.start_time.strftime("%Y%m%d")}
-DTEND:#{@post.start_time.strftime("%Y%m%d")}
-DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}　開始時間が9:00となっていますが、実際は未定です
-LOCATION:#{@post.address}
-SUMMARY:#{User.find(@post.user_id).name+@post.name1}
-END:VEVENT
-END:VCALENDAR" %>
-<%= f.close %>
+    <%= f = File.open("#{User.find(@post.user_id).name+@post.name1}.ics", 'w') %>
+    <%= f.puts "BEGIN:VCALENDAR
+    PRODID:-//dolicon.herokuapp.com//website//EN
+    VERSION:2.0
+    BEGIN:VEVENT
+    DTSTART:#{@post.start_time.strftime("%Y%m%d")}
+    DTEND:#{@post.start_time.strftime("%Y%m%d")}
+    DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}　開始時間が9:00となっていますが、実際は未定です
+    LOCATION:#{@post.address}
+    SUMMARY:#{User.find(@post.user_id).name+@post.name1}
+    END:VEVENT
+    END:VCALENDAR" %>
+    <%= f.close %>
 
-<% else %>
+  <% else %>
 
-<%= f = File.open("#{User.find(@post.user_id).name+@post.name1}.ics", 'w') %>
-<%= f.puts "BEGIN:VCALENDAR
-PRODID:-//dolicon.herokuapp.com//website//EN
-VERSION:2.0
-BEGIN:VEVENT
-DTSTART:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
-DTEND:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
-DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}
-LOCATION:#{@post.address}
-SUMMARY:#{User.find(@post.user_id).name+@post.name1}
-END:VEVENT
-END:VCALENDAR" %>
-<%= f.close %>
-
-<% end %>
+    <%= f = File.open("#{User.find(@post.user_id).name+@post.name1}.ics", 'w') %>
+    <%= f.puts "BEGIN:VCALENDAR
+    PRODID:-//dolicon.herokuapp.com//website//EN
+    VERSION:2.0
+    BEGIN:VEVENT
+    DTSTART:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
+    DTEND:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
+    DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}
+    LOCATION:#{@post.address}
+    SUMMARY:#{User.find(@post.user_id).name+@post.name1}
+    END:VEVENT
+    END:VCALENDAR" %>
+    <%= f.close %>
+  <% end %>
 </div>
-
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_07_131523) do
+ActiveRecord::Schema.define(version: 2022_06_14_014130) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -62,6 +62,11 @@ ActiveRecord::Schema.define(version: 2022_05_07_131523) do
     t.text "hikukainame"
     t.text "hikukairyakusyou"
     t.integer "postsyurui"
+    t.text "kyoudou1"
+    t.text "kyoudou2"
+    t.text "kyoudou3"
+    t.text "kyoudou4"
+    t.text "kyoudou5"
   end
 
   create_table "relationships", force: :cascade do |t|

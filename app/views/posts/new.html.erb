@@ -5,6 +5,16 @@
       if ( document.Form2["post[postsyurui]"][0].checked ) { 
         document . Form2["post[name1]"] . disabled = false; 
         document . getElementById('post_name1') . style . display = "inline"; 
+        document . Form2["post[kyoudou1]"] . disabled = true; 
+        document . getElementById('post_kyoudou1') . style . display = "none"; 
+        document . Form2["post[kyoudou2]"] . disabled = true; 
+        document . getElementById('post_kyoudou2') . style . display = "none"; 
+        document . Form2["post[kyoudou3]"] . disabled = true; 
+        document . getElementById('post_kyoudou3') . style . display = "none"; 
+        document . Form2["post[kyoudou4]"] . disabled = true; 
+        document . getElementById('post_kyoudou4') . style . display = "none"; 
+        document . Form2["post[kyoudou5]"] . disabled = true; 
+        document . getElementById('post_kyoudou5') . style . display = "none"; 
         document . Form2["post[hikukainame]"] . disabled = true; 
         document . getElementById('post_hikukainame') . style . display = "none"; 
         document . Form2["post[hikukairyakusyou]"] . disabled = true; 
@@ -17,18 +27,54 @@
         document . getElementById('hikukai') . style . display = "none"; 
 
       } else { 
-        document . Form2["post[name1]"] . disabled = true;
-        document . getElementById('post_name1') . style . display = "none"; 
-        document . Form2["post[hikukainame]"] . disabled = false;
-        document . getElementById('post_hikukainame') . style . display = "inline"; 
-        document . Form2["post[hikukairyakusyou]"] . disabled = false;
-        document . getElementById('post_hikukairyakusyou') . style . display = "inline"; 
-        document . Form2["post[music]"] . disabled = true;
-        document . getElementById('post_music') . style . display = "none"; 
-        document . Form2["post[image2]"] . disabled = true;
-        document . getElementById('post_image2') . style . display = "none"; 
-        document . getElementById('ensoukai') . style . display = "none"; 
-        document . getElementById('hikukai') . style . display = "inline"; 
+        if ( document.Form2["post[postsyurui]"][1].checked ) {
+          document . Form2["post[name1]"] . disabled = true;
+          document . getElementById('post_name1') . style . display = "none"; 
+          document . Form2["post[kyoudou1]"] . disabled = true; 
+          document . getElementById('post_kyoudou1') . style . display = "none"; 
+          document . Form2["post[kyoudou2]"] . disabled = true; 
+          document . getElementById('post_kyoudou2') . style . display = "none"; 
+          document . Form2["post[kyoudou3]"] . disabled = true; 
+          document . getElementById('post_kyoudou3') . style . display = "none"; 
+          document . Form2["post[kyoudou4]"] . disabled = true; 
+          document . getElementById('post_kyoudou4') . style . display = "none";
+          document . Form2["post[kyoudou5]"] . disabled = true; 
+          document . getElementById('post_kyoudou5') . style . display = "none"; 
+          document . Form2["post[hikukainame]"] . disabled = false;
+          document . getElementById('post_hikukainame') . style . display = "inline"; 
+          document . Form2["post[hikukairyakusyou]"] . disabled = false;
+          document . getElementById('post_hikukairyakusyou') . style . display = "inline"; 
+          document . Form2["post[music]"] . disabled = true;
+          document . getElementById('post_music') . style . display = "none"; 
+          document . Form2["post[image2]"] . disabled = true;
+          document . getElementById('post_image2') . style . display = "none"; 
+          document . getElementById('ensoukai') . style . display = "none"; 
+          document . getElementById('hikukai') . style . display = "inline"; 
+        } else{
+          document . Form2["post[name1]"] . disabled = false; 
+          document . getElementById('post_name1') . style . display = "inline"; 
+          document . Form2["post[kyoudou1]"] . disabled = false; 
+          document . getElementById('post_kyoudou1') . style . display = "inline"; 
+          document . Form2["post[kyoudou2]"] . disabled = false; 
+          document . getElementById('post_kyoudou2') . style . display = "inline"; 
+          document . Form2["post[kyoudou3]"] . disabled = false; 
+          document . getElementById('post_kyoudou3') . style . display = "inline"; 
+          document . Form2["post[kyoudou4]"] . disabled = false; 
+          document . getElementById('post_kyoudou4') . style . display = "inline"; 
+          document . Form2["post[kyoudou5]"] . disabled = false; 
+          document . getElementById('post_kyoudou5') . style . display = "inline"; 
+          document . Form2["post[hikukainame]"] . disabled = true; 
+          document . getElementById('post_hikukainame') . style . display = "none"; 
+          document . Form2["post[hikukairyakusyou]"] . disabled = true; 
+          document . getElementById('post_hikukairyakusyou') . style . display = "none"; 
+          document . Form2["post[music]"] . disabled = false; 
+          document . getElementById('post_music') . style . display = "inline"; 
+          document . Form2["post[image2]"] . disabled = false; 
+          document . getElementById('post_image2') . style . display = "inline"; 
+          document . getElementById('ensoukai') . style . display = "inline"; 
+          document . getElementById('hikukai') . style . display = "none";
+        }
+
       }
   }
   window.onload = changeDisplay; // ページを表示したとき、changeDisplay() を呼び出す
@@ -39,6 +85,7 @@
 
 <div class="toukou-zentai">
 <h3>新規投稿</h3>
+
 <form name="Form2" class="new_post" id="new_post" enctype="multipart/form-data" action="/posts" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="z7o5psCpJt0ahCPMjgypAESchG_ubBjKiG0IFN6k2UMu0bvkzijJvZHagVqlfnVK5aIaqDAGWGGGy6W-eCaXOg" />
 
 <div class="field">
@@ -47,29 +94,73 @@
 <label for='post_postsyurui_0'>演奏会</label>
 <input type="radio" value="1" name="post[postsyurui]" id="post_postsyurui_1" onClick="changeDisplay()"/>
 <label for='post_postsyurui_1'>弾く会</label>
+<input type="radio" value="2" name="post[postsyurui]" id="post_postsyurui_2" onClick="changeDisplay()"/>
+<label for='post_postsyurui_2'>合同演奏会</label>
 </div>
 
-  <div class="field">
   <div class="field" id="post_name1" style="display:none;">
+  <div class="field">
     <label for="post_演奏会名（団体名は含めない）">演奏会名（団体名は含めない）</label>
     <b>必須</b>
     <br><input size="30" type="text" name="post[name1]" required/>
   </div>
   </div>
 
-  <div class="field">
   <div class="field" id="post_hikukainame" style="display:none;">
+  <div class="field">
     <label for="タイトル">タイトル</label>
     <b>必須</b>
     <br><input size="30" type="text" name="post[hikukainame]" required/>
   </div>
   </div>
 
+  
+  <div class="field" id="post_kyoudou1" style="display:none;">
   <div class="field">
+    <label for="参加団体１">参加団体１（投稿者）</label>
+    <c>任意</c>
+    <br><input size="30" type="text" name="post[kyoudou1]" />
+    <h6>※当サイトに登録済の団体は団体一覧の正式名称を記入してください</h6>
+  </div>
+  </div>
+    
+  <div class="field" id="post_kyoudou2" style="display:none;">
+  <div class="field">
+    <label for="参加団体２">参加団体２</label>
+    <c>任意</c>
+    <br><input size="30" type="text" name="post[kyoudou2]" />
+  </div>
+  </div>
+
+  <div class="field" id="post_kyoudou3" style="display:none;">
+  <div class="field">
+    <label for="参加団体３">参加団体３</label>
+    <c>任意</c>
+    <br><input size="30" type="text" name="post[kyoudou3]" />
+  </div>
+  </div>
+  
+  <div class="field" id="post_kyoudou4" style="display:none;">
+  <div class="field">
+    <label for="参加団体４">参加団体４</label>
+    <c>任意</c>
+    <br><input size="30" type="text" name="post[kyoudou4]" />
+  </div>
+  </div>
+
+  <div class="field" id="post_kyoudou5" style="display:none;">
+  <div class="field">
+    <label for="参加団体５">参加団体５</label>
+    <c>任意</c>
+    <br><input size="30" type="text" name="post[kyoudou5]" />
+  </div>
+  </div>
+
   <div class="field" id="post_hikukairyakusyou" style="display:none;">
+  <div class="field">
     <label for="略称">略称</label>
     <c>任意</c>
-    <br><h>カレンダーでの表示名</h></label>
+    <br><h>（カレンダーでの表示名）</h></label>
     <br><input size="30" type="text" name="post[hikukairyakusyou]" required/>
   </div>
   </div>
