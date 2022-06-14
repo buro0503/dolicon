@@ -133,7 +133,7 @@ end
 def detail_search
   @q = Post.ransack(params[:q])
   @posts = @q.result(distinct: true)
-  @prefectureName = post.where('prefecture_id IN(?)', params[:prefecture_id])
+  @prefectureName = @posts.where('prefecture_id IN(?)', params[:prefecture_id])
 end
 
 

@@ -331,12 +331,16 @@
       <% posts.each do |t| %>
         <div>
           <%= Prefecture.find(t.prefecture_id).name %>
-          <% if t.hikukairyakusyou.present? %>
-          <br><%= link_to t.hikukairyakusyou, post_path(t.id) %>
-          <% elsif t.hikukainame.present? %>
-          <br><%= link_to t.hikukainame, post_path(t.id) %>
+          <% if t.postsyurui == 1 %>
+            <% if t.hikukairyakusyou.present? %>
+              <br><%= link_to t.hikukairyakusyou, post_path(t.id) %>
+            <% elsif t.hikukainame.present? %>
+              <br><%= link_to t.hikukainame, post_path(t.id) %>
+            <% end %>
+          <% elsif t.postsyurui == 2 %>
+           <br><%= link_to t.name1, post_path(t.id) %>
           <% else %>
-          <br><%= link_to User.find(t.user_id).ryakusyou, post_path(t.id) %>
+            <br><%= link_to User.find(t.user_id).ryakusyou, post_path(t.id) %>
           <% end %>
         
         </div>
