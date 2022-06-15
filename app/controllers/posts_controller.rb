@@ -157,7 +157,7 @@ end
     params.require(:post).permit(:name1, :name2, :month, :day, :detail,
      :image, :image2, :music, :site, :post, :prefecture, :prefecture_id,
       :latitude, :longitude, :date, :start_time, :image1, :image2,
-      :title, :details, :hikukainame, :hikukairyakusyou, :postsyurui, :kyoudou1, :kyoudou2, :kyoudou3, :kyoudou4, :kyoudou5)
+      :title, :details, :hikukainame, :hikukairyakusyou, :postsyurui, :kyoudou1, :kyoudou2, :kyoudou3, :kyoudou4, :kyoudou5, :address)
  end
 
  def post_search_params

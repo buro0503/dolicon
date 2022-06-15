@@ -112,14 +112,16 @@
         <% end %>
       <% end %>
 
-      <h2>合同演奏会一覧</h2>
-        <% @post.each do |post| %>
-          <div class="user_post_each">
-            <p><%= post.start_time.strftime("%Y年%-m月%-d日") %></p>
-            <p><%= post.name1 %>
-          <%= link_to "詳細へ", post_path(post.id) %></p>
-          </div>
-        <% end %>
+      <% if @post.present? %>
+        <h2>合同演奏会一覧</h2>
+          <% @post.each do |post| %>
+            <div class="user_post_each">
+              <p><%= post.start_time.strftime("%Y年%-m月%-d日") %></p>
+              <p><%= post.name1 %>
+            <%= link_to "詳細へ", post_path(post.id) %></p>
+            </div>
+          <% end %>
+      <% end %>
     <% else %>
       <br>投稿はまだありません
     <% end %>
