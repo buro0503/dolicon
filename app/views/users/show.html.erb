@@ -104,14 +104,15 @@
       <% @user.posts.order("start_time DESC").each do |t| %>
         <% if t.postsyurui != 2 %>
          <div class="user_post_each">
-            <%= t.start_time.strftime("%Y年%-m月%-d日") %>
-            <br><%= t.name1 %> 
+            <p><%= t.start_time.strftime("%Y年%-m月%-d日") %></p>
+            <p><%= t.name1 %> 
             <%= t.hikukainame %>
-            <%= link_to "詳細へ", post_path(t.id) %>
+            <%= link_to "詳細へ", post_path(t.id) %></p>
          </div>
         <% end %>
       <% end %>
 
+      <h2>合同演奏会一覧</h2>
         <% @post.each do |post| %>
           <p><%= post.start_time.strftime("%Y年%-m月%-d日") %></p>
           <p><%= post.name1 %>

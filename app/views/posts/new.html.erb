@@ -87,7 +87,6 @@
 <h3>新規投稿</h3>
 
 <form name="Form2" class="new_post" id="new_post" enctype="multipart/form-data" action="/posts" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="z7o5psCpJt0ahCPMjgypAESchG_ubBjKiG0IFN6k2UMu0bvkzijJvZHagVqlfnVK5aIaqDAGWGGGy6W-eCaXOg" />
-
 <div class="field">
 <label for="post_投稿区分">投稿区分</label><br>
 <input type="radio" value="0" name="post[postsyurui]" id="post_postsyurui_0" checked onClick="changeDisplay()"/>
@@ -119,7 +118,7 @@
   <div class="field">
     <label for="参加団体１">参加団体１（投稿者）</label>
     <c>任意</c>
-    <br><input size="30" type="text" name="post[kyoudou1]" />
+    <br><input size="30" type="text" name="post[kyoudou1]" value="" />
     <h6>※当サイトに登録済の団体は団体一覧の正式名称を記入してください</h6>
   </div>
   </div>
@@ -238,7 +237,7 @@
     <br><input accept="image/jpeg,image/png,image/jfif,text/html" type="file" name="post[image]" id="post_image" />
   </div>
 
-  <div class="field" id="post_image2" style="display:none;">
+    <div class="field" id="post_image2" style="display:none;">
     <label for="post_チラシ画像（裏）">チラシ画像（裏）</label>
     <c>任意</c>
     <br><input accept="image/jpeg,image/png,image/jfif" type="file" name="post[image2]" />

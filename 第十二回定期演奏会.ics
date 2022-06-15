@@ -2,10 +2,10 @@ BEGIN:VCALENDAR
     PRODID:-//dolicon.herokuapp.com//website//EN
     VERSION:2.0
    BEGIN:VEVENT
-    DTSTART:20220614T141700J
-    DTEND:20220614T141700J
-    DESCRIPTION:https://dolicon.herokuapp.com/posts/64
+    DTSTART:20220620T102600J
+    DTEND:20220620T102600J
+    DESCRIPTION:https://dolicon.herokuapp.com/posts/73
    LOCATION:
-   SUMMARY:第十二回定期演奏会出演団体：ぶろ,,,,
+   SUMMARY:第十二回定期演奏会出演団体：大阪大学,ぶろ,ああ,samplename,
    END:VEVENT
     END:VCALENDAR

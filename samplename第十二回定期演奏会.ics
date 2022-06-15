@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+    PRODID:-//dolicon.herokuapp.com//website//EN
+    VERSION:2.0
+    BEGIN:VEVENT
+    DTSTART:20220629T205900J
+    DTEND:20220629T205900J
+    DESCRIPTION:https://dolicon.herokuapp.com/posts/76
+    LOCATION:
+    SUMMARY:samplename第十二回定期演奏会
+    END:VEVENT
+    END:VCALENDAR

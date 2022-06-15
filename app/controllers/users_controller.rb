@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
     def show
         @user = User.find(params[:id])
     end
@@ -54,12 +53,8 @@ class UsersController < ApplicationController
         @users_45 = @q.result(distinct: true) .where(prefecture_id: 45).where(syurui: [1,2])
         @users_46 = @q.result(distinct: true) .where(prefecture_id: 46).where(syurui: [1,2])
         @users_47 = @q.result(distinct: true) .where(prefecture_id: 47).where(syurui: [1,2])
-       
-       
-       
-
-
     end    
+    
 
 
           before_action :authenticate_user!, except: [:index, :show]
@@ -69,6 +64,14 @@ class UsersController < ApplicationController
         devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :profile, :syurui, :ryakusyou, :prefecture, :prefecture_id, :url, :twitterid, :insta_name])
       end
 
-
+      def autocomplete_kyoudou1
+        kyoudou1_suggestions = User.autocomplete(params[:term]).pluck(:name)
+        respond_to do |format|
+          format.html
+          format.json {
+            render json: kyoudou1_suggestions
+          }
+        end
+      end
 
 end

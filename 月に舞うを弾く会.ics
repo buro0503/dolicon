@@ -2,9 +2,9 @@ BEGIN:VCALENDAR
   PRODID:-//dolicon.herokuapp.com//website//EN
   VERSION:2.0
   BEGIN:VEVENT
-  DTSTART:20220609
-  DTEND:20220609
-  DESCRIPTION:https://dolicon.herokuapp.com/posts/52　開始時間が9:00となっていますが、実際は未定です
+  DTSTART:20220621
+  DTEND:20220621
+  DESCRIPTION:https://dolicon.herokuapp.com/posts/77　開始時間が9:00となっていますが、実際は未定です
   LOCATION:
   SUMMARY:月に舞うを弾く会
   END:VEVENT

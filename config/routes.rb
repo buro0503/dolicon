@@ -30,5 +30,6 @@ Rails.application.routes.draw do
  get 'post/detail_search' => 'posts#detail_search'
  get  'download'  => 'posts#download'
  get 'get' =>'posts#get'
-
+ get 'idol' => 'idol#test'
+ get 'users/autocomplete_kyoudou1/:term' => 'users#autocomplete_kyoudou1'
 end
