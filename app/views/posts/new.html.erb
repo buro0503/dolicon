@@ -224,6 +224,12 @@
 <option value="47">沖縄県</option></select>
   </div>
 
+  <div class="field my-3">
+  <label for="post_開催場所">開催場所</label>
+  <c>任意</c>
+  <br><input type="text" name="post[address]" id="post_address" required/>
+</div>
+
   <div class="field">
   <label for="post_自由記述">自由記述</label>
   <c>任意</c>
@@ -251,12 +257,6 @@
     <br><input type="datetime-local" name="post[start_time]" id="post_start_time" required/>
   </div>
 
-
-  <div class="field my-3">
-    <label for="post_開催場所">開催場所</label>
-    <c>任意</c>
-    <br><input type="text" name="post[address]" id="post_address" required/>
-  </div>
   <div class="actions">
     <input type="button" name="commit" value="投稿する" onclick="submit();" data-disable-with="投稿する" />
   </div>
