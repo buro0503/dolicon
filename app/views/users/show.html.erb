@@ -117,8 +117,8 @@
           <div class="user_post_each">
             <p><%= post.start_time.strftime("%Y年%-m月%-d日") %></p>
             <p><%= post.name1 %>
-          </div>
           <%= link_to "詳細へ", post_path(post.id) %></p>
+          </div>
         <% end %>
     <% else %>
       <br>投稿はまだありません
