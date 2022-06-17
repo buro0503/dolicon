@@ -95,35 +95,39 @@
 
 
 
-  <div class="user_post">
+<div class="user_post">
   <% if @user.nicname == nil %>
-     <h2>ユーザーの演奏会一覧</h2>
+    <div class="left">
+      <h2>ユーザーの演奏会一覧</h2>
 
-    <% @post = Post.where("kyoudou1 = ? or kyoudou2 = ? or kyoudou3 = ? or kyoudou4 = ? or kyoudou5 = ?","#{@user.name}","#{@user.name}","#{@user.name}","#{@user.name}","#{@user.name}").order("start_time DESC") %>
-    <% if @user.posts.present? || @post.present? %>
-      <% @user.posts.order("start_time DESC").each do |t| %>
-        <% if t.postsyurui != 2 %>
-         <div class="user_post_each">
-            <p><%= t.start_time.strftime("%Y年%-m月%-d日") %></p>
-            <p><%= t.name1 %> 
-            <%= t.hikukainame %>
-            <%= link_to "詳細へ", post_path(t.id) %></p>
-         </div>
-        <% end %>
-      <% end %>
-
-      <% if @post.present? %>
-        <h2>合同演奏会一覧</h2>
-          <% @post.each do |post| %>
+      <% @post = Post.where("kyoudou1 = ? or kyoudou2 = ? or kyoudou3 = ? or kyoudou4 = ? or kyoudou5 = ?","#{@user.name}","#{@user.name}","#{@user.name}","#{@user.name}","#{@user.name}").order("start_time DESC") %>
+      <% if @user.posts.present? || @post.present? %>
+        <% @user.posts.order("start_time DESC").each do |t| %>
+          <% if t.postsyurui != 2 %>
             <div class="user_post_each">
-              <p><%= post.start_time.strftime("%Y年%-m月%-d日") %></p>
-              <p><%= post.name1 %>
-            <%= link_to "詳細へ", post_path(post.id) %></p>
+              <p><%= t.start_time.strftime("%Y年%-m月%-d日") %></p>
+              <p><%= t.name1 %> 
+              <%= t.hikukainame %>
+              <%= link_to "詳細へ", post_path(t.id) %></p>
             </div>
           <% end %>
+        <% end %>
+    </div>
+
+        <% if @post.present? %>
+          <div class="right">
+            <h2>合同演奏会一覧</h2>
+              <% @post.each do |post| %>
+                <div class="goudou_post_each">
+                  <p><%= post.start_time.strftime("%Y年%-m月%-d日") %></p>
+                  <p><%= post.name1 %>
+                <%= link_to "詳細へ", post_path(post.id) %></p>
+               </div>
+              <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <br>投稿はまだありません
       <% end %>
-    <% else %>
-      <br>投稿はまだありません
-    <% end %>
-   <% end %>
-  </div>
+  <% end %>
+</div>
