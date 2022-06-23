@@ -145,6 +145,7 @@ end
  def download
   @post = Post.find(params[:format])
   send_file "#{User.find(@post.user_id).name+@post.name1}.ics"
+
 end
  
 

@@ -4,8 +4,8 @@ BEGIN:VCALENDAR
   BEGIN:VEVENT
   DTSTART:20220624
   DTEND:20220624
-  DESCRIPTION:https://dolicon.herokuapp.com/posts/83　開始時間が9:00となっていますが、実際は未定です
+  DESCRIPTION:https://dolicon.herokuapp.com/posts/82　開始時間が9:00となっていますが、実際は未定です
   LOCATION:北千里
-  SUMMARY:月に舞うを弾く会
+  SUMMARY:aaa
   END:VEVENT
   END:VCALENDAR

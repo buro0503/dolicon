@@ -1,11 +1,13 @@
-BEGIN:VCALENDAR
-    PRODID:-//dolicon.herokuapp.com//website//EN
+
+    BEGIN:VCALENDAR
+    PRODID:-//www.ozmall.co.jp//restaurant//EN
     VERSION:2.0
     BEGIN:VEVENT
-    DTSTART:20220616T124500J
-    DTEND:20220616T124500J
-    DESCRIPTION:https://dolicon.herokuapp.com/posts/80
-    LOCATION:
-    SUMMARY:samplename第十二回定期演奏会
+    DTSTART:20220515T040000Z
+    DTEND:20220515T060000Z
+    DTSTAMP:20220428T012715Z
+    DESCRIPTION:2022年5月15日（日）13:00【3名様】
+    LOCATION:大阪府大阪市北区梅田3-1-3 IUCUA1107F
+    SUMMARY:bills 大阪(大阪/洋食・西洋料理、オセアニア料理、その他)
     END:VEVENT
     END:VCALENDAR
