@@ -111,15 +111,116 @@
       <%= render partial: 'likes/like', locals: {post: @post} %>
     </div>
 
+
+    <div class="calfile">
+
+<% if @post.postsyurui==1 %>
+
+  <%= f = File.open("#{@post.hikukainame}.ics", 'w') %>
+  <%= f.puts "BEGIN:VCALENDAR
+PRODID:-//dolicon.herokuapp.com//website//EN
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:#{@post.start_time.strftime("%Y%m%d")}
+DTEND:#{@post.start_time.strftime("%Y%m%d")}
+DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}　開始時間が9:00となっていますが、実際は未定です
+LOCATION:#{@post.address}
+SUMMARY:#{@post.hikukainame}
+END:VEVENT
+END:VCALENDAR" %>
+  <%= f.close %>
+
+<% elsif @post.postsyurui==2 %>
+
+  <% if @post.start_time.strftime("%H:%M")=="00:00" %>
+
+    <%= f = File.open("#{@post.name1}.ics", 'w') %>
+    <%= f.puts "BEGIN:VCALENDAR
+PRODID:-//dolicon.herokuapp.com//website//EN
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:#{@post.start_time.strftime("%Y%m%d")}
+DTEND:#{@post.start_time.strftime("%Y%m%d")}
+DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}　開始時間が9:00となっていますが、実際は未定です
+LOCATION:#{@post.address}
+SUMMARY:#{@post.name1}出演団体：#{@post.kyoudou1},#{@post.kyoudou2},#{@post.kyoudou3},#{@post.kyoudou4},#{@post.kyoudou5}
+END:VEVENT
+END:VCALENDAR" %>
+    <%= f.close %>
+
+  <% else %>
+
+    <%= f = File.open("#{@post.name1}.ics", 'w') %>
+    <%= f.puts "BEGIN:VCALENDAR
+PRODID:-//dolicon.herokuapp.com//website//EN
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
+DTEND:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
+DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}
+LOCATION:#{@post.address}
+SUMMARY:#{@post.name1}出演団体：#{@post.kyoudou1},#{@post.kyoudou2},#{@post.kyoudou3},#{@post.kyoudou4},#{@post.kyoudou5}
+END:VEVENT
+END:VCALENDAR" %>
+    <%= f.close %>
+  <% end %>
+
+<% else %>
+
+  <% if @post.start_time.strftime("%H:%M")=="00:00" %>
+
+    <%= f = File.open("#{User.find(@post.user_id).name+@post.name1}.ics", 'w') %>
+    <%= f.puts "BEGIN:VCALENDAR
+PRODID:-//dolicon.herokuapp.com//website//EN
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:#{@post.start_time.strftime("%Y%m%d")}
+DTEND:#{@post.start_time.strftime("%Y%m%d")}
+DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}　開始時間が9:00となっていますが、実際は未定です
+LOCATION:#{@post.address}
+SUMMARY:#{User.find(@post.user_id).name+@post.name1}
+END:VEVENT
+END:VCALENDAR" %>
+    <%= f.close %>
+
+  <% else %>
+
+    <%= f = File.open("#{User.find(@post.user_id).name+@post.name1}.ics", 'w') %>
+    <%= f.puts "BEGIN:VCALENDAR
+PRODID:-//dolicon.herokuapp.com//website//EN
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
+DTEND:#{@post.start_time.strftime("%Y%m%d")}T#{@post.start_time.strftime("%H%M%S")}J
+DESCRIPTION:https://dolicon.herokuapp.com/posts/#{@post.id}
+LOCATION:#{@post.address}
+SUMMARY:#{User.find(@post.user_id).name+@post.name1}
+END:VEVENT
+END:VCALENDAR" %>
+    <%= f.close %>
+  <% end %>
+</div>
+<% end %>
+
+
+
+
+
+
     <div class="kyouyuu">
       <ul>
         <li><div class="line-it-button" data-lang="ja" data-type="share-b" data-env="REAL" data-url="https://dolicon.herokuapp.com/posts/<%= @post.id %>" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
         <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script></li>
+        <li><a class="btn btn-info" href="/download.<%=@post.id%>"><img width="45" height="45" src="/assets/twitter/googlecalendar.png" alt="" class="calendar"></a></li>
       </ul>
       <ul>
         <li><k>LINEで共有</k></li>
+        <li><r>予定を追加</r></li>
       </ul>
+      <h6>※予定を追加機能は一部端末（iPhoneなど）では利用できません</h6>
     </div>
+
+
 
   </div>
   </div>
