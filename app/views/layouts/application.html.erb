@@ -206,6 +206,12 @@
     <% if user_signed_in? %>
      
       <% if current_user.syurui != 0 %>
+        <% if current_user.posts.present? %>
+        <% else %>
+          <div class="balloon1-right">
+           <p>新規投稿はここから</p>
+          </div>
+        <% end %>
         <%= link_to new_post_path do%>
          <i class="fa-solid fa-circle-plus"></i>
         <% end %>

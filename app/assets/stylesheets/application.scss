@@ -138,7 +138,7 @@ html{
 
 
 .gotop{
-  display: block;
+  display: none;
   width: 60px;
   height: 60px;
   box-sizing: border-box;
@@ -179,7 +179,7 @@ html{
 font-size: 3em;
 position:fixed;
 right:0.2em;
-bottom:0.7em;
+bottom:0em;
 transition:1s;
 }
 
@@ -252,6 +252,34 @@ details[open] summary {
   margin-left: 0.5em;
 }
 
+
+.balloon1-right {
+  position: relative;
+  display: inline-block;
+  bottom: 0.8em;
+  margin: 1.5em 15px 1.5em 0em;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #fff;
+  font-size: 16px;
+  background: #4270af;
+}
+
+.balloon1-right:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #4270af;
+}
+
+.balloon1-right p {
+  margin: 0;
+  padding: 0;
+}
 
 @media (max-width: 4000px){
   header li {
