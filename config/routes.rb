@@ -32,4 +32,5 @@ Rails.application.routes.draw do
  get 'get' =>'posts#get'
  get 'idol' => 'idol#test'
  get 'users/autocomplete_kyoudou1/:term' => 'users#autocomplete_kyoudou1'
+ get 'question' => 'faq#question'
 end

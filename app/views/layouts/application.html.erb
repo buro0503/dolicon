@@ -28,7 +28,7 @@
 
   <body>
     <header>
-     <div class=header-title>
+     <div class="header-title">
       <h1>
         <%= link_to "Mandolin Concert Info", posts_path %>
       </h1>
@@ -74,6 +74,11 @@
                 <c>ログアウト</c>
               <% end %>
 
+              <li><%= link_to question_path do %></li>
+                <i class="fa-brands fa-quora"></i>
+                <c>よくある質問</c>
+              <% end %>
+
               <li><%= link_to posts_mailform_path do %></li>
                 <i class="fa-solid fa-envelope"></i>
                 <c>お問い合せ</c>
@@ -100,6 +105,11 @@
                 <i class="fa-solid fa-arrow-right-to-bracket"></i>
                 <c>ログイン</c>
               <% end %>       
+
+              <li><%= link_to question_path do %></li>
+                <i class="fa-brands fa-quora"></i>
+                <c>よくある質問</c>
+              <% end %>
 
               <li><%= link_to posts_mailform_path do %></li>
                 <i class="fa-solid fa-envelope"></i>
@@ -150,6 +160,11 @@
               <br><c>お問い合せ</c>
             <% end %>
 
+            <li><%= link_to question_path do %></li>
+              <i class="fa-brands fa-quora"></i>
+              <c>よくある質問</c>
+            <% end %>
+
             <li><%= link_to destroy_user_session_path, method: :delete do%></li>
                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
                  <br><c>ログアウト</c>
@@ -177,6 +192,11 @@
             <li><%= link_to posts_mailform_path do %></li>
               <i class="fa-solid fa-envelope"></i>
               <br><c>お問い合せ</c>
+            <% end %>
+
+            <li><%= link_to question_path do %></li>
+              <i class="fa-brands fa-quora"></i>
+              <c>よくある質問</c>
             <% end %>
 
             <li><%= link_to new_user_session_path do %></li>
