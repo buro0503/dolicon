@@ -1,0 +1,26 @@
+.questionbox{
+ background-color: rgb(243, 243, 243);
+ margin-bottom: 1em;
+ padding: 1em 1em;
+ border-left: solid 3px rgb(49, 105, 217);
+}
+
+.question{
+ margin-bottom: 1em;
+ font-size: larger;
+ //border-bottom: solid 3px black;
+}
+
+.answer{
+ background-color: white;
+ padding: 0.5em 1em 0.5em 1em;
+ line-height: 130%;
+}
+
+.q{
+    color: rgb(88, 156, 245)
+}
+
+.a{
+    color: orange;
+}
